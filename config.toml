@@ -39,4 +39,4 @@ sam_menu = [
 sam_bottom_menu = true
 
 [extra.sam_footer]
-text = "&copy; Copyright 2022, Matthew Gilbert. All Rights Reserved."
+text = "&copy; Copyright 2022, Matthew Gilbert. MIT License."

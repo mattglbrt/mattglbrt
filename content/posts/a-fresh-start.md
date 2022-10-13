@@ -1,5 +1,5 @@
 +++
-title = "A fresh start"
+title = "a fresh start"
 date = 2022-10-13
 [taxonomies]
 tags = ["Journal Entries"]
