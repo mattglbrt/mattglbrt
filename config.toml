@@ -32,7 +32,8 @@ home = "home"
 sam_menu = [
     { text = "posts", link = "/posts" },
     { text = "now", link = "/now" },
-    { text = "about", link = "/about" }
+    { text = "about", link = "/about" },
+    { text = "contact", link = "/contact" }
 ]
 
 sam_bottom_menu = true
