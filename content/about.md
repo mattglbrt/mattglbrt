@@ -7,11 +7,7 @@ no_header = true
 
 I am a husband, father, artist, writer, and consultant. On some days I'm also a gardener, leather worker, designer, developer or just a blob attached to a keyboard and chair. I'm working on fixing that last one.
 
-Professionally, I am the founder of Everyway and MDG Growth. Head of Product Marketing at Invisible Commerce. Growth Consultant for IntellecTechs.
-
-I have spoken at events and taught workshops throughout Virginia on topics such as marketing, website development, small business and startup growth, demand generation, content marketing, and social media marketing.
-
-I currently live in Chesapeake, VA with my wife, daughter, and son. We share our home with two German Shepherds named Pig and Beanifer Jeffries and a feral beast some people might mistake for a cat name, Finnigan.
+I currently live in Chesapeake, VA with my wife, daughter, and son. We share our home with two German Shepherds and a feral beast some people might mistake for a cat name.
 
 #### A timeline of my life:
 
