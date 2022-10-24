@@ -1,6 +1,6 @@
 +++
 title = "starting ogor"
-date = 2022-10-23
+date = 2022-10-10
 [taxonomies]
 tags = ["ogor mawtribes", "age of sigmar", "miniature painting"]
 authors = ["Matt Gilbert"] 
@@ -37,5 +37,5 @@ I've complied their comments from multiple posts to create a rough outline of ho
 - Then the colour of the oxide ( orange - greenish - blue) for iron, brass or copper.
 
 
-[ekkius]:[https://www.instagram.com/ekkius]
-[redditpost]: [https://www.reddit.com/r/ageofsigmar/comments/ew72xg/starting_of_an_ogor_mawtribe/]
+[ekkius]: https://www.instagram.com/ekkius
+[redditpost]: https://www.reddit.com/r/ageofsigmar/comments/ew72xg/starting_of_an_ogor_mawtribe/
