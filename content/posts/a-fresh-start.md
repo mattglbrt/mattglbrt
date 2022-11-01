@@ -25,24 +25,20 @@ Have I created this site just to publicly stumble through trying to find out? So
 
 With that stream of consciousness ramble over. My goals for this month are to finish up some loose threads that have been dangling for years. All conventional wisdom says to pick one thing and focus on it. Conventional wisdom hasn’t worked for me in the past, and I am not going to let it hold me back going into the future. I want to do a lot of things, so a lot of things I will do.
 
-- [ ] Mattglbrt.com (this site) Live
+- [x] Mattglbrt.com (this site) Live
 - [ ] Mdggrowth.com finished and live
 - [ ] FreeTimeProfit.com finished and live
-- [ ] The Hobbinomicon Started
-- [ ] Busy Playn Booth Set Up and Ready for Events
-- [ ] Sign up for NaNoWriMo and plan my first novel
+- [x] Busy Playn Booth Set Up and Ready for Events
+- [x] Sign up for NaNoWriMo and plan my first novel
 - [ ] Build goeveryway.com and launch
 
-The to-do list above touches on everything I want to pursue in earnest next year. I have my sites set on next year already because I have smashed all my goals for this year already. Here is a brief overview of my upcoming projects.
+The to-do list above touches on everything I want to pursue in earnest next year. Here is a brief overview of my upcoming projects.
 
 ### MDG Growth
 This is my parent LLC that owns my commerce stores. We currently only have busyplayn.com operational, but I want to relaunch inkhide and start a few more brands next year. By having this site ready to go I will have an anchor for everything else, and it has been sitting at about 80% finished for nearly 3 years now. 
 
 ### Free Time Profit
 I realized that maybe I do want to have that entrepreneurial outlet, but I want to focus on beginners and help people help themselves. I have a few ideas that I think will be cool, and I do not necessarily want my personal site focused on that.
-
-### The Hobbinomicon
-Throughout my life there has been one constant – miniature painting, modeling, and tabletop games. I have been longing to be involved in this niche at a large scale, and the Hobbinomicon is my way of contributing back into a community from which I have gained so much. 
 
 ### Busy Playn
 What started as a fun passion project for my wife and I, has taken off, and now I see the potential to turn this into a million dollar brand. We have recently finished up our soft launch and with this data, I will begin to move into full scale operations and marketing. For now, we have booked several vendor booths and events so that is my immediate priority.
