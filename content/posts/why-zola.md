@@ -9,7 +9,7 @@ authors = ["Matt Gilbert"]
 
 I wish I could tell you elaborate and deeply technical reasons why I picked Zola instead of Astro, Next, Gatsby, or any of the myriad other options, but that’s not really why I picked it.
 
-The reason why goes back to Christmas 2022. Every year my wife and I pick out books for each other. One of my books was [Billy Summers by Steven King] (https://amzn.to/3IcKDRC). In this book, the main character is reading the novel, [Thérèse Raquin](https://amzn.to/3Ip9WzM) . At the time, I had no idea what that was, but a few months later, while checking the book section at my local thrift store, something I do weekly. I happen to come across this very novel. Written by Emile Zola. Of course, I bought it.
+The reason why goes back to Christmas 2022. Every year my wife and I pick out books for each other. One of my books was [Billy Summers by Steven King](https://amzn.to/3IcKDRC). In this book, the main character is reading the novel, [Thérèse Raquin](https://amzn.to/3Ip9WzM) . At the time, I had no idea what that was, but a few months later, while checking the book section at my local thrift store, something I do weekly. I happen to come across this very novel. Written by Emile Zola. Of course, I bought it.
 
 Later that same day, I joined the JavaScript Jam Twitter space, and Zola came up in the open mic discussion.
 
