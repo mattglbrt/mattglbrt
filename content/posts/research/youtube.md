@@ -1,5 +1,5 @@
 +++
-title = "how to start a youtube channel"
+title = "On YouTube"
 date = 2022-10-24
 [taxonomies]
 tags = ["youtube", "how to"]
