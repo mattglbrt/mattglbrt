@@ -5,6 +5,7 @@ date = 2022-10-24
 tags = ["youtube", "how to"]
 authors = ["Matt Gilbert"] 
 +++
+My collection of notes on starting a YouTube channel. You can find all the original sources for the information at the bottom.
 
 ## Increase Watch Time
 * Do not use intros because you need to retain 50%+ viewer longer than 30 seconds. 
