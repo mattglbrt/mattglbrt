@@ -30,8 +30,8 @@ date_format = "%a %b %e, %Y"
 home = "home"
 
 sam_menu = [
-    { text = "posts", link = "/posts" },
-    { text = "now", link = "/now" },
+    { text = "mattglbrt", link = "/mattglbrt" },
+     { text = "posts", link = "/posts" },
     { text = "about", link = "/about" },
     { text = "contact", link = "/contact" }
 ]
