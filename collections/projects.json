@@ -1,33 +1,15 @@
 [
     {
-        "name": "Go Everyway",
-        "description": "Go to market & growth engineering consulting",
-        "image": "/assets/images/projects/tails.jpeg",
-        "url": "https://goeveryway.com/"
+        "name": "Coldwell Banker Now",
+        "description": "Guide you home",
+        "image": "/assets/images/projects/cbnow.jpg",
+        "url": "https://cbnow.com/"
     },
     {
-        "name": "Everyway Design",
-        "description": "A website & content marketing anti-agency",
-        "image": "/assets/images/projects/wave.jpeg",
-        "url": "https://everywaydesign.com/"
-    },
-    {
-        "name": "Everyway SOP Library",
-        "description": "Easy to follow and implement standard operating procedures",
-        "image": "/assets/images/projects/pines.jpeg",
-        "url": "https://everyway.io"
-    },
-    {
-        "name": "The Hobbinomicon",
-        "description": "Under development",
-        "image": "/assets/images/projects/devblog.jpeg",
-        "url": "https://hobbinomicon.com/"
-    },
-    {
-        "name": "Buzzard's Trading Post",
-        "description": "My lifelong dream",
-        "image": "/assets/images/projects/markdownx.jpeg",
-        "url": "https://buzzardstradingpost.com"
+        "name": "AccuTrain",
+        "description": "Empowering educators to be their best",
+        "image": "/assets/images/projects/accutrain.jpg",
+        "url": "https://accutrain.com/"
     },
     {
         "name": "IntellecTechs",
