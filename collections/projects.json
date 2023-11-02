@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Go Everyway",
+        "description": "Go to market & growth engineering consulting",
+        "image": "/assets/images/projects/tails.jpeg",
+        "url": "https://goeveryway.com/"
+    },
+    {
+        "name": "Everyway Design",
+        "description": "A website & content marketing anti-agency",
+        "image": "/assets/images/projects/wave.jpeg",
+        "url": "https://everywaydesign.com/"
+    },
+    {
+        "name": "Everyway SOP Library",
+        "description": "Easy to follow and implement standard operating procedures",
+        "image": "/assets/images/projects/pines.jpeg",
+        "url": "https://everyway.io"
+    },
+    {
+        "name": "The Hobbinomicon",
+        "description": "Under development",
+        "image": "/assets/images/projects/devblog.jpeg",
+        "url": "https://hobbinomicon.com/"
+    },
+    {
+        "name": "Buzzard's Trading Post",
+        "description": "My lifelong dream",
+        "image": "/assets/images/projects/markdownx.jpeg",
+        "url": "https://buzzardstradingpost.com"
+    },
+    {
+        "name": "IntellecTechs",
+        "description": "Strategic Consultant",
+        "image": "/assets/images/projects/saasadventure.jpeg",
+        "url": "https://intellectechs.com"
+    }
+]
