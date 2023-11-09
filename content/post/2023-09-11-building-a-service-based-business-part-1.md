@@ -7,6 +7,8 @@ tags:
   - Guides
   - Everyway
 ---
+
+# This post is a work in progress
 This post serves as the Table of Contents and the roadmap for my first series of content on this website, How to Build a Service Based Business. I have done this countless times for clients and customers and now I am doing it for myself. Again. This time I am doing my best to document everything and build it in public.
 
 ## Legal Stuff
@@ -23,48 +25,4 @@ I compiled [a list of every state's small business website](https://mattglbrt.co
 I did this online with the [IRS](https://irs.taxid-us.com/?keyword=fein&source=Google&adAccount=460-350-8849&network=g&device=c&devicemodel=&mobile=&campaign=18912152548&matchType=e&sf9865saa&gad=1&gclid=Cj0KCQjw9fqnBhDSARIsAHlcQYTEV7AyNX-BCdSKlR7T2nSzcpfIkF5IrR-hl2CKRjISYfa4ef0ZJ2waAq9nEALw_wcB). It was a straight forward process that took another 15 minutes.
 
 ### Insurance
-Working on this right now.
-
-## Finances & Accounting
-### Setting Up Business Bank Account
-### Setting Up Accounting Software (Quickbooks or Wave)
-
-## Creating An Actual Business Offering
-### Prepwork
-#### Domain Name
-#### Email Accounts
-#### Accounts and Tools
-#### Email Warm Up
-
-### Establishing a Vision
-#### Establishing Initial ICP 
-#### How to Find Product Marekting Fit (Ongoing)
-
-### Creating an Offer for Your ICP
-#### Sales Targets
-#### Lead Flow
-#### Creating the actual offer
-#### AARRR Metrics establishing KPIS & Goals
-
-### Building a Brand
-#### Logo & Style Guide
-#### Social Media
-
-### Building a Website
-#### Writing Content
-#### Building the Actual Site
-#### Campaign Landing Pages
-#### Analytics
-
-### Launch & Acquire Customers
-#### Networking & Referrals
-#### Word of Mouth
-#### Outbound Email
-#### Paid Advertising
-#### Search Enginge Optimization
-#### Customer Lifecycle
-
-### Customer Retention
-#### What is Churn & How to Calculate it
-#### Customer Satisfaction & Scaling
-#### Turning Clients into Advocates
+Coming soon.
