@@ -45,7 +45,7 @@ And again, "I have faith in you."
 
 I spent the last 6 months soul-searching, planning, meaningfully resting, and of course signing new clients and projects to keep the lights on, but I haven't been building Everyway as a business like how I should be. What I have been missing for essentially my entire life is a real Vision, a Mission, a defining purpose. My mission has always been to make as much money as possible. That is not a mission, that is no true purpose.
 
-So here I am, January 14th is coming up again, and surprise, my wife is once again pregnant. The pressure is on, 2 years later and in many ways I am back to where I started, and I hope to keep spiraling upward.
+So here I am, January 14th is coming up again, and surprise, my wife is once again pregnant, this time with the twins. 2 years later and in many ways I am back to where I started with just as much or maybe more pressure to succeed, and I hope to keep spiraling upward.
 
 Oh, what's my vision? If you made it this far, you can check it out on post number 2.
 
