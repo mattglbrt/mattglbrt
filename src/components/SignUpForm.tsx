@@ -6,15 +6,18 @@ export function SignUpForm() {
   let id = useId()
 
   return (
-    <form className="relative isolate mt-8 flex items-center pr-1">
+    <form
+      method="POST"
+      action="https://script.google.com/macros/s/AKfycby2wDdGPjLY4LiwM55NlYKut0AOLI1mna84BHMWf3BqkNBD2NaCJtn2QXRncDt-NegrCw/exec"
+      className="relative isolate mt-8 flex items-center pr-1">
       <label htmlFor={id} className="sr-only">
         Email address
       </label>
       <input
         required
         type="email"
-        autoComplete="email"
-        name="email"
+        autoComplete="Email"
+        name="Email"
         id={id}
         placeholder="Email address"
         className="peer w-0 flex-auto bg-transparent px-4 py-2.5 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-[0.8125rem]/6"
