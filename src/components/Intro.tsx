@@ -53,7 +53,7 @@ export function Intro() {
         <span className="text-sky-300">Father, Husband, Entreprenuer</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
-        I help people become business owners, and enable business owners to become successful entreprenuers.
+        I help people become business owners and enable business owners to become successful entreprenuers.
       </p>
       <p className="mt-4 text-sm/6 text-gray-300">I'm building a portfolio of businesses and documenting the process here.</p>
       <SignUpForm />
