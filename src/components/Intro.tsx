@@ -49,7 +49,7 @@ export function Intro() {
         </Link>
   </div>*/}
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
-        Hi, I'm Matt.<br />
+        I'm Matt Gilbert.<br />
         <span className="text-sky-300">Father, Husband, Entreprenuer</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
