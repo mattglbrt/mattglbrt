@@ -6,7 +6,7 @@ export function SignUpForm() {
   let id = useId()
 
   return (
-    <form name="email signup" netlify
+    <form name="email signup" data-netlify="true"
       method="POST"
 
       className="relative isolate mt-8 flex items-center pr-1">
