@@ -6,9 +6,9 @@ export function SignUpForm() {
   let id = useId()
 
   return (
-    <form
+    <form name="email signup" netlify
       method="POST"
-      action="https://script.google.com/macros/s/AKfycby2wDdGPjLY4LiwM55NlYKut0AOLI1mna84BHMWf3BqkNBD2NaCJtn2QXRncDt-NegrCw/exec"
+
       className="relative isolate mt-8 flex items-center pr-1">
       <label htmlFor={id} className="sr-only">
         Email address
