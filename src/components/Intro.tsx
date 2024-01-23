@@ -50,10 +50,10 @@ export function Intro() {
   </div>*/}
       <h1 className="mt-14 font-display text-4xl/tight font-light text-white">
         I'm Matt Gilbert.<br />
-        <span className="text-sky-300">Father, Husband, Entreprenuer</span>
+        <span className="text-sky-300">I help businesses connect the dots.</span>
       </h1>
       <p className="mt-4 text-sm/6 text-gray-300">
-        I help people become business owners and enable business owners to become successful entreprenuers.
+        I am an expert at helping organizations become unblocked. A swiss army knife of marketing, sales, programming, and technology.
       </p>
       <p className="mt-4 text-sm/6 text-gray-300">I'm building a portfolio of businesses and documenting the process here.</p>
       <SignUpForm />
