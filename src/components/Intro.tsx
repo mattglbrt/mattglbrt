@@ -1,7 +1,6 @@
 import Link from 'next/link'
 
 import { IconLink } from '@/components/IconLink'
-import { SignUpForm } from '@/components/SignUpForm'
 
 function BookIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -47,7 +46,7 @@ export function Intro() {
         I am an expert at helping organizations become unblocked. A swiss army knife of marketing, sales, programming, and technology.
       </p>
       <p className="mt-4 text-sm/6 text-gray-300">I'm building a portfolio of businesses and documenting the process here.</p>
-      <SignUpForm />
+
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="https://goeveryway.com" icon={BookIcon} className="flex-none">
           Work With Me
