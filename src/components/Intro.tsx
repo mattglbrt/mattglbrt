@@ -45,7 +45,7 @@ export function Intro() {
       <p className="mt-4 text-sm/6 text-gray-300">
         I am an expert at helping organizations become unblocked. A swiss army knife of marketing, sales, programming, and technology.
       </p>
-      <p>I specialize in <a href="#">RevOps</a>, Website Development, Sales Enablement, and Process Management.</p>
+      <p className="mt-4 text-sm/6 text-gray-300">I specialize in <a href="#">RevOps</a>, Website Development, Sales Enablement, and Process Management.</p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="https://goeveryway.com" icon={BookIcon} className="flex-none">
