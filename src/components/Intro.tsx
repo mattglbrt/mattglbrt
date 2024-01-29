@@ -55,7 +55,7 @@ export function Intro() {
           Contact Me
         </IconLink>
         <IconLink href="#about-matt-gilbert" icon={BookIcon} className="flex-none">
-          About Me
+          My Mission
         </IconLink>
       </div>
     </>
