@@ -45,13 +45,13 @@ export function Intro() {
       <p className="mt-4 text-sm/6 text-gray-300">
         I am an expert at helping organizations become unblocked.
       </p>
-      <p className="mt-4 text-sm/6 text-gray-300">I specialize in <a href="#revops-for-small-business--startups"><u>RevOps</u></a>, <a href="https://everywaydesign.com">Website Development</a>, and <a href="https://goeveryway.com">Content Marketing</a>.</p>
+      <p className="mt-4 text-sm/6 text-gray-300">I specialize in <a href="#revops-for-small-business--startups"><u>RevOps</u></a>, <a href="https://everywaydesign.com"><u>Website Development</u></a>, and <a href="https://goeveryway.com"><u>Content Marketing</u></a>.</p>
 
       <div className="mt-8 flex flex-wrap justify-center gap-x-1 gap-y-3 sm:gap-x-2 lg:justify-start">
         <IconLink href="https://goeveryway.com" icon={BookIcon} className="flex-none">
           Work With Me
         </IconLink>
-        <IconLink href="https://themattgilbert.com" icon={BookIcon} className="flex-none">
+        <IconLink href="mailto:matt@goeveryway.com" icon={BookIcon} className="flex-none">
           Contact Me
         </IconLink>
         <IconLink href="#about-matt-gilbert" icon={BookIcon} className="flex-none">
