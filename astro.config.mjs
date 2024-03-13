@@ -5,7 +5,7 @@ import netlify from "@astrojs/netlify/functions";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://lexingtonthemes.com',
+  site: 'https://mattglbrt.com',
   integrations: [tailwind(), sitemap()],
   output: "server",
   adapter: netlify()
