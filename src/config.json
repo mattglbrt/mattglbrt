@@ -19,6 +19,7 @@
     "description": "I've built successful IT, marketing, and sales operations for the big guys - silicon valley start ups and international companies. Now my mission is to assist small business owners, soloprenuers, and artists build their dreams.",
     "heroLinkText": "@mattglbrt",
     "heroLink": "#",
+    "yiyan": "test",
     "socials": [
       {
         "name": "Github",
@@ -110,7 +111,7 @@
     "wechat": "#"
   },
   "analytics": {
-    "enable": true,
+    "enable": false,
     "google": {
       "measurementId": "G-71LCCMDVF8"
     }
