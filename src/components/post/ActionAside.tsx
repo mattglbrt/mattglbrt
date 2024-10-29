@@ -41,7 +41,7 @@ export function ActionAside() {
       }}
     >
       <ShareButton />
-      <DonateButton />
+    
     </div>
   )
 }
@@ -80,7 +80,7 @@ function ShareModal({ url, text }: { url: string; text: string }) {
       animate={{ opacity: 1, scale: 1 }}
       exit={{ opacity: 0, scale: 0.8 }}
     >
-      <h2 className="px-3 py-1 font-bold">分享此内容</h2>
+      <h2 className="px-3 py-1 font-bold">Share this content</h2>
       <hr className="my-2 border-primary" />
       <div className="px-3 py-2 grid grid-cols-[180px_auto] gap-3">
         <QR.QRCodeSVG value={url} size={180} />
@@ -127,25 +127,4 @@ function DonateButton() {
   )
 }
 
-function DonateContent() {
-  return (
-    <motion.div
-      initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      exit={{ y: 20, opacity: 0 }}
-    >
-      <h2 className="text-center mb-5">Thank you for your support, it will be my biggest motivation to move forward.</h2>
-      <div className="flex flex-wrap gap-4 justify-center">
-        <img
-          className="object-cover"
-          width={300}
-          height={300}
-          src={sponsor.wechat}
-          alt="thanks"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
-    </motion.div>
-  )
-}
+
