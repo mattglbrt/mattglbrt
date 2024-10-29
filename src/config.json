@@ -1,0 +1,118 @@
+{
+  "site": {
+    "url": "http://mattglbrt.com",
+    "title": "mattglbrt",
+    "description": "The Digital Garden of Matt Gilbert",
+    "keywords": "mattglbrt, matt gilbert",
+    "lang": "en-US",
+    "favicon": "/favicon.ico",
+    "appleTouchIcon": "/apple-touch-icon.png"
+  },
+  "author": {
+    "name": "Matt Gilbert",
+    "twitterId": "@mattglbrt",
+    "avatar": "https://pbs.twimg.com/profile_images/1491153371851628549/u_QV2qH6_400x400.jpg"
+  },
+  "hero": {
+    "name": "Matt Gilbert",
+    "bio": "Father of Four, Artist, Builder",
+    "description": "I've built successful IT, marketing, and sales operations for the big guys - silicon valley start ups and international companies. Now my mission is to assist small business owners, soloprenuers, and artists build their dreams.",
+    "heroLinkText": "@mattglbrt",
+    "heroLink": "#",
+    "socials": [
+      {
+        "name": "Github",
+        "icon": "icon-github",
+        "url": "https://github.com/mattglbrt",
+        "color": "rgb(24, 23, 23)"
+      },
+      {
+        "name": "X",
+        "icon": "icon-x",
+        "url": "https://twitter.com/mattglbrt",
+        "color": "rgb(36, 46, 54)"
+      },
+      {
+        "name": "Email",
+        "icon": "icon-mail",
+        "url": "mailto:matt@goeveryway.com",
+        "color": "rgb(212, 70, 56)"
+      }
+    ]
+  },
+  "color": {
+    "accent": [
+      { "light": "#F55555", "dark": "#FCCF31" },
+      { "light": "#0396FF", "dark": "#ABDCFF" },
+      { "light": "#fb7287", "dark": "#99D8CF" },
+      { "light": "#F072B6", "dark": "#FFF886" },
+      { "light": "#9F44D3", "dark": "#E2B0FF" },
+      { "light": "#FF6666", "dark": "#A1CCD1" },
+      { "light": "#F6416C", "dark": "#838BC6" },
+      { "light": "#32CCBC", "dark": "#90F7EC" },
+      { "light": "#33A6B8", "dark": "#79F1A4" },
+      { "light": "#F55555", "dark": "#FCCF31" }
+    ],
+    "bg": {
+      "primary": { "light": "#ffffff", "dark": "#1c1c1e" },
+      "secondary": { "light": "#f4f4f5", "dark": "#27272a" }
+    },
+    "text": {
+      "primary": { "light": "#373a3c", "dark": "#ffffff" },
+      "secondary": { "light": "#71717a", "dark": "#d1d5db" }
+    },
+    "border": {
+      "primary": { "light": "#e4e4e7", "dark": "#3f3f46" }
+    }
+  },
+  "menus": [
+    {
+      "name": "home",
+      "link": "/",
+      "icon": "icon-pantone"
+    },
+    {
+      "name": "blog",
+      "link": "/archives",
+      "icon": "icon-archive"
+    },
+    {
+      "name": "projects",
+      "link": "/projects",
+      "icon": "icon-flask"
+    },
+    {
+      "name": "about",
+      "link": "/about",
+      "icon": "icon-ghost"
+    },
+    {
+      "name": "uses",
+      "link": "/friends",
+      "icon": "icon-hearts"
+    },
+    {
+      "name": "contact",
+      "link": "/contact",
+      "icon": "icon-mail"
+    }
+  ],
+  "posts": {
+    "perPage": 10
+  },
+  "footer": {
+    "startTime": "2024-10-22T00:00:00Z"
+  },
+  "waline": {
+    "serverURL": "https://comment-server-awfr860zs-mattglbrts-projects.vercel.app/"
+  },
+  "sponsor": {
+    "wechat": "#"
+  },
+  "analytics": {
+    "enable": true,
+    "google": {
+      "measurementId": "G-71LCCMDVF8"
+    }
+  }
+}
