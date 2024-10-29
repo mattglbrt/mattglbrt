@@ -12,7 +12,6 @@ import ProjectList from '@/components/ProjectList.astro'
 import { ReadingProgress } from '@/components/post/ReadingProgress'
 import { PostToc } from '@/components/post/PostToc'
 import { Comments } from '@/components/comment'
-import GitHubContributions from '@/components/GitHubContributions.astro'
 
 export const getStaticPaths = (async () => {
   const specList = await getCollection('spec')
@@ -49,7 +48,7 @@ const isMdContentEmpty = md.body.trim().length === 0
         </header>
         {md.slug === 'friends' && <FriendList />}
         {md.slug === 'projects' && <ProjectList />}
-        {md.slug === 'about' && <GitHubContributions />}
+        
         {!isMdContentEmpty && (
           <MarkdownWrapper>
             <Content />
