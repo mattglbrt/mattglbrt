@@ -1,13 +1,12 @@
 import { author, site } from '@/config.json'
 import { getFormattedDateTime } from '@/utils/date'
-import { AnimatedSignature } from '../AnimatedSignature'
 import { useEffect, useState } from 'react'
 import { toast } from "react-toastify";
 
 function getPostUrl(slug: string) {
   return new URL(slug, site.url).href
 }
-
+ 
 export function PostCopyright({
   title,
   slug,
@@ -43,7 +42,7 @@ export function PostCopyright({
       <hr className="my-3 border-primary" />
       <div>
         <div className="float-right ml-4 my-2">
-          <AnimatedSignature />
+          
         </div>
         <p>
           
