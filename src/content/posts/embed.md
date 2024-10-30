@@ -5,7 +5,7 @@ lastMod: 2024-05-18T07:29:49.820Z
 tags: [Video, Markdown]
 category: Notes
 summary: Leaving myself some reminders
-draft: true
+draft: false
 ---
 
 ## Codepen
