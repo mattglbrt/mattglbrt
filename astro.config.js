@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import path from 'path'
 import { remarkReadingTime } from './src/plugins/remarkReadingTime'
 import { rehypeCodeBlock } from './src/plugins/rehypeCodeBlock'
 import { rehypeTableBlock } from './src/plugins/rehypeTableBlock'
@@ -18,7 +19,6 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 import swup from '@swup/astro'
 
-// https://astro.build/config
 export default defineConfig({
   site: site.url,
   integrations: [
@@ -49,6 +49,11 @@ export default defineConfig({
     remarkRehype: { footnoteLabel: '参考', footnoteBackLabel: '返回正文' },
   },
   vite: {
+    resolve: {
+      alias: {
+        '@': path.resolve('./src'), // Absolute path to 'src' for consistency with tsconfig.json
+      },
+    },
     build: {
       rollupOptions: {
         external: ['/pagefind/pagefind.js'],
