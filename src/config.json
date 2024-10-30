@@ -108,7 +108,7 @@
     "serverURL": "https://comment-server-awfr860zs-mattglbrts-projects.vercel.app/"
   },
   "analytics": {
-    "enable": false,
+    "enable": true,
     "google": {
       "measurementId": "G-71LCCMDVF8"
     }
