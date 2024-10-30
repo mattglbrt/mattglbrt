@@ -107,11 +107,8 @@
   "waline": {
     "serverURL": "https://comment-server-awfr860zs-mattglbrts-projects.vercel.app/"
   },
-  "sponsor": {
-    "wechat": "https://mattglbrt.com"
-  },
   "analytics": {
-    "enable": false,
+    "enable": true,
     "google": {
       "measurementId": "G-71LCCMDVF8"
     }

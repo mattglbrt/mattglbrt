@@ -1,4 +1,4 @@
-import { sponsor, site } from '@/config.json'
+import { site } from '@/config.json'
 import { motion } from 'framer-motion'
 import * as QR from 'qrcode.react'
 import { useAtomValue } from 'jotai'
@@ -103,27 +103,6 @@ function ShareModal({ url, text }: { url: string; text: string }) {
         </div>
       </div>
     </motion.div>
-  )
-}
-
-function DonateButton() {
-  const { present } = useModal()
-
-  const openDonate = () => {
-    present({
-      content: <DonateContent />,
-    })
-  }
-
-  return (
-    <button
-      type="button"
-      aria-label="Donate to author"
-      className="size-6 text-xl leading-none hover:text-accent"
-      onClick={() => openDonate()}
-    >
-      <i className="iconfont icon-user-heart"></i>
-    </button>
   )
 }
 
