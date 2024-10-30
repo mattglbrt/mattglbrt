@@ -1,6 +1,7 @@
 ---
 import { hero, author } from '@/config.json'
 import Highlight from '@/components/Highlight.astro'
+import SignupForm from '@/components/SignupForm.astro'
 ---
 
 <div class="lg:-mt-16 lg:h-dvh lg:min-h-[720px]">
@@ -12,7 +13,10 @@ import Highlight from '@/components/Highlight.astro'
         Hi, I'm <Highlight class="font-bold">{hero.name}</Highlight>.<br />{hero.bio}
       </h1>
       <div class="text-sm text-secondary mt-3 text-center lg:text-left">{hero.description}</div>
-      
+      <div class="text-sm text-secondary mt-3 text-center lg:text-left">
+        <!-- Load the SignupForm component on the client side -->
+        <SignupForm client:load />
+      </div>
     </div>
     <div class="mt-20 lg:mt-0">
       <div
