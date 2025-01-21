@@ -5,13 +5,8 @@ import { GrGrow } from "react-icons/gr";
 
 const socials = [
   {
-    name: "Everyway",
-    url: "https://everywaydesign.com",
-    icon: GrGrow,
-  },
-  {
     name: "Contact Me",
-    url: "mailto:matt@goeveryway.com",
+    url: "https://everywaydesign.com/contact",
     icon: FaComment,
   },
   {
