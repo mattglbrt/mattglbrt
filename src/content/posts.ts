@@ -1,27 +1,27 @@
 export const POSTS = [
   {
-    title: "Ultimate Neovim Setup Guide: lazy.nvim Plugin Manager",
+    title: "Currents",
     description:
-      "Hello everyone! In this article I will show you how to configure the neovim editor from scratch with lazy.vim...",
-    date: "2024-06-24",
-    tags: ["Neovim", "Productivity", "Tutorial"],
-    url: "https://dev.to/slydragonn/ultimate-neovim-setup-guide-lazynvim-plugin-manager-23b7",
+      "When I was younger, my friends and I use to tie a cooler to a bunch of pool noodles and float down the James River or in the Chesapeake Bay...",
+    date: "2025-01-21",
+    tags: ["Rambling"],
+    url: "https://mattglbrt.substack.com/p/currents",
   },
   {
-    title: "How to Set up the Windows terminal with Powershell and Oh My Posh",
+    title: "Spiraling Upwards",
     description:
-      "To install this terminal you should have Windows 10 or 11. It's very easy, You direct to the Microsoft store and search Windows terminal and install this option...",
-    date: "2023-04-23",
-    tags: ["Terminal", "windows", "Powershell"],
-    url: "https://dev.to/slydragonn/how-to-set-up-the-windows-terminal-with-powershell-and-oh-my-posh-2ba4",
+      "This is the start of the 35th year of my life, and it feels different.",
+    date: "2025-01-15",
+    tags: ["Rambling"],
+    url: "https://mattglbrt.substack.com/p/spiraling-upward",
   },
   {
     title:
-      "How to Create a GitHub Profile Readme with GitHub Actions, Profile Trophy, and Custom Icons Badges",
+      "Hello World",
     description:
-      "First, we should create the README.md file, that’s where we put all code. You can create the file directly on the GitHub site or create it on your pc and push it to the repository.",
-    date: "2023-04-7",
-    tags: ["Github", "Markdown", "Tutorial"],
-    url: "https://dev.to/slydragonn/how-to-create-a-github-profile-readme-with-github-actions-profile-trophy-and-custom-icons-badges-5h6j",
+      "The famous words that start every new development project.",
+    date: "2025-01-1",
+    tags: ["Rambling"],
+    url: "https://mattglbrt.substack.com/p/hello-world",
   },
 ]
