@@ -1,9 +1,9 @@
 export const EXPERIENCES = [
   {
-    date: "March 2023 - April 2024",
-    jobTitle: "Technology Assistant",
-    company: "Empresa de Conducciones las Arrieritas SA",
+    date: "January 2025",
+    jobTitle: "Spiraling Upward",
+    company: "Chesapeake, VA",
     description:
-      "During my time at the company, I have improved the agility of monitoring, data analysis and decision-making processes by implementing modern techniques and developing solutions using technologies such as Python, Django, Typescript, React and Nextjs.",
+      "I've been here many times before, but this time feels different. This time I building in public and doing my best to share everything I know with the world. Living with my wife, 4 kids, 2 dogs and a cat.",
   },
 ]

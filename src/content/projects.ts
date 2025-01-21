@@ -1,74 +1,56 @@
-import { FaGithub } from "react-icons/fa"
+import { FaDiscord, FaGithub, FaYoutube } from "react-icons/fa"
 import { PiLinkSimpleBold } from "react-icons/pi"
 
 export const PROJECTS = [
   {
-    title: "Neovim Setup",
+    title: "Everyway Design",
     description:
-      "Neovim is a hyper-extensible text editor based on Vim, and it is a fast editor compared to its counterparts like vscode, but it has a steep learning curve especially in terms of how to configure it, which I have made a bit easier for new developers who want to use neovim by creating and sharing my own configuration.",
+      "I don't just build some of the fastest websites you have ever seen. I provide the systems and tech behind them to support your business and achieve your goals. If you want to hire me, this is the place to go.",
     image: "/neovim.jpg",
-    tags: ["Lua", "Vimscript", "lazy.nvim", "packer.nvim"],
+    tags: ["Wordpress", "Shopify", "Optimization", "Lead Gen", "AI"],
     links: [
       {
-        name: "Lazy",
-        url: "https://github.com/slydragonn/nvim-lazy",
-        icon: FaGithub,
-      },
-      {
-        name: "Packer",
-        url: "https://github.com/slydragonn/dotfiles",
-        icon: FaGithub,
-      },
+        name: "Hire Me",
+        url: "https://everywaydesign.com",
+        icon: PiLinkSimpleBold,
+      }
     ],
   },
   {
-    title: "Markdown Web Editor",
-    description: "A Simple and Straightforward Markdown Web Editor",
+    title: "The Hobbinomicon",
+    description: "A community, podcast, and website devoted to TTRPGs, Miniature Painting, and Table Top Wargames, with a focus on indie games and helping people actually play them.",
     image: "/markwriter.jpg",
-    tags: ["React", "Next.js", "Codemirror", "ChakraUI"],
+    tags: [],
     links: [
       {
-        name: "Preview",
-        url: "https://markwriter.vercel.app/",
+        name: "YouTube",
+        url: "https://www.youtube.com/@thehobbinomicon",
+        icon: FaYoutube,
+      },
+      {
+        name: "Website",
+        url: "https://hobbinomicon.com",
         icon: PiLinkSimpleBold,
       },
       {
-        name: "Github",
-        url: "https://github.com/slydragonn/markwriter",
-        icon: FaGithub,
-      },
+        name: "Discord",
+        url: "https://discord.gg/e5hpQZv7gD",
+        icon: FaDiscord,
+      }
     ],
   },
   {
-    title: "Landing Page",
-    description: "Landing page for entrepreneurship competition",
+    title: "The Book of Valtiare",
+    description: "I don't entirely know what this is going to be yet, but if you like the Hobbinomicon and the things I talk about there, hopefully you will like this too.",
     image: "/blueriver.jpg",
-    tags: ["JavaScript", "Next.js"],
+    tags: [],
     links: [
       {
-        name: "Preview",
-        url: "https://blue-river.vercel.app/",
+        name: "Open the Book",
+        url: "https://valtiare.com",
         icon: PiLinkSimpleBold,
       },
     ],
-  },
-  {
-    title: "Minimalist Portfolio",
-    description:
-      "minimalist-dragon is a free to use template for the Astro Themes repository.",
-    image: "/minimalist-dragon.jpg",
-    tags: ["Astro", "TypeScript"],
-    links: [
-      {
-        name: "Astro Themes",
-        url: "https://astro.build/themes/details/minimalist-dragon/",
-        icon: PiLinkSimpleBold,
-      },
-      {
-        name: "Github",
-        url: "https://github.com/slydragonn/minimalist-dragon",
-        icon: FaGithub,
-      },
-    ],
-  },
+  }
+  
 ]
