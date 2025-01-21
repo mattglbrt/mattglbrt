@@ -1,27 +1,28 @@
-import { FaDev, FaGithub, FaLinkedin } from "react-icons/fa"
-import { FaXTwitter } from "react-icons/fa6"
+import { FaComment, FaYoutube } from "react-icons/fa"
 import { ModeToggle } from "./ModeToggle"
+import { BsSubstack } from "react-icons/bs";
+import { GrGrow } from "react-icons/gr";
 
 const socials = [
   {
-    name: "Github",
-    url: "https://github.com/slydragonn",
-    icon: FaGithub,
+    name: "Everyway",
+    url: "https://everywaydesign.com",
+    icon: GrGrow,
   },
   {
-    name: "DEV",
-    url: "https://dev.to/slydragonn",
-    icon: FaDev,
+    name: "Contact Me",
+    url: "mailto:matt@goeveryway.com",
+    icon: FaComment,
   },
   {
-    name: "Twitter",
-    url: "https://x.com/alejo_log",
-    icon: FaXTwitter,
+    name: "Substack",
+    url: "https://mattglbrt.substack.com",
+    icon: BsSubstack,
   },
   {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/alejolg/",
-    icon: FaLinkedin,
+    name: "YouTube",
+    url: "#",
+    icon: FaYoutube,
   },
 ]
 
