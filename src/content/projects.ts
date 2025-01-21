@@ -7,7 +7,7 @@ export const PROJECTS = [
     description:
       "I don't just build some of the fastest websites you have ever seen. I provide the systems and tech behind them to support your business and achieve your goals. If you want to hire me, this is the place to go.",
     image: "/everywaydesign.jpg",
-    tags: ["Wordpress", "Shopify", "Optimization", "Lead Gen", "AI"],
+    tags: [],
     links: [
       {
         name: "Hire Me",
