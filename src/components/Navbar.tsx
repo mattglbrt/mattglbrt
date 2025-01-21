@@ -21,7 +21,7 @@ const socials = [
   },
   {
     name: "YouTube",
-    url: "#",
+    url: "https://www.youtube.com/@mattglbrt",
     icon: FaYoutube,
   },
 ]
