@@ -17,8 +17,36 @@ export const PROJECTS = [
     ],
   },
   {
+    title: "YouTube",
+    description:
+      "I'm recording everything I know and doing my best to condense it into usable guides and tutorials which will be posted completely for free on YouTube. The first series in currently in progress. Subscrbe now to be notified when its published. ",
+    image: "/youtube.jpg",
+    tags: [],
+    links: [
+      {
+        name: "Subscribe",
+        url: "https://www.youtube.com/@mattglbrt?sub_confirmation=1 ",
+        icon: PiLinkSimpleBold,
+      }
+    ],
+  },
+  {
+    title: "Quick Call",
+    description:
+      "Schedule a no strings attached 30 minute call with me to discuess how I can help your organization.",
+    image: "/schedule.jpg",
+    tags: [],
+    links: [
+      {
+        name: "Schedule a Call",
+        url: "https://calendly.com/mattgilbert/30min",
+        icon: PiLinkSimpleBold,
+      }
+    ],
+  },
+  {
     title: "The Hobbinomicon",
-    description: "A community, podcast, and website devoted to TTRPGs, Miniature Painting, and Table Top Wargames, with a focus on indie games and helping people actually play them.",
+    description: "This is more of a fun one. I want to help indie creators in the tabletop and miniature painting communities so I am building a platform to bring more people into the hobby, find cool projects, and then actually start playing them. ",
     image: "/hobbinomicon.jpg",
     tags: [],
     links: [
@@ -37,19 +65,6 @@ export const PROJECTS = [
         url: "https://discord.gg/e5hpQZv7gD",
         icon: FaDiscord,
       }
-    ],
-  },
-  {
-    title: "The Book of Valtiare",
-    description: "I don't entirely know what this is going to be yet, but if you like the Hobbinomicon and the things I talk about there, hopefully you will like this too.",
-    image: "/valtiare.jpg",
-    tags: [],
-    links: [
-      {
-        name: "Open the Book",
-        url: "https://valtiare.com",
-        icon: PiLinkSimpleBold,
-      },
     ],
   }
   
