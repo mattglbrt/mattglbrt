@@ -25,7 +25,7 @@ export const PROJECTS = [
     links: [
       {
         name: "Subscribe",
-        url: "https://www.youtube.com/@mattglbrt?sub_confirmation=1 ",
+        url: "https://www.youtube.com/@goeveryway",
         icon: PiLinkSimpleBold,
       }
     ],
