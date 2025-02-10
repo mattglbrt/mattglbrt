@@ -19,7 +19,7 @@ export const PROJECTS = [
   {
     title: "YouTube",
     description:
-      "I'm recording everything I know and doing my best to condense it into usable guides and tutorials which will be posted completely for free on YouTube. The first series in currently in progress. Subscrbe now to be notified when its published. ",
+      "I'm recording everything I know and doing my best to condense it into usable guides and tutorials which will be posted completely for free on YouTube. The first series in currently in progress. Subscribe now to be notified when its published. ",
     image: "/youtube.jpg",
     tags: [],
     links: [
