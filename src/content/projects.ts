@@ -19,13 +19,13 @@ export const PROJECTS = [
   {
     title: "AI, Automation, & Optimization",
     description:
-      "Coming soon. Make more, do less. Improve your bottom line through AI and customer experience improvements.",
+      "Make more, do less. Improve your bottom line through AI and customer experience.",
     image: "/everywayio.jpg",
     tags: [],
     links: [
       {
         name: "Hire Me",
-        url: "https://everywaydesign.com",
+        url: "https://everyway.io",
         icon: PiLinkSimpleBold,
       }
     ],
@@ -62,7 +62,7 @@ export const PROJECTS = [
     title: "Things to tell my kids",
     description:
       "I'm compiling every nugget of wisdom I've managed to stumble on so I can tell my kids when they are older. I figured I should share it with everyone.",
-    image: "/tttmk.jpg",
+    image: "/tttmk.png",
     tags: [],
     links: [
       {
