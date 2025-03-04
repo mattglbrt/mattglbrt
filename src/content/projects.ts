@@ -19,7 +19,7 @@ export const PROJECTS = [
   {
     title: "AI, Automation, & Optimization",
     description:
-      "Make more, do less. Improve your bottom line through AI and customer experience.",
+      "Make more, do less. Improve your bottom line through AI and a focus on customer experience.",
     image: "/everywayio.jpg",
     tags: [],
     links: [
