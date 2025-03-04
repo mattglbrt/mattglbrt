@@ -3,7 +3,7 @@ import { PiLinkSimpleBold } from "react-icons/pi"
 
 export const PROJECTS = [
   {
-    title: "Everyway Design",
+    title: "Websites",
     description:
       "I don't just build some of the fastest websites you have ever seen. I provide the systems and tech behind them to support your business and achieve your goals. If you want to hire me, this is the place to go.",
     image: "/everywaydesign.jpg",
@@ -17,7 +17,21 @@ export const PROJECTS = [
     ],
   },
   {
-    title: "YouTube",
+    title: "AI, Automation, & Optimization",
+    description:
+      "Coming soon. Make more, do less. Improve your bottom line through AI and customer experience improvements.",
+    image: "/everywayio.jpg",
+    tags: [],
+    links: [
+      {
+        name: "Hire Me",
+        url: "https://everywaydesign.com",
+        icon: PiLinkSimpleBold,
+      }
+    ],
+  },
+  {
+    title: "Free Go to Market & Lead Generation Resources",
     description:
       "I'm recording everything I know and doing my best to condense it into usable guides and tutorials which will be posted completely for free on YouTube. The first series in currently in progress. Subscribe now to be notified when its published. ",
     image: "/youtube.jpg",
@@ -45,8 +59,22 @@ export const PROJECTS = [
     ],
   },
   {
+    title: "Things to tell my kids",
+    description:
+      "I'm compiling every nugget of wisdom I've managed to stumble on so I can tell my kids when they are older. I figured I should share it with everyone.",
+    image: "/tttmk.jpg",
+    tags: [],
+    links: [
+      {
+        name: "Check out my blog",
+        url: "https://mattglbrt.substack.com/",
+        icon: PiLinkSimpleBold,
+      }
+    ],
+  },
+  {
     title: "The Hobbinomicon",
-    description: "This is more of a fun one. I want to help indie creators in the tabletop and miniature painting communities so I am building a platform to bring more people into the hobby, find cool projects, and then actually start playing them. ",
+    description: "I'm building a directory of indie tabletop games, miniature sculptors, and local game stores to help increase their visibility and give back to the hobby that has given me so much.",
     image: "/hobbinomicon.jpg",
     tags: [],
     links: [
