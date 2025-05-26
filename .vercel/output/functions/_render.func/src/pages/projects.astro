@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets';
+import H1 from "../components/h1.astro";
+import InfoLayout from "../layouts/InfoLayout.astro";
+import ACGenerator from "../assets/ac-generator.jpg";
+import FluidPropulsion from "../assets/fluid-propulsion.jpg";
+import ElectricMotor from "../assets/electro-magnetic-motor.jpg";
+
+const projects = [
+  {
+    title: "Everyway Design",
+    description: "I don't just build some of the fastest websites you have ever seen. I provide the systems and tech behind them to support your business and achieve your goals. If you want to hire me, this is the place to go.",
+    image: ACGenerator,
+    url: "https://everywaydesign.com"
+  },
+  {
+    title: "AI & Automation",
+    description: "Make more, do less. Improve your bottom line through AI and a focus on customer experience.",
+    image: FluidPropulsion,
+    url: "https://everyway.io/"
+  },
+];
+
+---
+
+<InfoLayout>
+     <div class="p-4 sm:pt-8 sm:px-12 pb-20 min-h-screen">
+          <H1> How I can help </H1>
+
+          <ul class="mt-4 sm:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-16 sm:gap-8">
+               {projects.map((project) => (
+  <li>
+    <a
+      href={project.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="group block"
+    >
+      <Image
+        src={project.image}
+        alt={project.title}
+        class="aspect-[1/1.33] object-center object-cover rounded-lg shadow-lg mb-4 sm:mb-0 sm:mr-4 transition group-hover:opacity-90"
+      />
+      <div class="p-1 sm:p-2">
+        <h2 class="text-base text-zinc-100 underline group-hover:text-blue-400 transition">
+          {project.title}
+        </h2>
+        <p class="text-sm text-zinc-400 text-balance">{project.description}</p>
+      </div>
+    </a>
+  </li>
+))}
+
+          </ul>
+     </div>
+</InfoLayout>
