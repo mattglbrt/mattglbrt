@@ -41,13 +41,7 @@ const relatedArticles = allArticles.filter(
             <Content />
         </Prose>
 
-        <p class="my-4 text-sm italic text-zinc-300">
-            This is an excerpt from {`${article.data.author}'s`}
-            <a href={article.data.originalLink} target="_blank" class="underline underline-offset-4 decoration-zinc-100 hover:decoration-white hover:text-white">
-                {article.data.title}
-            </a>
-            article. I highly recommend you give it a read!
-        </p>
+       
 
         {
             relatedArticles.length > 0 && (
