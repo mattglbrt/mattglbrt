@@ -3,7 +3,6 @@ import { formatDate } from "../../lib/utils";
 import Prose from "../../components/prose.astro";
 import { getCollection, render } from "astro:content";
 import InfoLayout from "../../layouts/InfoLayout.astro";
-import SubscribeForm from "../../components/subscribe-form.astro";
 
 export const prerender = true;
 
@@ -41,7 +40,12 @@ const relatedArticles = allArticles.filter(
             <Content />
         </Prose>
 
-       
+       <div class="mt-12 text-center text-sm text-zinc-400">
+  Did you enjoy this post? Subscribe to my Substack, Things to Tell My Kids 
+  <a href="https://substack.com/@mattglbrt" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline hover:text-white hover:underline">
+    here.
+  </a>.
+</div>
 
         {
             relatedArticles.length > 0 && (
@@ -68,8 +72,6 @@ const relatedArticles = allArticles.filter(
                 </div>
             )
         }
-
-            <SubscribeForm />
     </section>
 
 </InfoLayout>

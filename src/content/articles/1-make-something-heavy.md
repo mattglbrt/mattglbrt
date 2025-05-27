@@ -9,6 +9,7 @@ readingDuration: 1
 pubDate: 2025 01 21
 coverAlt: Thea's Drawing 2024
 cover: https://substackcdn.com/image/fetch/w_1040,h_545,c_fill,f_webp,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F262db643-d3ed-4d23-956f-f43a3b254b20_1920x2560.jpeg
+substackUrl: https://substack.com/home/post/p-155359577
 ---
 
 # Currents
