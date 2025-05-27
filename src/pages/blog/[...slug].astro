@@ -32,6 +32,9 @@ const relatedArticles = allArticles.filter(
         relatedArticle.data.category === article.data.category &&
         relatedArticle.id !== article.id,
 );
+
+const substackUrl = article.data.substackUrl || "https://substack.com/@mattglbrt";
+
 ---
 
 <InfoLayout title={article.data.title} frontmatter={article.data}>
@@ -41,9 +44,9 @@ const relatedArticles = allArticles.filter(
         </Prose>
 
        <div class="mt-12 text-center text-sm text-zinc-400">
-  Did you enjoy this post? Subscribe to my Substack, Things to Tell My Kids 
+  Did you enjoy this post?  
   <a href="https://substack.com/@mattglbrt" target="_blank" rel="noopener noreferrer" class="text-zinc-300 underline hover:text-white hover:underline">
-    here.
+    Subscribe to my Substack, Things to Tell My Kids
   </a>.
 </div>
 
