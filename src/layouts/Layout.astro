@@ -79,11 +79,40 @@ const ogImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
     <meta name="twitter:image" content={ogImageUrl} />
 
     <title>{title}</title>
+
+    <!-- Google Analytics - loaded after page interaction to not affect Core Web Vitals -->
+    <script is:inline>
+      // Defer GA loading until after user interaction or 4 seconds (whichever comes first)
+      function loadGA() {
+        if (window.gaLoaded) return;
+        window.gaLoaded = true;
+
+        const script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-71LCCMDVF8';
+        script.async = true;
+        document.head.appendChild(script);
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-71LCCMDVF8');
+      }
+
+      // Load on first user interaction
+      ['click', 'scroll', 'keydown', 'touchstart'].forEach(event => {
+        document.addEventListener(event, loadGA, { once: true, passive: true });
+      });
+
+      // Fallback: load after 4 seconds if no interaction
+      setTimeout(loadGA, 4000);
+    </script>
   </head>
   <body class="min-h-screen text-text-primary font-sans antialiased">
     <div class="max-w-4xl mx-auto px-4 py-6">
       {showNav && <Navigation />}
-      <slot />
+      <main>
+        <slot />
+      </main>
       {showFooter && <Footer />}
     </div>
   </body>
