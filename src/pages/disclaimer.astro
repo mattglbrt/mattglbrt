@@ -1,0 +1,123 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const lastUpdated = "December 11, 2024";
+---
+
+<Layout title="Disclaimer" description="Website disclaimer and terms of use">
+  <article class="glass p-6 sm:p-8 prose prose-invert prose-lg max-w-none">
+        <h1>Website Disclaimer</h1>
+        <p class="text-white/60">Last updated: {lastUpdated}</p>
+
+        <h2>1. No Professional Advice</h2>
+        <p>All content provided on this website—including articles, resources, guides, opinions, tools, downloads, and any other material—is offered for general informational and entertainment purposes only. Nothing on this website should be interpreted as:</p>
+        <ul>
+          <li>Legal advice</li>
+          <li>Financial advice</li>
+          <li>Tax advice</li>
+          <li>Business, marketing, or professional consulting</li>
+          <li>Any other form of licensed or regulated professional guidance</li>
+        </ul>
+        <p>You should always consult with a qualified professional who is familiar with your specific situation before making decisions that could affect your business, finances, or legal standing.</p>
+
+        <h2>2. No Client Relationship</h2>
+        <p>Viewing this website, using the information provided, contacting us, or interacting with our content does not create a client, customer, or professional relationship of any kind.</p>
+        <p>A professional relationship with Everyway LLC, MDG Growth LLC, or any associated business is only formed after:</p>
+        <ul>
+          <li>A formal proposal or engagement letter is issued,</li>
+          <li>Both parties explicitly agree to the terms, and</li>
+          <li>A contract is signed.</li>
+        </ul>
+        <p>Unless all of those conditions have been met, you are not a client, we are not your consultants, and we do not owe you any professional duties.</p>
+
+        <h2>3. No Guarantees</h2>
+        <p>While we strive to provide accurate, up-to-date information, we make no representations or warranties of any kind, express or implied, regarding:</p>
+        <ul>
+          <li>Accuracy</li>
+          <li>Completeness</li>
+          <li>Reliability</li>
+          <li>Suitability</li>
+          <li>Timeliness</li>
+          <li>Outcomes</li>
+          <li>Results</li>
+        </ul>
+        <p>Your use of this website and any materials herein is at your own risk.</p>
+
+        <h2>4. Not Responsible for Errors or Omissions</h2>
+        <p>Information related to business licenses, government programs, regulations, marketing strategies, or financial concepts can change frequently. We do not guarantee that the information presented is current, correct, or applicable to your circumstances.</p>
+        <p>We assume no responsibility for:</p>
+        <ul>
+          <li>Errors or inaccuracies</li>
+          <li>Omissions</li>
+          <li>Misinterpretations</li>
+          <li>Changes to laws, regulations, or government websites</li>
+        </ul>
+        <p>Always verify information with official sources.</p>
+
+        <h2>5. No Liability</h2>
+        <p>Under no circumstances shall we be liable for any loss, damage, or adverse outcomes, including but not limited to:</p>
+        <ul>
+          <li>Business losses</li>
+          <li>Financial losses</li>
+          <li>Legal or compliance issues</li>
+          <li>Lost revenue or opportunities</li>
+          <li>Indirect or consequential damages</li>
+        </ul>
+        <p>By using this website, you agree to hold harmless Everyway LLC, MDG Growth LLC, the site owner, and all associated parties from any claims or damages arising from your use of the content.</p>
+
+        <h2>6. External Links</h2>
+        <p>This website may link to third-party resources, government portals, or external websites. These links are provided for convenience only. We do not endorse, guarantee, or control the content of any external sites and are not responsible for their accuracy, policies, or reliability.</p>
+
+        <h2>7. Entertainment-Only Nature</h2>
+        <p>Unless explicitly stated otherwise, all content—including explanations, examples, stories, commentary, and opinions—is intended for entertainment and general educational purposes only. It should not be relied upon as a basis for professional decisions.</p>
+
+        <h2>8. Use at Your Own Risk</h2>
+        <p>You are solely responsible for:</p>
+        <ul>
+          <li>Verifying information</li>
+          <li>Complying with federal, state, and local laws</li>
+          <li>Making decisions for your business or personal life</li>
+          <li>Seeking appropriate professional counsel</li>
+        </ul>
+        <p>By using this website, you acknowledge and agree that you assume full responsibility for your actions.</p>
+  </article>
+</Layout>
+
+<style is:global>
+  .prose {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .prose h1, .prose h2, .prose h3, .prose h4 {
+    color: white;
+    font-weight: 700;
+  }
+
+  .prose h1 {
+    margin-bottom: 0.5rem;
+  }
+
+  .prose h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .prose a {
+    color: #3b82f6;
+    text-decoration: underline;
+  }
+
+  .prose a:hover {
+    color: #2563eb;
+  }
+
+  .prose ul {
+    padding-left: 1.5rem;
+  }
+
+  .prose li {
+    margin: 0.5rem 0;
+  }
+</style>

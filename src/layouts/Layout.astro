@@ -1,12 +1,26 @@
 ---
 import '../styles/global.css';
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 
 interface Props {
   title: string;
   description?: string;
+  image?: string;
+  showNav?: boolean;
+  showFooter?: boolean;
 }
 
-const { title, description = "Link in bio - Connect with me across the web" } = Astro.props;
+const {
+  title,
+  description = "Link in bio - Connect with me across the web",
+  image = "/og-image.jpg",
+  showNav = true,
+  showFooter = true,
+} = Astro.props;
+
+const siteUrl = "https://mattglbrt.com";
+const ogImageUrl = image.startsWith("http") ? image : `${siteUrl}${image}`;
 ---
 
 <!doctype html>
@@ -15,17 +29,37 @@ const { title, description = "Link in bio - Connect with me across the web" } = 
     <meta charset="UTF-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#0f172a" />
 
     <!-- Open Graph / Social -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:site_name" content="Matt Gilbert" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
 
     <title>{title}</title>
   </head>
   <body class="min-h-screen text-text-primary font-sans antialiased">
-    <slot />
+    <div class="max-w-4xl mx-auto px-4 py-6">
+      {showNav && <Navigation />}
+      <slot />
+      {showFooter && <Footer />}
+    </div>
   </body>
 </html>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  name?: string;
+}
+
+const { name = "Matt Gilbert" } = Astro.props;
+---
+
+<footer class="text-center text-white/50 text-sm py-8 space-y-2 mt-8">
+  <p>&copy; {new Date().getFullYear()} {name}. All rights reserved.</p>
+  <div class="flex justify-center gap-4 flex-wrap">
+    <a href="/terms" class="hover:text-white transition-colors">Terms</a>
+    <span>|</span>
+    <a href="/privacy" class="hover:text-white transition-colors">Privacy</a>
+    <span>|</span>
+    <a href="/disclaimer" class="hover:text-white transition-colors">Disclaimer</a>
+  </div>
+</footer>

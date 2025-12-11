@@ -1,7 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import ProfileHeader from '../components/ProfileHeader.astro';
-import Navigation from '../components/Navigation.astro';
+import RevenueTracker from '../components/RevenueTracker.astro';
 import SocialLinks from '../components/SocialLinks.astro';
 import YouTubeLatest from '../components/YouTubeLatest.astro';
 import NewsletterSignup from '../components/NewsletterSignup.astro';
@@ -12,84 +12,77 @@ import NewsletterSignup from '../components/NewsletterSignup.astro';
 
 // Your profile info
 const profile = {
-  name: "Your Name",
-  tagline: "Creator | Developer | Content Maker",
-  // Replace with your avatar URL or leave empty for initial
-  avatarUrl: "",
+  name: "Matt Gilbert",
+  tagline: "Artist | Husband | Father",
+  avatarUrl: "/mattglbrt.jpg",
 };
 
 // Your social media links
 // Available icons: twitter, youtube, instagram, tiktok, linkedin, github,
 // discord, twitch, spotify, threads, bluesky, email, website, podcast
 const socialLinks = [
-  { name: "YouTube", url: "https://youtube.com/@yourchannel", icon: "youtube" },
-  { name: "Twitter/X", url: "https://twitter.com/yourhandle", icon: "twitter" },
-  { name: "Instagram", url: "https://instagram.com/yourhandle", icon: "instagram" },
-  { name: "TikTok", url: "https://tiktok.com/@yourhandle", icon: "tiktok" },
-  { name: "LinkedIn", url: "https://linkedin.com/in/yourprofile", icon: "linkedin" },
-  { name: "GitHub", url: "https://github.com/yourusername", icon: "github" },
-  { name: "Discord", url: "https://discord.gg/yourserver", icon: "discord" },
-  { name: "Twitch", url: "https://twitch.tv/yourchannel", icon: "twitch" },
-  { name: "Threads", url: "https://threads.net/@yourhandle", icon: "threads" },
-  { name: "Bluesky", url: "https://bsky.app/profile/you.bsky.social", icon: "bluesky" },
-  { name: "Email", url: "mailto:you@example.com", icon: "email" },
-  { name: "Website", url: "https://yourwebsite.com", icon: "website" },
+  { name: "YouTube", url: "https://www.youtube.com/@mattglbrt", icon: "youtube" },
+  { name: "TikTok", url: "https://www.tiktok.com/@mattglbrt", icon: "tiktok" },
+  { name: "Instagram", url: "https://www.instagram.com/hobbinomicon/", icon: "instagram" },
+  { name: "Website", url: "https://buzzardstradingpost.com", icon: "website" },
+  { name: "Email", url: "mailto:matt@goeveryway.com", icon: "email" },
+  { name: "Discord", url: "https://discord.com/invite/5YnP7KrQH3", icon: "discord" },
 ];
 
 // Your YouTube channels - add channel IDs to fetch latest videos
 // Find channel ID: Go to channel > About > Share > Copy channel ID
 const youtubeChannels = [
-  { name: "Main Channel", channelId: "UCxxxxxxxxxxxxxxxxxxxxxxx" },
-  { name: "Second Channel", channelId: "UCxxxxxxxxxxxxxxxxxxxxxxx" },
+  { name: "Matt Gilbert", channelId: "UClfiOtzwwm9C4Mw8Fh06oIg" },
 ];
 
 // YouTube API Key (optional - get from Google Cloud Console)
 // Without this, placeholder videos will be shown
 const youtubeApiKey = import.meta.env.YOUTUBE_API_KEY || "";
 
-// Navigation links
-const navLinks = [
-  { name: "Blog", href: "/blog" },
-  { name: "Newsletter", href: "/newsletter" },
-];
+// Revenue tracking - Building in Public
+// Update these values as your revenue grows!
+const revenue = {
+  total: 0, // Total revenue generated
+  goal: 1000, // Your revenue goal (optional - remove to hide progress bar)
+  sources: [
+    { name: "eBay", amount: 0, icon: "ebay" },
+  ],
+};
 ---
 
 <Layout title={profile.name} description={profile.tagline}>
-  <main class="min-h-screen py-8 px-4">
-    <div class="max-w-2xl mx-auto space-y-8">
-      <!-- Profile Header -->
-      <ProfileHeader
-        name={profile.name}
-        tagline={profile.tagline}
-        avatarUrl={profile.avatarUrl}
+  <div class="space-y-8">
+    <!-- Profile Header -->
+    <ProfileHeader
+      name={profile.name}
+      tagline={profile.tagline}
+      avatarUrl={profile.avatarUrl}
+    />
+
+    <!-- Revenue Tracker - Building in Public -->
+    <RevenueTracker
+      totalRevenue={revenue.total}
+      goal={revenue.goal}
+      sources={revenue.sources}
+    />
+
+    <!-- Latest YouTube Videos -->
+    <section class="glass p-6">
+      <YouTubeLatest
+        channels={youtubeChannels}
+        apiKey={youtubeApiKey}
       />
+    </section>
 
-      <!-- Navigation -->
-      <Navigation links={navLinks} />
+    <!-- Newsletter Signup -->
+    <section id="newsletter">
+      <NewsletterSignup />
+    </section>
 
-      <!-- Social Links -->
-      <section class="glass-strong p-6">
-        <h2 class="text-xl font-bold text-white mb-4 text-center">Connect With Me</h2>
-        <SocialLinks links={socialLinks} />
-      </section>
-
-      <!-- Latest YouTube Videos -->
-      <section class="glass p-6">
-        <YouTubeLatest
-          channels={youtubeChannels}
-          apiKey={youtubeApiKey}
-        />
-      </section>
-
-      <!-- Newsletter Signup -->
-      <section id="newsletter">
-        <NewsletterSignup />
-      </section>
-
-      <!-- Footer -->
-      <footer class="text-center text-white/50 text-sm py-4">
-        <p>&copy; {new Date().getFullYear()} {profile.name}. All rights reserved.</p>
-      </footer>
-    </div>
-  </main>
+    <!-- Social Links -->
+    <section class="glass-strong p-6">
+      <h2 class="text-xl font-bold text-white mb-4 text-center">Connect With Me</h2>
+      <SocialLinks links={socialLinks} />
+    </section>
+  </div>
 </Layout>

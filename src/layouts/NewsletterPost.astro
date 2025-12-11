@@ -14,18 +14,9 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
 ---
 
 <Layout title={`${title} - Issue #${issueNumber}`} description={description}>
-  <main class="min-h-screen py-8 px-4">
-    <article class="max-w-3xl mx-auto">
-      <!-- Back button -->
-      <a href="/newsletter" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m15 18-6-6 6-6"/>
-        </svg>
-        Back to Newsletter Archive
-      </a>
-
-      <!-- Header -->
-      <header class="glass-strong p-6 sm:p-8 mb-6 text-center">
+  <article>
+    <!-- Header -->
+    <header class="glass-strong p-6 sm:p-8 mb-6 text-center">
         <span class="inline-block px-4 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full mb-4">
           Issue #{issueNumber}
         </span>
@@ -63,18 +54,17 @@ const formattedDate = pubDate.toLocaleDateString('en-US', {
         </div>
       )}
 
-      <!-- Subscribe CTA -->
-      <div class="mt-8 glass p-6 text-center">
-        <p class="text-white/80 mb-4">Enjoyed this issue? Subscribe to get future editions in your inbox.</p>
-        <a
-          href="/#newsletter"
-          class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-accent-hover text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
-        >
-          Subscribe to Newsletter
-        </a>
-      </div>
-    </article>
-  </main>
+    <!-- Subscribe CTA -->
+    <div class="mt-8 glass p-6 text-center">
+      <p class="text-white/80 mb-4">Enjoyed this issue? Subscribe to get future editions in your inbox.</p>
+      <a
+        href="/#newsletter"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-accent-hover text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+      >
+        Subscribe to Newsletter
+      </a>
+    </div>
+  </article>
 </Layout>
 
 <style is:global>

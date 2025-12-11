@@ -2,9 +2,13 @@
 import type { CollectionEntry } from 'astro:content';
 import Layout from './Layout.astro';
 
-type Props = CollectionEntry<'blog'>['data'] & { id: string };
+type Props = CollectionEntry<'vlog'>['data'] & { id: string };
 
-const { title, description, pubDate, updatedDate, videoId, videoUrl, channelName, duration, heroImage, tags } = Astro.props;
+const { title, description, pubDate, updatedDate, videoId, videoUrl, channelName, duration, tags, id } = Astro.props;
+
+// Generate dynamic OG image URL based on post slug
+const slug = id.replace(/\.md$/, '');
+const ogImage = `/og/vlog/${slug}.png`;
 
 const formattedPubDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -17,24 +21,13 @@ const formattedUpdatedDate = updatedDate?.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
-
-const isVideoPost = Boolean(videoId);
 ---
 
-<Layout title={title} description={description}>
-  <main class="min-h-screen py-8 px-4">
-    <article class="max-w-4xl mx-auto">
-      <!-- Back button -->
-      <a href="/blog" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m15 18-6-6 6-6"/>
-        </svg>
-        Back to Blog
-      </a>
-
-      <!-- Header -->
-      <header class="glass-strong p-6 sm:p-8 mb-6">
-        {isVideoPost && channelName && (
+<Layout title={title} description={description} image={ogImage}>
+  <article>
+    <!-- Header -->
+    <header class="glass-strong p-6 sm:p-8 mb-6">
+        {channelName && (
           <span class="inline-block px-3 py-1 bg-red-500/20 text-red-300 text-sm rounded-full mb-4">
             {channelName}
           </span>
@@ -73,35 +66,32 @@ const isVideoPost = Boolean(videoId);
         )}
       </header>
 
-      <!-- Video embed for video posts -->
-      {videoId && (
-        <div class="glass overflow-hidden mb-6">
-          <div class="aspect-video">
-            <iframe
-              src={`https://www.youtube.com/embed/${videoId}`}
-              title={title}
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              class="w-full h-full"
-            ></iframe>
-          </div>
+      <!-- Video embed -->
+      <div class="glass overflow-hidden mb-6">
+        <div class="aspect-video">
+          <iframe
+            src={`https://www.youtube.com/embed/${videoId}`}
+            title={title}
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+            class="w-full h-full"
+          ></iframe>
         </div>
-      )}
+      </div>
 
-      <!-- Hero image for non-video posts -->
-      {heroImage && !videoId && (
-        <div class="glass overflow-hidden mb-6">
-          <img
-            src={heroImage}
-            alt={title}
-            class="w-full h-auto"
-          />
-        </div>
-      )}
-
-      <!-- Content -->
+      <!-- Transcript Content -->
       <div class="glass p-6 sm:p-8 prose prose-invert prose-lg max-w-none">
+        <h2 class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/>
+            <polyline points="14 2 14 8 20 8"/>
+            <line x1="16" x2="8" y1="13" y2="13"/>
+            <line x1="16" x2="8" y1="17" y2="17"/>
+            <line x1="10" x2="8" y1="9" y2="9"/>
+          </svg>
+          Transcript
+        </h2>
         <slot />
       </div>
 
@@ -122,8 +112,7 @@ const isVideoPost = Boolean(videoId);
           </a>
         </div>
       )}
-    </article>
-  </main>
+  </article>
 </Layout>
 
 <style is:global>
@@ -144,12 +133,12 @@ const isVideoPost = Boolean(videoId);
   }
 
   .prose a {
-    color: #667eea;
+    color: #3b82f6;
     text-decoration: underline;
   }
 
   .prose a:hover {
-    color: #764ba2;
+    color: #2563eb;
   }
 
   .prose strong {
@@ -185,7 +174,7 @@ const isVideoPost = Boolean(videoId);
   }
 
   .prose blockquote {
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #3b82f6;
     padding-left: 1rem;
     font-style: italic;
     color: rgba(255, 255, 255, 0.7);

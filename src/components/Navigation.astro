@@ -9,16 +9,31 @@ interface Props {
 }
 
 const { links = [
-  { name: 'Blog', href: '/blog' },
+  { name: 'Vlog', href: '/vlog' },
+  { name: 'Resources', href: '/resources' },
   { name: 'Newsletter', href: '/newsletter' },
 ] } = Astro.props;
+
+const currentPath = Astro.url.pathname;
 ---
 
-<nav class="glass-subtle p-2 mb-8 flex justify-center gap-1 sm:gap-2 flex-wrap">
+<nav class="glass-subtle p-2 flex justify-center gap-1 sm:gap-2 flex-wrap mb-8">
+  <a
+    href="/"
+    class:list={[
+      "px-4 py-2 rounded-lg transition-all duration-200 text-sm sm:text-base",
+      currentPath === "/" ? "text-white bg-white/10" : "text-white/80 hover:text-white hover:bg-white/10"
+    ]}
+  >
+    Home
+  </a>
   {links.map((link) => (
     <a
       href={link.href}
-      class="px-4 py-2 text-white/80 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-sm sm:text-base"
+      class:list={[
+        "px-4 py-2 rounded-lg transition-all duration-200 text-sm sm:text-base",
+        currentPath.startsWith(link.href) ? "text-white bg-white/10" : "text-white/80 hover:text-white hover:bg-white/10"
+      ]}
     >
       {link.name}
     </a>

@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const posts = (await getCollection('blog'))
+const posts = (await getCollection('vlog'))
   .filter((post) => !post.data.draft)
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
@@ -15,21 +15,18 @@ function formatDate(date: Date): string {
 }
 ---
 
-<Layout title="Blog" description="Articles, video transcripts, and more">
-  <main class="min-h-screen py-8 px-4">
-    <div class="max-w-4xl mx-auto">
-      <!-- Back to home -->
-      <a href="/" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="m15 18-6-6 6-6"/>
-        </svg>
-        Home
-      </a>
-
-      <!-- Header -->
-      <header class="glass-strong p-6 sm:p-8 mb-8 text-center">
-        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2">Blog</h1>
-        <p class="text-white/70">Articles, video transcripts, and insights</p>
+<Layout title="Vlog" description="Video content with full transcripts">
+  <div>
+    <!-- Header -->
+    <header class="glass-strong p-6 sm:p-8 mb-8 text-center">
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-2 flex items-center justify-center gap-3">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" class="text-red-500">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814z"/>
+            <path d="M9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="white"/>
+          </svg>
+          Vlog
+        </h1>
+        <p class="text-white/70">Video content with full transcripts</p>
       </header>
 
       <!-- Posts grid -->
@@ -37,44 +34,26 @@ function formatDate(date: Date): string {
         <div class="grid gap-6 md:grid-cols-2">
           {posts.map((post) => (
             <a
-              href={`/blog/${post.id}`}
+              href={`/vlog/${post.id}`}
               class="glass p-6 hover:bg-white/20 transition-all duration-300 hover:scale-[1.02] block group"
             >
-              {post.data.videoId && (
-                <div class="aspect-video mb-4 rounded-lg overflow-hidden relative">
-                  <img
-                    src={`https://i.ytimg.com/vi/${post.data.videoId}/mqdefault.jpg`}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                  <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
-                    <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
-                        <path d="M8 5v14l11-7z"/>
-                      </svg>
-                    </div>
+              <div class="aspect-video mb-4 rounded-lg overflow-hidden relative">
+                <img
+                  src={`https://i.ytimg.com/vi/${post.data.videoId}/mqdefault.jpg`}
+                  alt={post.data.title}
+                  class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                  <div class="w-12 h-12 bg-red-600 rounded-full flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="white">
+                      <path d="M8 5v14l11-7z"/>
+                    </svg>
                   </div>
                 </div>
-              )}
-
-              {post.data.heroImage && !post.data.videoId && (
-                <div class="aspect-video mb-4 rounded-lg overflow-hidden">
-                  <img
-                    src={post.data.heroImage}
-                    alt={post.data.title}
-                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    loading="lazy"
-                  />
-                </div>
-              )}
+              </div>
 
               <div class="flex items-center gap-2 mb-2">
-                {post.data.videoId && (
-                  <span class="px-2 py-0.5 bg-red-500/20 text-red-300 text-xs rounded-full">
-                    Video
-                  </span>
-                )}
                 {post.data.channelName && (
                   <span class="text-white/50 text-xs">{post.data.channelName}</span>
                 )}
@@ -115,11 +94,10 @@ function formatDate(date: Date): string {
         </div>
       ) : (
         <div class="glass p-8 text-center">
-          <p class="text-white/70">No posts yet. Check back soon!</p>
+          <p class="text-white/70">No videos yet. Check back soon!</p>
         </div>
       )}
-    </div>
-  </main>
+  </div>
 </Layout>
 
 <style>

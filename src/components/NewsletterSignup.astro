@@ -3,14 +3,12 @@ interface Props {
   title?: string;
   description?: string;
   buttonText?: string;
-  formAction?: string;
 }
 
 const {
   title = "Stay in the Loop",
   description = "Get the latest updates, videos, and exclusive content delivered straight to your inbox.",
   buttonText = "Subscribe",
-  formAction = "#", // Replace with your newsletter service endpoint
 } = Astro.props;
 ---
 
@@ -26,7 +24,23 @@ const {
     <p class="text-white/70">{description}</p>
   </div>
 
-  <form action={formAction} method="POST" class="newsletter-form space-y-4">
+  <form
+    name="newsletter"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    class="newsletter-form space-y-4"
+  >
+    <!-- Honeypot field for spam protection -->
+    <p class="hidden">
+      <label>
+        Don't fill this out if you're human: <input name="bot-field" />
+      </label>
+    </p>
+
+    <!-- Hidden form name field required by Netlify -->
+    <input type="hidden" name="form-name" value="newsletter" />
+
     <div class="flex flex-col sm:flex-row gap-3">
       <input
         type="email"
@@ -65,25 +79,24 @@ const {
     e.preventDefault();
 
     const formData = new FormData(form);
-    const email = formData.get('email');
 
-    // If using a real form action, uncomment this:
-    // try {
-    //   const response = await fetch(form.action, {
-    //     method: 'POST',
-    //     body: formData,
-    //   });
-    //   if (response.ok) {
-    //     form.classList.add('hidden');
-    //     successMessage.classList.remove('hidden');
-    //   }
-    // } catch (error) {
-    //   console.error('Newsletter signup failed:', error);
-    // }
+    try {
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(formData as any).toString(),
+      });
 
-    // Demo behavior - replace with real API call
-    console.log('Newsletter signup:', email);
-    form.classList.add('hidden');
-    successMessage.classList.remove('hidden');
+      if (response.ok) {
+        form.classList.add('hidden');
+        successMessage.classList.remove('hidden');
+      } else {
+        console.error('Newsletter signup failed');
+        alert('Something went wrong. Please try again.');
+      }
+    } catch (error) {
+      console.error('Newsletter signup failed:', error);
+      alert('Something went wrong. Please try again.');
+    }
   });
 </script>
