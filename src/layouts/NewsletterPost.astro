@@ -1,0 +1,133 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Layout from './Layout.astro';
+
+type Props = CollectionEntry<'newsletter'>['data'] & { id: string };
+
+const { title, description, issueNumber, pubDate, webVersionUrl } = Astro.props;
+
+const formattedDate = pubDate.toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+---
+
+<Layout title={`${title} - Issue #${issueNumber}`} description={description}>
+  <main class="min-h-screen py-8 px-4">
+    <article class="max-w-3xl mx-auto">
+      <!-- Back button -->
+      <a href="/newsletter" class="inline-flex items-center gap-2 text-white/70 hover:text-white mb-6 transition-colors">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m15 18-6-6 6-6"/>
+        </svg>
+        Back to Newsletter Archive
+      </a>
+
+      <!-- Header -->
+      <header class="glass-strong p-6 sm:p-8 mb-6 text-center">
+        <span class="inline-block px-4 py-1 bg-accent/20 text-accent text-sm font-medium rounded-full mb-4">
+          Issue #{issueNumber}
+        </span>
+
+        <h1 class="text-3xl sm:text-4xl font-bold text-white mb-4">{title}</h1>
+
+        <p class="text-white/70 mb-4">{description}</p>
+
+        <time datetime={pubDate.toISOString()} class="text-white/50 text-sm">
+          {formattedDate}
+        </time>
+      </header>
+
+      <!-- Content -->
+      <div class="glass p-6 sm:p-8 prose prose-invert prose-lg max-w-none newsletter-content">
+        <slot />
+      </div>
+
+      <!-- Web version link -->
+      {webVersionUrl && (
+        <div class="mt-6 text-center">
+          <a
+            href={webVersionUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/>
+              <polyline points="15 3 21 3 21 9"/>
+              <line x1="10" x2="21" y1="14" y2="3"/>
+            </svg>
+            View original email version
+          </a>
+        </div>
+      )}
+
+      <!-- Subscribe CTA -->
+      <div class="mt-8 glass p-6 text-center">
+        <p class="text-white/80 mb-4">Enjoyed this issue? Subscribe to get future editions in your inbox.</p>
+        <a
+          href="/#newsletter"
+          class="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-accent to-accent-hover text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
+        >
+          Subscribe to Newsletter
+        </a>
+      </div>
+    </article>
+  </main>
+</Layout>
+
+<style is:global>
+  .newsletter-content {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .newsletter-content h1,
+  .newsletter-content h2,
+  .newsletter-content h3,
+  .newsletter-content h4 {
+    color: white;
+    font-weight: 700;
+  }
+
+  .newsletter-content h2 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .newsletter-content a {
+    color: #667eea;
+    text-decoration: underline;
+  }
+
+  .newsletter-content a:hover {
+    color: #764ba2;
+  }
+
+  .newsletter-content strong {
+    color: white;
+  }
+
+  .newsletter-content ul,
+  .newsletter-content ol {
+    padding-left: 1.5rem;
+  }
+
+  .newsletter-content li {
+    margin: 0.5rem 0;
+  }
+
+  .newsletter-content blockquote {
+    border-left: 4px solid #667eea;
+    padding-left: 1rem;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .newsletter-content hr {
+    border-color: rgba(255, 255, 255, 0.2);
+    margin: 2rem 0;
+  }
+</style>

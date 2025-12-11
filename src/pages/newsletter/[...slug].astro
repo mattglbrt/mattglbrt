@@ -1,0 +1,19 @@
+---
+import { getCollection, render } from 'astro:content';
+import NewsletterPost from '../../layouts/NewsletterPost.astro';
+
+export async function getStaticPaths() {
+  const issues = await getCollection('newsletter');
+  return issues.map((issue) => ({
+    params: { slug: issue.id },
+    props: issue,
+  }));
+}
+
+const issue = Astro.props;
+const { Content } = await render(issue);
+---
+
+<NewsletterPost {...issue.data} id={issue.id}>
+  <Content />
+</NewsletterPost>
