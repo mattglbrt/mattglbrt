@@ -6,16 +6,52 @@ interface Props {
 }
 
 const { name, tagline, avatarUrl } = Astro.props;
+
+// Generate optimized image paths if using the default avatar
+const isDefaultAvatar = avatarUrl === '/mattglbrt.jpg';
+const optimizedImages = isDefaultAvatar ? {
+  avif224: '/mattglbrt-224.avif',
+  avif448: '/mattglbrt-448.avif',
+  webp224: '/mattglbrt-224.webp',
+  webp448: '/mattglbrt-448.webp',
+  fallback: '/mattglbrt-optimized.jpg',
+} : null;
 ---
 
 <header class="text-center mb-8">
   {avatarUrl ? (
     <div class="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden ring-4 ring-white/20 shadow-lg">
-      <img
-        src={avatarUrl}
-        alt={name}
-        class="w-full h-full object-cover"
-      />
+      {optimizedImages ? (
+        <picture>
+          <source
+            type="image/avif"
+            srcset={`${optimizedImages.avif224} 1x, ${optimizedImages.avif448} 2x`}
+          />
+          <source
+            type="image/webp"
+            srcset={`${optimizedImages.webp224} 1x, ${optimizedImages.webp448} 2x`}
+          />
+          <img
+            src={optimizedImages.fallback}
+            alt={name}
+            width="128"
+            height="128"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+            class="w-full h-full object-cover"
+          />
+        </picture>
+      ) : (
+        <img
+          src={avatarUrl}
+          alt={name}
+          width="128"
+          height="128"
+          loading="eager"
+          class="w-full h-full object-cover"
+        />
+      )}
     </div>
   ) : (
     <div class="w-32 h-32 mx-auto mb-4 rounded-full bg-gradient-to-br from-accent to-accent-hover flex items-center justify-center ring-4 ring-white/20 shadow-lg">
