@@ -42,12 +42,14 @@ const youtubeApiKey = import.meta.env.YOUTUBE_API_KEY || "";
 
 // Revenue tracking - Building in Public
 // Update these values as your revenue grows!
+const revenueSources = [
+  { name: "eBay", amount: 75, icon: "ebay" },
+];
+
 const revenue = {
-  total: 35, // Total revenue generated
+  total: revenueSources.reduce((sum, source) => sum + source.amount, 0),
   goal: 1000, // Your revenue goal (optional - remove to hide progress bar)
-  sources: [
-    { name: "eBay", amount: 35, icon: "ebay" },
-  ],
+  sources: revenueSources,
 };
 ---
 
