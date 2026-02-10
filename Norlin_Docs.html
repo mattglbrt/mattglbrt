@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Norlin – A Beautiful Dark Blog Theme for Astro</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: #e0e0e0;
+      background: #1a1a1a;
+    }
+
+    .wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .site-header {
+      text-align: center;
+      padding: 60px 0 40px;
+      border-bottom: 2px solid #333;
+      margin-bottom: 40px;
+    }
+
+    .site-title {
+      font-size: 3em;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    .site-description {
+      font-size: 1.2em;
+      color: #888;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 2em;
+      color: #fff;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #333;
+    }
+
+    h3 {
+      font-size: 1.5em;
+      color: #fff;
+      margin: 30px 0 15px;
+    }
+
+    h5 {
+      font-size: 1.1em;
+      color: #fff;
+      margin: 20px 0 10px;
+    }
+
+    p {
+      margin-bottom: 15px;
+      color: #b0b0b0;
+    }
+
+    ul {
+      margin: 15px 0 15px 30px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      color: #b0b0b0;
+    }
+
+    a {
+      color: #ff7b7b;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    code {
+      background: #2a2a2a;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-family: 'Courier New', monospace;
+      color: #ff7b7b;
+      font-size: 0.9em;
+    }
+
+    pre {
+      background: #2a2a2a;
+      padding: 20px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid #333;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: #e0e0e0;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #333;
+      margin: 40px 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid #333;
+    }
+
+    .support {
+      background: #252525;
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      margin: 20px 0;
+    }
+
+    .support-btn {
+      display: inline-block;
+      background: #1a1a1a;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .support-btn:hover {
+      background: #ff7b7b;
+      color: #1a1a1a;
+      text-decoration: none;
+    }
+
+    .site-info {
+      text-align: center;
+      padding: 40px 0 20px;
+      border-top: 2px solid #333;
+      margin-top: 60px;
+      color: #666;
+    }
+
+    strong {
+      color: #fff;
+    }
+
+    .note {
+      background: #2a3f5f;
+      border-left: 4px solid #4a9eff;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+
+      p {
+        margin: 0;
+        color: #fff;
+      }
+    }
+
+    .warning {
+      background: #5f3f2a;
+      border-left: 4px solid #ff9f4a;
+      padding: 15px 20px;
+      margin: 20px 0;
+      border-radius: 4px;
+
+      p {
+        margin: 0;
+        color: #fff;
+      }
+    }
+
+    .config-section {
+      background: #252525;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border-left: 3px solid #ff7b7b;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="site-header" role="banner">
+      <h1 class="site-title">Norlin</h1>
+      <p class="site-description">Astro Theme Documentation</p>
+    </header>
+
+    <div id="main">
+      <div id="content" role="main">
+
+        <section>
+          <h2>Theme Information</h2>
+          <ul>
+            <li>Name: <strong>Norlin</strong> – A Beautiful Dark Blog Theme for Astro</li>
+            <li>Norlin is a creative modern theme with a clean design specially created for dark theme lovers. The Norlin theme is fully responsive and looks great on mobile devices. It features a beautiful and modern design that is best suited for your personal or corporate blog. You can easily customize the theme by changing the settings, colors, layouts, navigation, and more.</li>
+            <li>Current Version: 1.0.1</li>
+            <li>Released: 02/02/2026</li>
+            <li>Creator: <a href="https://anvodstudio.com/">Anvod Studio</a></li>
+          </ul>
+          <hr />
+        </section>
+
+        <section>
+          <h2 id="top">Table of Contents</h2>
+          <ul>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#configurations">Theme Configurations</a></li>
+            <li><a href="#deployment">Deployment</a></li>
+            <li><a href="#posts">Posts</a></li>
+            <li><a href="#pages">Pages</a></li>
+            <li><a href="#navigation">Navigation</a></li>
+            <li><a href="#hero">Hero Section</a></li>
+            <li><a href="#social">Social Links</a></li>
+            <li><a href="#newsletter">Newsletter</a></li>
+            <li><a href="#contact">Contact Form</a></li>
+            <li><a href="#comments">Comments (Disqus)</a></li>
+            <li><a href="#analytics">Google Analytics</a></li>
+            <li><a href="#styling">Styling & Themes</a></li>
+            <li><a href="#UpdateFavicon">Update Favicon</a></li>
+            <li><a href="#Credits">Credits</a></li>
+            <li><a href="#Support">Support</a></li>
+          </ul>
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="getting-started">Getting Started</h3>
+          
+          <p>To run the theme locally, navigate to the theme directory and follow these steps:</p>
+
+          <div class="note">
+            <p><strong>Prerequisites:</strong> Make sure you have Node.js (v18 or higher) and npm installed on your system.</p>
+          </div>
+
+          <p><strong>1. Install dependencies:</strong></p>
+          <pre><code>npm install</code></pre>
+
+          <p><strong>2. Start the development server:</strong></p>
+          <pre><code>npm run dev</code></pre>
+
+          <p><strong>3. Build for production:</strong></p>
+          <pre><code>npm run build</code></pre>
+
+          <p><strong>4. Preview production build:</strong></p>
+          <pre><code>npm run preview</code></pre>
+
+          <p>The development server will typically start at <code>http://localhost:4321</code></p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="configurations">Theme Configurations</h3>
+
+          <p>All theme settings are centralized in the <code>src/data/settings.ts</code> file. This file contains all the customization options for your Astro theme.</p>
+
+          <div class="config-section">
+            <h5>📁 Site Settings</h5>
+            <p>Configure your basic site information:</p>
+            <pre><code>site: {
+  title: 'Norlin',
+  logo: '', // Optional: '/images/logo.png'
+  description: 'Norlin – A Beautiful Dark Blog Theme for Astro.',
+  url: 'https://yourdomain.com',
+  image: '/images/og-image.jpg',
+  language: 'en',
+}</code></pre>
+            <ul>
+              <li><strong>title:</strong> Your site name</li>
+              <li><strong>logo:</strong> Path to your logo image (optional)</li>
+              <li><strong>description:</strong> Site description for SEO</li>
+              <li><strong>url:</strong> Your site's full URL</li>
+              <li><strong>image:</strong> Default Open Graph image</li>
+            </ul>
+          </div>
+
+          <div class="config-section">
+            <h5>🔍 SEO & Social Settings</h5>
+            <p>Configure SEO metadata and social media cards:</p>
+            <pre><code>seo: {
+  twitter: {
+    handle: '@yourusername',
+    site: '@yourusername',
+    cardType: 'summary_large_image',
+  },
+  openGraph: {
+    type: 'website',
+  },
+}</code></pre>
+          </div>
+
+          <div class="config-section">
+            <h5>👤 Author Settings</h5>
+            <p>Set your author information:</p>
+            <pre><code>author: {
+  name: 'Robert Wilson',
+  src: avatar, // Imported image
+}</code></pre>
+            <p>The avatar image is imported at the top of the file: <code>import avatar from '../images/15.jpg';</code></p>
+          </div>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="navigation">Navigation</h3>
+
+          <p>Configure your site navigation menu in <code>src/data/settings.ts</code>:</p>
+
+          <pre><code>navigation: {
+  items: [
+    { title: 'Home', url: '/' },
+    { title: 'About', url: '/about/' },
+    { title: 'Contact Me', url: '/contact/' },
+    { title: 'Style Guide', url: '/styleguide/' },
+    { 
+      title: 'Get Theme', 
+      url: 'http://anvodstudio.com/themes/astro/norlin', 
+      external: true 
+    },
+  ],
+}</code></pre>
+
+          <p><strong>Navigation Item Properties:</strong></p>
+          <ul>
+            <li><strong>title:</strong> Menu item text</li>
+            <li><strong>url:</strong> Link destination</li>
+            <li><strong>external:</strong> Set to <code>true</code> for external links (optional)</li>
+          </ul>
+
+          <div class="warning">
+            <p><strong>Important:</strong> Always include a trailing slash (<code>/</code>) at the end of internal links for proper routing in Astro.</p>
+          </div>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="hero">Hero Section</h3>
+
+          <p>Customize the hero section that appears on your homepage:</p>
+
+          <pre><code>hero: {
+  title: 'Robert Wilson',
+  description: 'Thoughts, stories and ideas.',
+  src: heroImage, // Imported image
+}</code></pre>
+
+          <p>The hero image is imported at the top of the file: <code>import heroImage from '../images/01.jpg';</code></p>
+
+          <p>Change the title, description, and background image to personalize your homepage hero section.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="social">Social Links</h3>
+
+          <p>Add your social media profiles to display in the footer and other areas:</p>
+
+          <pre><code>socialLinks: [
+  {
+    icon: 'fa7-brands:x-twitter',
+    name: 'X',
+    link: 'https://x.com/',
+  },
+  {
+    icon: 'fa7-brands:facebook-f',
+    name: 'Facebook',
+    link: 'https://facebook.com',
+  },
+  // Add more social links...
+]</code></pre>
+
+          <p><strong>Social Link Properties:</strong></p>
+          <ul>
+            <li><strong>icon:</strong> Font Awesome 7 icon name from Iconify</li>
+            <li><strong>name:</strong> Platform name (for accessibility)</li>
+            <li><strong>link:</strong> Your profile URL</li>
+          </ul>
+
+          <div class="note">
+            <p>The theme uses Font Awesome Free 7 icons via Iconify. You can find more icons at <a href="https://icon-sets.iconify.design/fa7-brands/" target="_blank">Iconify Font Awesome 7</a>.</p>
+          </div>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="posts">Posts</h3>
+
+          <p>Create blog posts in the <code>src/content/posts/</code> directory. Each post is a markdown file (<code>.md</code>) or MDX file (<code>.mdx</code>).</p>
+
+          <h5>Post Frontmatter</h5>
+          <p>Each post should include frontmatter with the following fields:</p>
+
+          <pre><code>---
+title: "Your Post Title"
+description: "A brief description of your post"
+image: "../../images/post-image.jpg"
+tags: [Work, Notes]
+featured: true
+date: 2025-01-15
+---</code></pre>
+
+          <p><strong>Frontmatter Fields:</strong></p>
+          <ul>
+            <li><strong>title:</strong> Post title (required)</li>
+            <li><strong>description:</strong> Post description for SEO and previews</li>
+            <li><strong>image:</strong> Featured image path (relative to src/)</li>
+            <li><strong>tags:</strong> Array of tags (use dashes instead of spaces: <code>web-development</code>)</li>
+            <li><strong>featured:</strong> Set to <code>true</code> to mark as featured post (displays star icon ☆)</li>
+            <li><strong>date:</strong> Publication date (YYYY-MM-DD format)</li>
+          </ul>
+
+          <h5>Pagination Settings</h5>
+          <p>Control how posts are displayed on the homepage:</p>
+          <pre><code>pagination: {
+  initial: 8, // Number of posts to show initially
+  step: 3     // Number of posts to load with "Load More"
+}</code></pre>
+
+          <h5>Wide Images</h5>
+          <p>To create full-width images in your posts, use the <code>:::wide</code> directive:</p>
+          <pre><code>:::wide
+![Image description](../../images/image.jpg)
+*Photo caption*
+:::</code></pre>
+
+          <h5>Image Galleries</h5>
+          <p>Create image galleries using the <code>:::gallery</code> directive:</p>
+          <pre><code>:::gallery
+  ![Abstract](../../images/501.jpg)
+  ![Bike](../../images/901.jpg)
+  ![Man](../../images/509.jpg)
+  *Gallery / Unsplash*
+:::</code></pre>
+
+          <div class="note">
+            <p><strong>Tip:</strong> Store all post images in the <code>src/images/</code> directory for easy management.</p>
+          </div>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="pages">Pages</h3>
+
+          <p>Create custom pages in the <code>src/pages/</code> directory or use content collections in <code>src/content/pages/</code>.</p>
+
+          <h5>Content Collection Pages</h5>
+          <p>For pages using content collections, create markdown files in <code>src/content/pages/</code> with this frontmatter:</p>
+
+          <pre><code>---
+title: "About"
+image: "../../images/page-image.jpg"
+---
+
+Your page content here...</code></pre>
+
+          <h5>Astro Component Pages</h5>
+          <p>You can also create pages directly as <code>.astro</code> components in <code>src/pages/</code> for more control over the layout and functionality.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="newsletter">Newsletter</h3>
+
+          <p>Enable and configure the newsletter subscription form:</p>
+
+          <pre><code>newsletter: {
+  enabled: true,
+  mailchimpIdentifier: 'gmail.us21.list-manage.com/subscribe/post?u=...',
+  description: 'Subscribe to our newsletter...',
+  buttonText: 'Join',
+}</code></pre>
+
+          <p><strong>Newsletter Properties:</strong></p>
+          <ul>
+            <li><strong>enabled:</strong> Set to <code>true</code> to display newsletter form</li>
+            <li><strong>mailchimpIdentifier:</strong> Your Mailchimp form action URL</li>
+            <li><strong>description:</strong> Text displayed above the form</li>
+            <li><strong>buttonText:</strong> Submit button text</li>
+          </ul>
+
+          <p>To get your Mailchimp identifier, create a form in your Mailchimp account and copy the form action URL.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="contact">Contact Form</h3>
+
+          <p>Configure the contact form using Formspree:</p>
+
+          <pre><code>contact: {
+  email: 'your_formspree_form_id', // Example: 'mbjebqko'
+}</code></pre>
+
+          <p>To set up the contact form:</p>
+          <ol>
+            <li>Go to <a href="https://formspree.io" target="_blank">Formspree.io</a> and create a free account</li>
+            <li>Create a new form and get your form ID</li>
+            <li>Add the form ID to the <code>email</code> field in settings</li>
+          </ol>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="comments">Comments (Disqus)</h3>
+
+          <p>Enable Disqus comments on your blog posts:</p>
+
+          <pre><code>comments: {
+  enabled: true,
+  disqusIdentifier: 'anvodstudio-demo',
+}</code></pre>
+
+          <p><strong>To set up Disqus:</strong></p>
+          <ol>
+            <li>Create a Disqus account at <a href="https://disqus.com" target="_blank">disqus.com</a></li>
+            <li>Register your website and get your <a href="https://help.disqus.com/customer/portal/articles/466208" target="_blank">Disqus shortname</a></li>
+            <li>Replace <code>anvodstudio-demo</code> with your Disqus shortname</li>
+            <li>Set <code>enabled: true</code> to display comments</li>
+          </ol>
+
+          <p>If comments fail to load, make sure you have <a href="https://help.disqus.com/customer/portal/articles/466182-publisher-quick-start-guide" target="_blank">registered your website with Disqus</a>.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="analytics">Google Analytics</h3>
+
+          <p>Add Google Analytics tracking to your site:</p>
+
+          <pre><code>analytics: {
+  google: '', // GA4 Measurement ID
+}</code></pre>
+
+          <p>To enable Google Analytics:</p>
+          <ol>
+            <li>Create a Google Analytics 4 property</li>
+            <li>Get your Measurement ID (format: G-XXXXXXXXXX)</li>
+            <li>Add it to the <code>google</code> field in settings</li>
+          </ol>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="deployment">Deployment</h3>
+
+          <p>Astro provides multiple deployment options. Here are the most popular:</p>
+
+          <h5>Deploy to Netlify</h5>
+          <ol>
+            <li>Push your project to GitHub</li>
+            <li>Connect your repository to Netlify</li>
+            <li>Set build command: <code>npm run build</code></li>
+            <li>Set publish directory: <code>dist</code></li>
+          </ol>
+
+          <h5>Deploy to Vercel</h5>
+          <ol>
+            <li>Push your project to GitHub</li>
+            <li>Import your repository to Vercel</li>
+            <li>Vercel will auto-detect Astro and configure settings</li>
+          </ol>
+
+          <h5>Deploy to GitHub Pages</h5>
+          <ol>
+            <li>Update <code>src/data/settings.ts</code> with your site URL</li>
+            <li>Use the GitHub Actions workflow for automatic deployment</li>
+          </ol>
+
+          <div class="note">
+            <p>For detailed deployment instructions, check the <a href="https://docs.astro.build/en/guides/deploy/" target="_blank">Astro Deployment Guide</a>.</p>
+          </div>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="styling">Styling & Themes</h3>
+
+          <p>The theme uses SCSS for styling. All styles are organized in <code>src/styles/</code>:</p>
+
+          <ul>
+            <li><code>0-settings/</code> – Variables, colors, and global settings</li>
+            <li><code>1-tools/</code> – Functions and resets</li>
+            <li><code>2-base/</code> – Base styles</li>
+            <li><code>3-modules/</code> – Component-specific styles</li>
+            <li><code>4-layouts/</code> – Layout styles</li>
+            <li><code>main.scss</code> – Main stylesheet that imports all modules</li>
+          </ul>
+
+          <h5>Customizing Colors</h5>
+          <p>Edit color variables in <code>src/styles/0-settings/_variables.scss</code> to customize the theme colors and create your own color scheme.</p>
+
+          <h5>Dark Mode</h5>
+          <p>The theme is designed with a dark color scheme by default. All colors and contrasts are optimized for dark mode viewing experience.</p>
+
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="UpdateFavicon">Update Favicon</h3>
+          <p>Replace the favicon in the <code>public/</code> directory:</p>
+          <ul>
+            <li><code>public/favicon.ico</code> – Main favicon file</li>
+          </ul>
+          <p>Reference your custom favicon in the <code>&lt;head&gt;</code> section of your layout files if needed.</p>
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="Credits">Credits</h3>
+          <p>This theme uses the following resources and libraries:</p>
+          <ul>
+            <li><a href="https://astro.build" target="_blank">Astro</a> – Static Site Generator</li>
+            <li><a href="https://fonts.google.com/specimen/Inter" target="_blank">Google Fonts</a> (Inter)</li>
+            <li><a href="https://fontawesome.com/icons" target="_blank">Font Awesome Icons</a> (via Iconify)</li>
+            <li><a href="https://github.com/johnny-mh/devlog/tree/main/packages/astro-fuse" target="_blank">Astro Fuse</a> – Plugin for Search Functionality</li>
+            <li>Preview images from <a href="https://unsplash.com/" target="_blank">Unsplash</a> and <a href="https://www.pexels.com/" target="_blank">Pexels</a></li>
+          </ul>
+          <hr />
+        </section>
+
+        <section>
+          <h3 id="Support">Support</h3>
+          <div class="support">
+            <p>If you have any questions or feedback about the theme, please feel free to contact me by email.</p>
+            <a href="mailto:anvodstudio@gmail.com" class="support-btn">Contact Artem</a>
+          </div>
+          <hr />
+        </section>
+
+        <p><a href="#top">⬆ Go To Table of Contents</a></p>
+      </div>
+    </div>
+
+    <footer class="site-info" role="contentinfo">
+      <p>© 2026 Anvod Studio</p>
+    </footer>
+  </div>
+</body>
+</html>
