@@ -44,8 +44,7 @@ export const settings = {
       { title: 'Home', url: '/' },
       { title: 'About', url: '/about/' },
       { title: 'Contact Me', url: '/contact/' },
-      { title: 'Style Guide', url: '/styleguide/' },
-      { title: 'Get Theme', url: 'http://anvodstudio.com/themes/astro/norlin', external: true },
+      { title: 'My Minis', url: 'https://yellowimp.com', external: true },
     ],
   },
 
