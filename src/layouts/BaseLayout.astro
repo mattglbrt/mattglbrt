@@ -15,11 +15,13 @@ export interface Props {
   title?: string;
   description?: string;
   image?: ImageMetadata | string;
+  hideFooterWidgets?: boolean;
 }
 
 const {
   description = settings.site.description,
-  image = settings.site.image
+  image = settings.site.image,
+  hideFooterWidgets = false,
 } = Astro.props;
 
 const title = [...new Set([Astro.props.title, settings.site.title])].filter(Boolean).join(' | ');
@@ -86,7 +88,7 @@ const imageUrl = typeof image === 'string'
       <slot />
     </main>
     <ScrollToTop />
-    <Footer />
+    <Footer hideWidgets={hideFooterWidgets} />
 
     <script>
       import '../scripts/common.ts';

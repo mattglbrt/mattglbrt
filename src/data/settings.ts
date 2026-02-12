@@ -1,5 +1,9 @@
 import avatar from '../images/15.jpg';
 import heroImage from '../images/01.jpg';
+import projectsHeroImage from '../images/06.jpg';
+import projectImage1 from '../images/03.jpg';
+import projectImage2 from '../images/04.jpg';
+import projectImage3 from '../images/05.jpg';
 
 export const settings = {
   /* -----------------------------
@@ -44,7 +48,7 @@ export const settings = {
       { title: 'Home', url: '/' },
       { title: 'About', url: '/about/' },
       { title: 'Contact Me', url: '/contact/' },
-      { title: 'My Minis', url: 'https://yellowimp.com', external: true },
+      { title: 'My Projects', url: '/projects/' },
     ],
   },
 
@@ -62,9 +66,50 @@ export const settings = {
    * ----------------------------- */
   hero: {
     title: 'Matt Gilbert',
-    description: 'Husband, Father, Artist',
+    description: [
+      { text: 'Artist', url: 'https://www.youtube.com/@mattglbrt', external: true },
+      { text: 'Aspiring Sculptor', url: 'https://yellowimp.com', external: true },
+      { text: 'Daily Vlogger', url: 'https://www.youtube.com/@Hobbinomicon', external: true },
+    ],
     src: heroImage,
   },
+
+  /* -----------------------------
+   * Projects Page
+   * ----------------------------- */
+  projectsPage: {
+    image: projectsHeroImage,
+  },
+
+  projects: [
+    {
+      name: 'Project One',
+      description: 'A short description of this project and what it is about.',
+      image: projectImage1,
+      links: [
+        { label: 'Website', url: 'https://example.com' },
+        { label: 'GitHub', url: 'https://github.com' },
+      ],
+    },
+    {
+      name: 'Project Two',
+      description: 'Another project with a brief description of what it does.',
+      image: projectImage2,
+      links: [
+        { label: 'Visit', url: 'https://example.com' },
+      ],
+    },
+    {
+      name: 'Project Three',
+      description: 'A third project to show how the layout works with multiple entries.',
+      image: projectImage3,
+      links: [
+        { label: 'Website', url: 'https://example.com' },
+        { label: 'Docs', url: 'https://example.com/docs' },
+        { label: 'GitHub', url: 'https://github.com' },
+      ],
+    },
+  ],
 
   /* -----------------------------
    * Social Links

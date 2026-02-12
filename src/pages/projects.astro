@@ -1,0 +1,46 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OptimizedImage from '../components/OptimizedImage.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import { settings } from '../data/settings';
+
+const { projects, projectsPage } = settings;
+---
+
+<BaseLayout title="Projects" description="A collection of my projects and work." hideFooterWidgets>
+  {
+    projectsPage.image ? (
+      <section class='hero'>
+        <div class='hero__inner'>
+          <div class='hero__image'>
+            <OptimizedImage
+              src={projectsPage.image}
+              alt="Projects"
+              loading='eager'
+              fetchpriority='high'
+            />
+          </div>
+          <div class='hero__content'>
+            <h1 class='hero__title'>Projects</h1>
+          </div>
+        </div>
+      </section>
+    ) : (
+      <section class='hero-without-image'>
+        <div class='hero-inner'>
+          <div class='hero__content'>
+            <h1 class='hero__title'>Projects</h1>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  <div class="container">
+    <div class="projects-page__list">
+      {projects.map((project) => (
+        <ProjectCard project={project} />
+      ))}
+    </div>
+  </div>
+</BaseLayout>

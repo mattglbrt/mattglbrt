@@ -18,7 +18,22 @@ import OptimizedImage from './OptimizedImage.astro';
         </div>
         <div class='hero__content'>
           {title && <h1 class='hero__title'>{title}</h1>}
-          {description && <p class='hero__desc'>{description}</p>}
+          {description && description.length > 0 && (
+            <p class='hero__desc'>
+              {description.map((item, i) => (
+                <>
+                  <a
+                    href={item.url}
+                    class="hero__link"
+                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    {item.text}
+                  </a>
+                  {i < description.length - 1 && ', '}
+                </>
+              ))}
+            </p>
+          )}
         </div>
       </div>
     </section>
@@ -27,7 +42,22 @@ import OptimizedImage from './OptimizedImage.astro';
       <div class='hero-inner'>
         <div class='hero__content'>
           {title && <h1 class='hero__title'>{title}</h1>}
-          {description && <p class='hero__desc'>{description}</p>}
+          {description && description.length > 0 && (
+            <p class='hero__desc'>
+              {description.map((item, i) => (
+                <>
+                  <a
+                    href={item.url}
+                    class="hero__link"
+                    {...(item.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  >
+                    {item.text}
+                  </a>
+                  {i < description.length - 1 && ', '}
+                </>
+              ))}
+            </p>
+          )}
         </div>
       </div>
     </section>

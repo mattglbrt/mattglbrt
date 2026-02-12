@@ -7,7 +7,7 @@ I’m Matt.
 
 I am an artist.
 
-It took me a long time to figure that out. I paint miniatures, build worlds, design games, bind books, sketch ideas, and spend an unreasonable amount of time thinking about imaginary places. This site is a home for that.
+It took me a long time to figure that out. This site is a home for that.
 
 ![Time to think](../../images/501.jpg)
 *Minimalism / [Unsplash](https://unsplash.com/)*
@@ -16,17 +16,7 @@ This isn’t a portfolio or a content churning website.
 
 It’s my sketchbook.
 My hobby log.
-A place to document projects.
-
-You’ll find:
-
-* Miniature painting and terrain builds
-
-* Tabletop and role-playing game design
-
-* Handmade objects and small creative experiments
-
-* Notes on process, tools, and inspiration
+A place to document everything I am doing and hopefully inspire you to do that same..
 
 Some projects will be polished. Most won’t. That’s the point.
 
@@ -39,7 +29,9 @@ Some projects will be polished. Most won’t. That’s the point.
 ### Why I Share Any of This
 
 Because making things in isolation eventually feels hollow.
-Because art is better when it is shared.
+Because art is meant to be shared.
+Creation is an act of rebellion.
+
 Because someone else might need permission to think of themselves as an artist first. I know that I did.
 
 Thanks for visiting.

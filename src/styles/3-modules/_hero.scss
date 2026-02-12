@@ -84,6 +84,16 @@
   }
 }
 
+.hero__link {
+  color: variables.$gray;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+  &:hover {
+    color: variables.$brand-color;
+  }
+}
+
 /* Hero Withou Image */
 .hero-without-image {
   position: relative;
