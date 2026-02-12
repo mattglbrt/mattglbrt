@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import { settings } from '../data/settings';
 
-const { socialLinks } = settings;
+const socialLinks = settings.socialLinks.filter((item) => item.link);
 ---
 
 <div class='social'>

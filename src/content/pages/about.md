@@ -9,8 +9,8 @@ I am an artist.
 
 It took me a long time to figure that out. This site is a home for that.
 
-![Time to think](../../images/501.jpg)
-*Minimalism / [Unsplash](https://unsplash.com/)*
+![Husband & Father of 4](../../images/aboutmattgilbrt.png)
+*Husband & Father of 4*
 
 This isn’t a portfolio or a content churning website.
 
@@ -29,12 +29,16 @@ Some projects will be polished. Most won’t. That’s the point.
 ### Why I Share Any of This
 
 Because making things in isolation eventually feels hollow.
+
 Because art is meant to be shared.
-Creation is an act of rebellion.
 
-Because someone else might need permission to think of themselves as an artist first. I know that I did.
+Because every act of creation is an act of rebellion.
 
-Thanks for visiting.
+Because someone else might need permission to think of themselves as an artist first.
+
+I know that I did.
+
+Thanks for visiting and I hope you found something inspiring.
 
 <p><iframe src="https://www.youtube.com/embed/QyQ85DEVpbc" frameborder="0" allowfullscreen></iframe></p>
 

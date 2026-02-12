@@ -120,42 +120,42 @@ export const settings = {
     {
       icon: 'fa7-brands:x-twitter',
       name: 'X',
-      link: 'https://x.com/',
+      link: '',
     },
     {
       icon: 'fa7-brands:facebook-f',
       name: 'Facebook',
-      link: 'https://facebook.com',
+      link: 'https://www.facebook.com/mattglbrt',
     },
     {
       icon: 'fa7-brands:dribbble',
       name: 'Dribbble',
-      link: 'https://dribbble.com',
+      link: '',
     },
     {
       icon: 'fa7-brands:instagram',
       name: 'Instagram',
-      link: 'https://instagram.com',
+      link: 'https://www.instagram.com/hobbinomicon/',
     },
     {
       icon: 'fa7-brands:pinterest',
       name: 'Pinterest',
-      link: 'https://pinterest.com',
+      link: '',
     },
     {
       icon: 'fa7-brands:youtube',
       name: 'Youtube',
-      link: 'https://youtube.com',
+      link: 'https://www.youtube.com/@mattglbrt',
     },
     {
       icon: 'fa7-brands:github',
       name: 'Github',
-      link: 'https://github.com',
+      link: 'https://github.com/mattglbrt',
     },
     {
       icon: 'fa7-brands:vimeo-v',
       name: 'Vimeo',
-      link: 'https://vimeo.com',
+      link: '',
     },
   ],
 
