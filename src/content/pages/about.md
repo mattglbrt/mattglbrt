@@ -7,39 +7,32 @@ I’m Matt.
 
 I am an artist.
 
-It took me a long time to figure that out. This site is a home for that.
+It took me a long time to figure that out. 
 
 ![Husband & Father of 4](../../images/aboutmattgilbrt.png)
 *Husband & Father of 4*
 
-This isn’t a portfolio or a content churning website.
-
 It’s my sketchbook.
 My hobby log.
-A place to document everything I am doing and hopefully inspire you to do that same..
-
-Some projects will be polished. Most won’t. That’s the point.
+A place to document everything I am doing and hopefully inspire you to do that same.
 
 :::gallery
-  ![Bike](../../images/900.jpg)
-  ![Bike](../../images/901.jpg)
-  ![Bike](../../images/902.jpg)
-  *Gallery / [Unsplash](https://unsplash.com/)*
+  ![mini](../../images/900.jpg)
+  ![mini](../../images/901.jpg)
+  ![mini](../../images/902.jpg)
+  *Some of favorites*
 :::
 ### Why I Share Any of This
 
-Because making things in isolation eventually feels hollow.
+Every act of creation is an act of rebellion.
 
-Because art is meant to be shared.
-
-Because every act of creation is an act of rebellion.
-
-Because someone else might need permission to think of themselves as an artist first.
+Someone else might need permission to think of themselves as an artist first.
 
 I know that I did.
 
+<p><iframe src="https://www.youtube.com/embed/LEubtM-faJ4?si=13-VrQkTSZhx94co" frameborder="0" allowfullscreen></iframe></p>
+
+My first youtube video, currently has 53 views as of 2/13/2026.
+
 Thanks for visiting and I hope you found something inspiring.
-
-<p><iframe src="https://www.youtube.com/embed/QyQ85DEVpbc" frameborder="0" allowfullscreen></iframe></p>
-
 <hr>
