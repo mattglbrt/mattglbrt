@@ -170,7 +170,7 @@ export const settings = {
    * Comments (Disqus)
    * ----------------------------- */
   comments: {
-    enabled: true,
+    enabled: false,
     disqusIdentifier: 'anvodstudio-demo',
   },
 
@@ -178,7 +178,7 @@ export const settings = {
    * Analytics
    * ----------------------------- */
   analytics: {
-    google: '', // GA4 Measurement ID
+    google: 'G-71LCCMDVF8', // GA4 Measurement ID
   },
 
   /* -----------------------------
