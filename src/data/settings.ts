@@ -187,7 +187,7 @@ export const settings = {
   newsletter: {
     enabled: true,
     mailchimpIdentifier: 'gmail.us21.list-manage.com/subscribe/post?u=8aeb9c31a5c97a3a5f9ff2740&id=0e31fd7793',
-    description: 'Subscribe to our newsletter and we’ll send you the emails of latest posts.',
+    description: 'Subscribe to my newsletter and I’ll send you the coolest post and hobby news from each month.',
     buttonText: 'Join',
   },
 } as const
