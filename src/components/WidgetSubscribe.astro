@@ -13,32 +13,28 @@ const { newsletter } = settings;
         </div>
         <p class='subscribe-subtitle'>{newsletter.description}</p>
         <form
-          class='subscribe-form validate'
-          action={newsletter.mailchimpIdentifier ? `//${newsletter.mailchimpIdentifier}` : '#'}
+          class='subscribe-form'
+          name='newsletter'
           method='POST'
-          id='membedded-subscribe-form'
-          name='membedded-subscribe-form'
-          target='_blank'
-          novalidate
+          data-netlify='true'
         >
+          <input type='hidden' name='form-name' value='newsletter' />
           <div class='subscribe-group'>
             <div class='subscribe-group-top'>
-              <label class='screen-reader-text' for='mce-EMAIL'>
+              <label class='screen-reader-text' for='newsletter-email'>
                 Email address
               </label>
               <input
                 class='subscribe-email required email'
-                id='mce-EMAIL'
+                id='newsletter-email'
                 type='email'
-                name='EMAIL'
+                name='email'
                 placeholder='Email Address'
                 required
               />
               <button
                 class='subscribe-button button button--primary'
-                id='membedded-subscribe'
                 type='submit'
-                name='subscribe'
               >
                 {newsletter.buttonText}
               </button>
