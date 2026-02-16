@@ -69,7 +69,7 @@ export const settings = {
     description: [
       { text: 'Artist', url: 'https://www.youtube.com/@mattglbrt', external: true },
       { text: 'Aspiring Sculptor', url: 'https://yellowimp.com', external: true },
-      { text: 'Daily Vlogger', url: 'https://www.youtube.com/@Hobbinomicon', external: true },
+      { text: 'Daily Hobby Vlogger', url: 'https://www.youtube.com/@Hobbinomicon', external: true },
     ],
     src: heroImage,
   },
