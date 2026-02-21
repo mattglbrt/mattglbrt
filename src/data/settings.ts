@@ -1,9 +1,7 @@
 import avatar from '../images/15.jpg';
 import heroImage from '../images/01.jpg';
 import projectsHeroImage from '../images/06.jpg';
-import projectImage1 from '../images/03.jpg';
-import projectImage2 from '../images/04.jpg';
-import projectImage3 from '../images/05.jpg';
+import hobbinomiconImage from '../images/hobbinomicon.jpg';
 
 export const settings = {
   /* -----------------------------
@@ -83,30 +81,28 @@ export const settings = {
 
   projects: [
     {
-      name: 'Project One',
-      description: 'A short description of this project and what it is about.',
-      image: projectImage1,
+      name: 'The Hobbinomicon',
+      description: 'Hobbying from the deep end of the dungeon. Daily Hobby Vlog.',
+      image: hobbinomiconImage,
       links: [
-        { label: 'Website', url: 'https://example.com' },
-        { label: 'GitHub', url: 'https://github.com' },
+        { label: 'Website', url: 'https://hobbinomicon.com' },
+        { label: 'YouTube', url: 'https://www.youtube.com/@Hobbinomicon' },
       ],
     },
     {
-      name: 'Project Two',
-      description: 'Another project with a brief description of what it does.',
-      image: projectImage2,
+      name: 'Yellow Imp Miniatures',
+      description: 'A miniature and game company in the making.',
+      image: hobbinomiconImage, // TODO: replace with Yellow Imp image
       links: [
-        { label: 'Visit', url: 'https://example.com' },
+        { label: 'Website', url: 'https://yellowimp.com' },
       ],
     },
     {
-      name: 'Project Three',
-      description: 'A third project to show how the layout works with multiple entries.',
-      image: projectImage3,
+      name: "Buzzard's Trading Post",
+      description: '3D printed miniatures, printing services, and new & used hobby supplies all in one shop.',
+      image: hobbinomiconImage, // TODO: replace with Buzzard's Trading Post image
       links: [
-        { label: 'Website', url: 'https://example.com' },
-        { label: 'Docs', url: 'https://example.com/docs' },
-        { label: 'GitHub', url: 'https://github.com' },
+        { label: 'Website', url: 'https://buzzardstradingpost.com' },
       ],
     },
   ],
