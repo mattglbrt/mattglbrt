@@ -114,29 +114,14 @@ export const settings = {
   // Other icons can be found at https://icon-sets.iconify.design/fa7-brands/
   socialLinks: [
     {
-      icon: 'fa7-brands:x-twitter',
-      name: 'X',
-      link: '',
-    },
-    {
       icon: 'fa7-brands:facebook-f',
       name: 'Facebook',
       link: 'https://www.facebook.com/mattglbrt',
     },
     {
-      icon: 'fa7-brands:dribbble',
-      name: 'Dribbble',
-      link: '',
-    },
-    {
       icon: 'fa7-brands:instagram',
       name: 'Instagram',
       link: 'https://www.instagram.com/hobbinomicon/',
-    },
-    {
-      icon: 'fa7-brands:pinterest',
-      name: 'Pinterest',
-      link: '',
     },
     {
       icon: 'fa7-brands:youtube',
@@ -147,11 +132,6 @@ export const settings = {
       icon: 'fa7-brands:github',
       name: 'Github',
       link: 'https://github.com/mattglbrt',
-    },
-    {
-      icon: 'fa7-brands:vimeo-v',
-      name: 'Vimeo',
-      link: '',
     },
   ],
 
