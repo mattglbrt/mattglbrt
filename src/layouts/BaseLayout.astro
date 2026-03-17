@@ -90,8 +90,98 @@ const imageUrl = typeof image === 'string'
     <ScrollToTop />
     <Footer hideWidgets={hideFooterWidgets} />
 
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox__close" aria-label="Close">&times;</button>
+      <button class="lightbox__nav lightbox__nav--prev" aria-label="Previous">&lsaquo;</button>
+      <button class="lightbox__nav lightbox__nav--next" aria-label="Next">&rsaquo;</button>
+      <img class="lightbox__img" src="" alt="" />
+      <div class="lightbox__counter"></div>
+    </div>
+
     <script>
       import '../scripts/common.ts';
+    </script>
+
+    <script>
+      function initLightbox() {
+        const lightbox = document.getElementById('lightbox') as HTMLElement;
+        const lightboxImg = lightbox.querySelector('.lightbox__img') as HTMLImageElement;
+        const lightboxClose = lightbox.querySelector('.lightbox__close') as HTMLElement;
+        const lightboxPrev = lightbox.querySelector('.lightbox__nav--prev') as HTMLElement;
+        const lightboxNext = lightbox.querySelector('.lightbox__nav--next') as HTMLElement;
+        const lightboxCounter = lightbox.querySelector('.lightbox__counter') as HTMLElement;
+
+        let images: string[] = [];
+        let currentIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        function show(index: number) {
+          currentIndex = ((index % images.length) + images.length) % images.length;
+          lightboxImg.src = images[currentIndex];
+          lightboxCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+        }
+
+        function open(galleryImages: string[], startIndex: number) {
+          images = galleryImages;
+          show(startIndex);
+          lightbox.classList.add('is-active');
+          document.body.style.overflow = 'hidden';
+        }
+
+        function close() {
+          lightbox.classList.remove('is-active');
+          document.body.style.overflow = '';
+        }
+
+        // Click gallery images to open
+        document.querySelectorAll('.gallery img').forEach((img) => {
+          img.addEventListener('click', () => {
+            const gallery = (img as HTMLElement).closest('.gallery');
+            if (!gallery) return;
+            const galleryImgs = Array.from(gallery.querySelectorAll('img'));
+            const srcs = galleryImgs.map((i) => (i as HTMLImageElement).src);
+            const idx = galleryImgs.indexOf(img as HTMLImageElement);
+            open(srcs, idx);
+          });
+        });
+
+        lightboxClose.addEventListener('click', close);
+        lightboxPrev.addEventListener('click', () => show(currentIndex - 1));
+        lightboxNext.addEventListener('click', () => show(currentIndex + 1));
+
+        // Click backdrop to close
+        lightbox.addEventListener('click', (e) => {
+          if (e.target === lightbox) close();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+          if (!lightbox.classList.contains('is-active')) return;
+          if (e.key === 'Escape') close();
+          if (e.key === 'ArrowLeft') show(currentIndex - 1);
+          if (e.key === 'ArrowRight') show(currentIndex + 1);
+        });
+
+        // Touch swipe
+        lightbox.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+
+        lightbox.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          const diff = touchStartX - touchEndX;
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) show(currentIndex + 1);
+            else show(currentIndex - 1);
+          }
+        }, { passive: true });
+      }
+
+      // Init on page load and Astro transitions
+      initLightbox();
+      document.addEventListener('astro:page-load', initLightbox);
     </script>
   </body>
 </html>
