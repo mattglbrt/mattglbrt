@@ -141,14 +141,6 @@ export const settings = {
   contact: {},
 
   /* -----------------------------
-   * Comments (Disqus)
-   * ----------------------------- */
-  comments: {
-    enabled: false,
-    disqusIdentifier: 'anvodstudio-demo',
-  },
-
-  /* -----------------------------
    * Analytics
    * ----------------------------- */
   analytics: {

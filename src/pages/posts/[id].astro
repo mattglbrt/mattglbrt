@@ -7,7 +7,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import OptimizedImage from '../../components/OptimizedImage.astro';
 import PostShare from '../../components/PostShare.astro';
 import RelatedPosts from '../../components/RelatedPosts.astro';
-import DisqusComments from '../../components/DisqusComments.astro';
 import { settings } from '../../data/settings';
 
 export async function getStaticPaths() {
@@ -196,13 +195,4 @@ function getReadingTime(content?: string): number {
   <!-- Related Posts -->
   <RelatedPosts currentPost={post} limit={3} />
 
-  <!-- Comments -->
-  {
-    settings.comments.enabled && (
-      <DisqusComments
-        identifier={settings.comments.disqusIdentifier}
-        title={data.title}
-      />
-    )
-  }
 </BaseLayout>
