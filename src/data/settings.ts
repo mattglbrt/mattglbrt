@@ -142,7 +142,7 @@ export const settings = {
    * ----------------------------- */
   youtube: {
     channels: [
-      { name: 'Matt Gilbert', channelId: 'UCloue_Zf7JyQ7rhyvxW7zSg' },
+      { name: 'Hobbinomicon', channelId: 'UCloue_Zf7JyQ7rhyvxW7zSg' },
       // Add more channels as needed:
       // { name: 'Hobbinomicon', channelId: 'UC...' },
     ],
