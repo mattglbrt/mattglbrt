@@ -1,3 +1,5 @@
+export const prerender = true;
+
 import { getCollection } from 'astro:content';
 import { settings } from '../data/settings';
 

@@ -1,3 +1,5 @@
+export const prerender = true;
+
 import rss from '@astrojs/rss';
 import { getCollection } from 'astro:content';
 import { settings } from '../data/settings';

@@ -14,11 +14,10 @@ const { newsletter } = settings;
         <p class='subscribe-subtitle'>{newsletter.description}</p>
         <form
           class='subscribe-form'
-          name='newsletter'
+          id='newsletter-form'
           method='POST'
-          data-netlify='true'
+          action='/api/subscribe'
         >
-          <input type='hidden' name='form-name' value='newsletter' />
           <div class='subscribe-group'>
             <div class='subscribe-group-top'>
               <label class='screen-reader-text' for='newsletter-email'>
@@ -39,9 +38,43 @@ const { newsletter } = settings;
                 {newsletter.buttonText}
               </button>
             </div>
+            <p class='subscribe-message' id='subscribe-message' style='display:none; margin-top: 10px;'></p>
           </div>
         </form>
       </div>
     </div>
   )
 }
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const message = document.getElementById('subscribe-message') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const formData = new FormData(form);
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        body: formData,
+      });
+
+      const data = await res.json();
+      message.style.display = 'block';
+
+      if (res.ok) {
+        message.textContent = 'Thanks for subscribing!';
+        message.style.color = '#4ade80';
+        form.reset();
+      } else {
+        message.textContent = data.error || 'Something went wrong. Please try again.';
+        message.style.color = '#ff7b7b';
+      }
+    } catch {
+      message.style.display = 'block';
+      message.textContent = 'Something went wrong. Please try again.';
+      message.style.color = '#ff7b7b';
+    }
+  });
+</script>
