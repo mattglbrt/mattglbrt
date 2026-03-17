@@ -1,0 +1,122 @@
+---
+import { getLatestVideos, type YouTubeVideo } from '../lib/youtube';
+import { settings } from '../data/settings';
+
+const videos = await getLatestVideos(settings.youtube.channels);
+---
+
+{
+  videos.length > 0 && (
+    <section class='latest-videos'>
+      <div class='container'>
+        <h2 class='latest-videos__title'>Latest Videos</h2>
+        <div class='latest-videos__grid'>
+          {videos.map((video: YouTubeVideo) => (
+            <a
+              class='latest-videos__card'
+              href={`https://www.youtube.com/watch?v=${video.videoId}`}
+              target='_blank'
+              rel='noopener noreferrer'
+            >
+              <div class='latest-videos__thumbnail'>
+                <img
+                  src={video.thumbnail}
+                  alt={video.title}
+                  loading='lazy'
+                />
+                <div class='latest-videos__play'>
+                  <svg viewBox='0 0 68 48' width='68' height='48'>
+                    <path d='M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55C3.97 2.33 2.27 4.81 1.48 7.74.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z' fill='#212121' fill-opacity='.8' />
+                    <path d='M45 24L27 14v20' fill='#fff' />
+                  </svg>
+                </div>
+              </div>
+              <div class='latest-videos__info'>
+                <span class='latest-videos__channel'>{video.channelName}</span>
+                <h3 class='latest-videos__video-title'>{video.title}</h3>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<style lang='scss'>
+  @import '../styles/0-settings/variables';
+
+  .latest-videos {
+    padding: 60px 0;
+
+    &__title {
+      font-size: $font-size-h2;
+      font-weight: $heading-font-weight;
+      color: $white;
+      margin-bottom: 30px;
+    }
+
+    &__grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    &__card {
+      display: block;
+      text-decoration: none;
+      border-radius: 8px;
+      overflow: hidden;
+      background: $blue-dark;
+      transition: $global-transition;
+
+      &:hover {
+        transform: translateY(-4px);
+
+        .latest-videos__play {
+          opacity: 1;
+        }
+      }
+    }
+
+    &__thumbnail {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__play {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.7;
+      transition: $global-transition;
+    }
+
+    &__info {
+      padding: 16px 20px;
+    }
+
+    &__channel {
+      font-size: 13px;
+      color: $brand-color;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    &__video-title {
+      font-size: $font-size-h5;
+      font-weight: 700;
+      color: $white;
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+  }
+</style>

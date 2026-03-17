@@ -4,6 +4,7 @@ export const prerender = true;
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import FeaturedPosts from '../components/FeaturedPosts.astro';
+import LatestVideos from '../components/LatestVideos.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { settings } from '../data/settings';
 import { getCollection } from 'astro:content';
@@ -27,6 +28,8 @@ const hasMore = posts.length > initial;
   <Hero />
 
   <FeaturedPosts posts={featuredPosts} />
+
+  <LatestVideos />
 
   <div class='container'>
     <div class='row' id='posts-list'>

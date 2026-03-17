@@ -136,6 +136,19 @@ export const settings = {
   ],
 
   /* -----------------------------
+   * YouTube Channels
+   * Add channels here to display latest videos on the homepage.
+   * Channel IDs start with "UC" — find yours in the channel URL.
+   * ----------------------------- */
+  youtube: {
+    channels: [
+      { name: 'Matt Gilbert', channelId: 'UCloue_Zf7JyQ7rhyvxW7zSg' },
+      // Add more channels as needed:
+      // { name: 'Hobbinomicon', channelId: 'UC...' },
+    ],
+  },
+
+  /* -----------------------------
    * Contact
    * ----------------------------- */
   contact: {},
