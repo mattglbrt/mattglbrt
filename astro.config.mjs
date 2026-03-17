@@ -16,6 +16,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkDirective, remarkWideImage, remarkGallery, remarkCallout],
   },
+  output: 'server',
   adapter: netlify(),
   integrations: [sitemap(), icon(), mdx()],
   vite: {
