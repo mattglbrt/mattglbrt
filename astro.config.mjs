@@ -17,7 +17,10 @@ export default defineConfig({
     remarkPlugins: [remarkDirective, remarkWideImage, remarkGallery, remarkCallout],
   },
   output: 'server',
-  adapter: netlify(),
+  adapter: netlify({ imageCDN: false }),
+  image: {
+    service: { entrypoint: 'astro/assets/services/sharp' },
+  },
   integrations: [sitemap(), icon(), mdx()],
   vite: {
     css: {
