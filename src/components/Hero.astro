@@ -12,6 +12,8 @@ import OptimizedImage from './OptimizedImage.astro';
           <OptimizedImage
             src={src}
             alt={title}
+            widths={[480, 768, 1024, 1280, 1600]}
+            sizes='(max-width: 900px) 100vw, 50vw'
             loading='eager'
             fetchpriority='high'
           />

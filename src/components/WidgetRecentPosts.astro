@@ -28,6 +28,8 @@ function getReadingTime(content?: string): number {
             <OptimizedImage
               src={post.data.image}
               alt={post.data.title}
+              widths={[160, 240, 320]}
+              sizes="120px"
               loading="lazy"
             />
           </a>
@@ -58,6 +60,8 @@ function getReadingTime(content?: string): number {
                   class="article__author-image"
                   src={settings.author.src}
                   alt={settings.author.name}
+                  widths={[40, 80, 120]}
+                  sizes="40px"
                 />
               </a>
             </div>

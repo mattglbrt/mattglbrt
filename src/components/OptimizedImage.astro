@@ -8,6 +8,8 @@ interface Props {
   class?: string;
   width?: number;
   height?: number;
+  widths?: number[];
+  sizes?: string;
   loading?: 'lazy' | 'eager';
   fetchpriority?: 'high' | 'low' | 'auto';
   decoding?: 'async' | 'sync' | 'auto';
@@ -19,6 +21,8 @@ const {
   class: className,
   width,
   height,
+  widths = [400, 640, 960, 1280],
+  sizes = '(max-width: 768px) 100vw, (max-width: 1100px) 50vw, 400px',
   loading = 'lazy',
   fetchpriority = 'auto',
   decoding = 'async',
@@ -44,6 +48,8 @@ const {
       alt={alt}
       width={width}
       height={height}
+      widths={widths}
+      sizes={sizes}
       loading={loading}
       fetchpriority={fetchpriority}
       decoding={decoding}
