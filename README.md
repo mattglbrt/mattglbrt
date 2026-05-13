@@ -1,8 +1,8 @@
 # Hi, I'm Matt 👋
 
-Artist, miniature painter, sculptor, and daily hobby vlogger.
+20 years across go-to-market, sales, and development — building, selling, and shipping software.
 
-I run a few connected projects in the tabletop / miniature space:
+Outside of work I'm an artist, miniature painter, sculptor, and daily hobby vlogger, with a few connected projects in the tabletop / miniature space:
 
 - **[The Hobbinomicon](https://www.youtube.com/@Hobbinomicon)** — daily hobby vlog
 - **Yellow Imp Miniatures** — miniature and game company (in progress)
