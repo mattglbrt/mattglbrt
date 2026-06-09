@@ -1,0 +1,14 @@
+---
+import type { Video } from "../../modules/videos/feed";
+import { renderVideosPre } from "../../modules/videos/render";
+
+type Props = {
+  videos: Video[];
+};
+
+const videosHtml = renderVideosPre(Astro.props.videos);
+---
+
+<section class="textmode-wrap volume-wrap">
+  <pre class="textmode-pre volume-pre" set:html={videosHtml}></pre>
+</section>

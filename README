@@ -1,0 +1,103 @@
+mattglbrt.com
+=============
+
+Matt Gilbert's personal site — the artist hub behind The Hobbinomicon and the
+rest of the brands. A text-first command-center: it links out to the channels,
+shops, and project sites, hosts a free-form Log, surfaces the latest videos, and
+takes commission inquiries.
+
+Built on the Entropic textmode theme (retro fixed-width / ASCII aesthetic).
+Static Astro build, deployed on Netlify.
+
+
+Quick start
+-----------
+
+    pnpm install --frozen-lockfile
+    pnpm dev        # local dev server
+    pnpm build      # static build -> dist/  (runs checks first)
+    pnpm check      # astro check + biome
+    pnpm format     # biome format --write
+
+Requires Node >= 22 and pnpm.
+
+
+Layout
+------
+
+    src/config/             site, volumes, appearance, effects, and videos config
+    src/content/philes/     Log posts (.phile files), grouped into volumes
+    src/images/             post images (optimized at build by astro:assets)
+    src/components/         Astro components
+    src/pages/              routes: home, /videos, /commissions, volumes
+    src/modules/            phile + volume loading, textmode engine, videos feed
+    netlify/functions/      scheduled daily rebuild (keeps the video feed fresh)
+
+Main knobs:
+
+    src/config/site.ts         home page text + the link hub
+    src/config/volumes.ts      volume titles + sorting (the Log is volume 1)
+    src/config/videos.ts       YouTube channels for the /videos feed
+    src/config/appearance.ts   colors, fonts, text cell sizing
+
+
+Writing a Log post
+-------------------
+
+Add a `.phile` file under `src/content/philes/volume-1/log/`. A phile is YAML
+frontmatter fenced by `---`, then plain fixed-width body text:
+
+    ---
+    title: "Post title"
+    date: 2026-06-02
+    author: "Matt Gilbert"
+    ---
+
+    Body text. Layout is preserved (ASCII frames, tables, diagrams render as
+    written) and prose wraps at 80 columns.
+
+Required frontmatter: `title`, `date`, `author`. Optional: `lang`, `order`,
+`slug`, `redacted`.
+
+In the body:
+
+    Images   put one on its own line: ![alt text](/images/folder/file.jpg)
+             The file lives under src/images/folder/file.jpg and is optimized
+             (responsive webp + click-to-zoom) automatically. The alt becomes
+             the caption.
+    Links    bare http(s):// and www. URLs become clickable automatically.
+    Color    inline ink: #[role|text]  (e.g. #[G|green]). Roles and dense ANSI
+             overlays are documented in the textmode modules.
+
+
+Videos
+------
+
+`/videos` pulls each channel's YouTube RSS feed at build time, merges and sorts
+them, and renders the latest. Add channel IDs in `src/config/videos.ts`. A
+Netlify scheduled function triggers a daily rebuild so new uploads appear
+without manual posts (set the `BUILD_HOOK_URL` env var — see `netlify.toml`).
+
+
+Commissions
+-----------
+
+`/commissions` is a showcase plus a Netlify Forms inquiry form. Toggle
+availability with the `COMMISSION_STATUS` constant at the top of
+`src/pages/commissions/index.astro`. Configure where submissions go in the
+Netlify UI (Forms -> notifications).
+
+
+Deploy
+------
+
+Netlify, static. `netlify.toml` sets the build command and publish dir. Pushing
+to `main` triggers a deploy. Netlify Forms and the scheduled rebuild function
+are picked up from the build.
+
+
+Credits
+-------
+
+Theme: Entropic, a retro textmode blog theme (MIT). See LICENSE.
+All artwork and creative content by Matt Gilbert — no AI-generated art.

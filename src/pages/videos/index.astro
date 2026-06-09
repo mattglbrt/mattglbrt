@@ -1,0 +1,14 @@
+---
+import TextmodeLayout from "../../layouts/textmode/TextmodeLayout.astro";
+import VideosScreen from "../../components/videos/VideosScreen.astro";
+import { getLatestVideos } from "../../modules/videos/feed";
+
+const videos = await getLatestVideos();
+---
+
+<TextmodeLayout
+  title="Videos"
+  description="The latest uploads across Matt Gilbert's YouTube channels, led by The Hobbinomicon."
+>
+  <VideosScreen videos={videos} />
+</TextmodeLayout>

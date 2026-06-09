@@ -1,0 +1,21 @@
+---
+import TextmodeLayout from "../../../layouts/textmode/TextmodeLayout.astro";
+import { link, textHtml } from "../../../modules/textmode/core/html";
+import { textmodeConfig } from "../../../config";
+
+const width = textmodeConfig.bodyWidth;
+const rule = "─".repeat(width);
+
+const html = `\n${textHtml("~ inquiry received")}\n${textHtml(rule)}\n\n${textHtml(
+  "Thanks — your inquiry is in. Matt reads these himself and will get back to you"
+)}\n${textHtml("at the email you gave.")}\n\n${textHtml(rule)}\n\nret ${link("/", "<home>")}   ·   ${link(
+  "/commissions/",
+  "<commissions>"
+)}\n`;
+---
+
+<TextmodeLayout title="Inquiry received" description="Your commission inquiry was sent to Matt Gilbert.">
+  <section class="textmode-wrap commission-wrap">
+    <pre class="textmode-pre commission-pre" set:html={html}></pre>
+  </section>
+</TextmodeLayout>

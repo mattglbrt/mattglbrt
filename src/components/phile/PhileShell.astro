@@ -1,0 +1,128 @@
+---
+import { Image, getImage } from "astro:assets";
+import type { Phile } from "../../modules/philes/model";
+import {
+  renderImage,
+  renderPhileBodyBlocks,
+  renderPhileFooterPre,
+  renderPhileHeader
+} from "../../modules/philes/render";
+import { resolvePhileImage } from "../../modules/philes/images";
+import { renderRedactedBody } from "../../modules/philes/redacted";
+
+type Props = {
+  phile: Phile;
+};
+
+// Responsive thumbnail widths (display caps near 640px) and the larger variant
+// the lightbox swaps in on zoom.
+const thumbWidths = [320, 640, 960, 1280];
+const thumbSizes = "(max-width: 760px) 88vw, 640px";
+const zoomMaxWidth = 1920;
+
+const phile = Astro.props.phile;
+const header = renderPhileHeader(phile);
+const isRedacted = phile.data.redacted || (phile.body ?? "").trim().length === 0;
+const bodyBlocks = isRedacted ? [] : renderPhileBodyBlocks(phile);
+
+const renderedBlocks = await Promise.all(
+  bodyBlocks.map(async (block) => {
+    if (block.kind !== "image") {
+      return block;
+    }
+
+    const metadata = await resolvePhileImage(block.src);
+
+    // Unbundleable image (remote URL or outside src/images) — fall back to a
+    // plain figure so it still renders and zooms.
+    if (!metadata) {
+      return { kind: "image-html" as const, html: renderImage(block.src, block.alt) };
+    }
+
+    const widths = thumbWidths.filter((width) => width <= metadata.width);
+    const zoom = await getImage({
+      src: metadata,
+      format: "webp",
+      width: Math.min(metadata.width, zoomMaxWidth)
+    });
+
+    return {
+      kind: "image-asset" as const,
+      metadata,
+      alt: block.alt,
+      widths: widths.length > 0 ? widths : [metadata.width],
+      zoomSrc: zoom.src
+    };
+  })
+);
+
+const hasImages = renderedBlocks.some((block) => block.kind === "image-asset" || block.kind === "image-html");
+const redactedHtml = isRedacted ? renderRedactedBody(phile) : undefined;
+const footerHtml = renderPhileFooterPre(phile);
+---
+
+<article class="textmode-wrap phile-wrap">
+  <header
+    class="phile-header"
+    style={`--phile-header-lines: ${header.lineCount}; --phile-meta-lines: ${header.metaLineCount}; --phile-title-lines: ${header.titleLineCount}`}
+  >
+    <pre
+      class="textmode-pre phile-pre phile-header-side life-art"
+      data-life-root
+      set:html={header.sideHtml}
+    ></pre>
+    <pre class="textmode-pre phile-pre phile-header-meta" set:html={header.metaHtml}></pre>
+  </header>
+  {
+    redactedHtml ? (
+      <pre class="textmode-pre phile-pre phile-body-pre phile-redacted-pre" set:html={redactedHtml}></pre>
+    ) : (
+      renderedBlocks.map((block) =>
+        block.kind === "image-asset" ? (
+          <div class="phile-media">
+            <figure class="phile-image">
+              <button
+                class="phile-image-trigger"
+                type="button"
+                data-lightbox-image
+                aria-label="Open image preview"
+              >
+                <Image
+                  src={block.metadata}
+                  alt={block.alt}
+                  widths={block.widths}
+                  sizes={thumbSizes}
+                  loading="lazy"
+                  decoding="async"
+                  data-zoom-src={block.zoomSrc}
+                />
+              </button>
+              {block.alt.trim().length > 0 && <figcaption>{block.alt}</figcaption>}
+            </figure>
+          </div>
+        ) : block.kind === "image-html" ? (
+          <div class="phile-media" set:html={block.html} />
+        ) : (
+          <pre class="textmode-pre phile-pre phile-body-pre" set:html={block.html} />
+        )
+      )
+    )
+  }
+  <pre class="textmode-pre phile-pre phile-footer-pre" set:html={footerHtml}></pre>
+</article>
+
+<script>
+  import { initLifeArt } from "../../modules/textmode/life/runtime";
+
+  initLifeArt();
+</script>
+
+{
+  hasImages && (
+    <script>
+      import { installImageLightbox } from "../../modules/textmode/lightbox/images";
+
+      installImageLightbox();
+    </script>
+  )
+}

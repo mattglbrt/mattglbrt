@@ -1,0 +1,29 @@
+.site-nav {
+  position: relative;
+  z-index: 1;
+  padding: 1.5em 1em 0;
+  font-family: var(--text-font);
+  font-size: var(--text-size);
+  line-height: 1.4;
+  text-align: center;
+}
+
+.site-nav-sep {
+  color: var(--ansi-bright-black);
+}
+
+.site-nav-current {
+  color: var(--fg);
+}
+
+.site-footer {
+  position: relative;
+  z-index: 1;
+  margin-top: 3em;
+  padding: 1.5em 1em;
+  color: var(--ansi-bright-black);
+  font-family: var(--text-font);
+  font-size: var(--text-size);
+  line-height: 1.2;
+  text-align: center;
+}

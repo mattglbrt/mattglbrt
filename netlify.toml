@@ -1,0 +1,25 @@
+# Netlify config for mattglbrt.com — static Astro build.
+
+[build]
+  command = "pnpm build"
+  publish = "dist"
+  functions = "netlify/functions"
+
+[build.environment]
+  NODE_VERSION = "22"
+  # Astro auto-detects pnpm from pnpm-lock.yaml.
+
+# Netlify Forms picks up the commission inquiry form automatically from the
+# built HTML (it has data-netlify="true"). Configure submission notifications
+# (e.g. forward to matt@hobbinomicon.com) in the Netlify UI under
+# Forms -> Settings & notifications.
+
+# Keep the YouTube "latest videos" feed fresh without manual posts.
+# The scheduled function in netlify/functions/scheduled-rebuild.mjs runs daily
+# and triggers a fresh build via a Netlify Build Hook.
+#
+# SETUP (one time, in the Netlify UI):
+#   1. Site settings -> Build & deploy -> Build hooks -> "Add build hook".
+#   2. Copy the hook URL.
+#   3. Site settings -> Environment variables -> add BUILD_HOOK_URL = <that URL>.
+# The daily run then redeploys the site and the Videos page refreshes.

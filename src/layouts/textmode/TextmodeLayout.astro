@@ -1,0 +1,55 @@
+---
+import BaseLayout from "../base/BaseLayout.astro";
+
+type Props = {
+  title?: string;
+  tabTitle?: string;
+  description?: string;
+  lang?: string;
+  preloadCjk?: boolean;
+  pageType?: "website" | "article";
+  publishedTime?: Date;
+};
+
+// Global nav, shown on every page except the home page (which already holds the
+// full link hub). The active item is rendered as plain text instead of a link.
+const path = Astro.url.pathname.replace(/\/+$/, "") || "/";
+const isHome = path === "/";
+const navItems = [
+  { label: "home", href: "/", active: path === "/" },
+  { label: "videos", href: "/videos/", active: path.startsWith("/videos") },
+  { label: "log", href: "/volume/1/", active: path.startsWith("/volume") },
+  { label: "commissions", href: "/commissions/", active: path.startsWith("/commissions") }
+];
+---
+
+<BaseLayout
+  title={Astro.props.title}
+  tabTitle={Astro.props.tabTitle}
+  description={Astro.props.description}
+  lang={Astro.props.lang}
+  preloadCjk={Astro.props.preloadCjk}
+  pageType={Astro.props.pageType}
+  publishedTime={Astro.props.publishedTime}
+>
+  {
+    !isHome && (
+      <nav class="site-nav">
+        {navItems.map((item, index) => (
+          <>
+            {index > 0 && <span class="site-nav-sep"> · </span>}
+            {item.active ? (
+              <span class="site-nav-current">[ {item.label} ]</span>
+            ) : (
+              <a href={item.href}>[ {item.label} ]</a>
+            )}
+          </>
+        ))}
+      </nav>
+    )
+  }
+  <main class="screen">
+    <slot />
+  </main>
+  <footer class="site-footer">All artwork and content by Matt Gilbert, no AI generated content.</footer>
+</BaseLayout>
