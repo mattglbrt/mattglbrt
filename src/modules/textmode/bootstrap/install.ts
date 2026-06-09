@@ -3,8 +3,8 @@ type BootstrapOptions = {
   particlesEnabled: boolean;
 };
 
-const idleDelayMs = 1200;
-const idleTimeoutMs = 1600;
+const idleDelayMs = 150;
+const idleTimeoutMs = 600;
 
 export function installTextmodeBootstrap(options = readOptions()): void {
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -12,17 +12,15 @@ export function installTextmodeBootstrap(options = readOptions()): void {
   installMobileFit(options.mobileFitBreakpoint);
 
   if (options.particlesEnabled && !reducedMotion) {
-    window.addEventListener(
-      "load",
-      () => {
-        runWhenIdle(() => {
-          void import("../particles/install").then(({ installAsciiParticles }) => {
-            installAsciiParticles();
-          });
-        });
-      },
-      { once: true, passive: true }
-    );
+    // The particle layer only needs the DOM (body + viewport size), not images.
+    // This bootstrap runs from a deferred module script, so the DOM is already
+    // parsed — schedule straight away instead of waiting for window "load",
+    // which is gated behind every image finishing downloading.
+    runWhenIdle(() => {
+      void import("../particles/install").then(({ installAsciiParticles }) => {
+        installAsciiParticles();
+      });
+    });
   }
 }
 

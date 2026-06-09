@@ -15,10 +15,13 @@ type Props = {
 };
 
 // Responsive thumbnail widths (display caps near 640px) and the larger variant
-// the lightbox swaps in on zoom.
+// the lightbox swaps in on zoom. Everything is emitted as WebP at a tuned
+// quality — far smaller than the source JP/PNG without visible loss.
 const thumbWidths = [320, 640, 960, 1280];
 const thumbSizes = "(max-width: 760px) 88vw, 640px";
 const zoomMaxWidth = 1920;
+const imageFormat = "webp";
+const imageQuality = 72;
 
 const phile = Astro.props.phile;
 const header = renderPhileHeader(phile);
@@ -42,7 +45,8 @@ const renderedBlocks = await Promise.all(
     const widths = thumbWidths.filter((width) => width <= metadata.width);
     const zoom = await getImage({
       src: metadata,
-      format: "webp",
+      format: imageFormat,
+      quality: imageQuality,
       width: Math.min(metadata.width, zoomMaxWidth)
     });
 
@@ -92,6 +96,8 @@ const footerHtml = renderPhileFooterPre(phile);
                   alt={block.alt}
                   widths={block.widths}
                   sizes={thumbSizes}
+                  format={imageFormat}
+                  quality={imageQuality}
                   loading="lazy"
                   decoding="async"
                   data-zoom-src={block.zoomSrc}
