@@ -1,13 +1,6 @@
-.commission-wrap {
-  display: block;
-  width: min(80ch, calc(100vw - 2em));
-  margin: 0 auto;
-}
-
-.commission-pre {
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
+/* Behaves as a normal textmode-wrap (inline-block, centred, zoom-to-fit on
+   mobile). The intro keeps the .textmode-pre fixed grid — no pre-wrap — so it
+   doesn't double-wrap against the zoom. */
 
 .commission-form {
   display: flex;
