@@ -53,6 +53,20 @@
     padding-right: 0;
   }
 
+  /* Centre the body block within the 53-col frame (49-col text + 2 cols
+     each side) so the left/right margins are even, and align the title,
+     images and footer to the same edge. */
+  .phile-body-pre {
+    padding-left: calc(var(--text-cell) * 2);
+    padding-right: calc(var(--text-cell) * 2);
+  }
+
+  .phile-footer-pre,
+  .phile-media,
+  .phile-header-meta {
+    padding-left: calc(var(--text-cell) * 2);
+  }
+
   .ascii-hero::after {
     display: none;
   }

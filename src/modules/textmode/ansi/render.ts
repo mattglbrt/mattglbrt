@@ -110,36 +110,91 @@ function renderBlocks(input: string, width: number): string[] {
 }
 
 function renderPlainAnsiLines(input: string, width: number): string[] {
-  const output: string[] = [];
-  let lineChunks: RenderChunk[] = [];
-  let lineWidth = 0;
+  // Flatten to styled cells split on explicit newlines, then word-wrap each
+  // source line so words are never broken mid-word (a long token like a URL
+  // still hard-breaks as a fallback).
+  const sourceLines: RenderChunk[][] = [[]];
 
   for (const token of parseInlineAnsi(input)) {
     for (const char of token.text) {
       if (char === "\n") {
-        flushLine();
+        sourceLines.push([]);
         continue;
       }
 
-      const charWidth = cellWidth(char);
-
-      if (lineWidth + charWidth > width && lineWidth > 0) {
-        flushLine();
-      }
-
-      appendChunk(lineChunks, { text: char, role: token.role, href: token.href });
-      lineWidth += charWidth;
+      sourceLines[sourceLines.length - 1].push({ text: char, role: token.role, href: token.href });
     }
   }
 
-  flushLine();
-  return output;
+  return sourceLines.flatMap((cells) => wrapCellLine(cells, width));
+}
 
-  function flushLine(): void {
-    output.push(renderChunks(lineChunks));
-    lineChunks = [];
-    lineWidth = 0;
+function wrapCellLine(cells: RenderChunk[], width: number): string[] {
+  if (cells.length === 0) {
+    return [""];
   }
+
+  const lines: RenderChunk[][] = [];
+  let line: RenderChunk[] = [];
+  let lineWidth = 0;
+  let word: RenderChunk[] = [];
+  let wordWidth = 0;
+  let wrapped = false;
+
+  const flushLine = (): void => {
+    lines.push(line);
+    line = [];
+    lineWidth = 0;
+    wrapped = true;
+  };
+
+  const flushWord = (): void => {
+    if (word.length === 0) {
+      return;
+    }
+
+    if (lineWidth > 0 && lineWidth + wordWidth > width) {
+      flushLine();
+    }
+
+    // Word wider than a full line (e.g. a long URL) — hard-break by cell.
+    for (const cell of word) {
+      const charWidth = cellWidth(cell.text);
+      if (lineWidth > 0 && lineWidth + charWidth > width) {
+        flushLine();
+      }
+      line.push(cell);
+      lineWidth += charWidth;
+    }
+
+    word = [];
+    wordWidth = 0;
+  };
+
+  for (const cell of cells) {
+    if (cell.text === " ") {
+      flushWord();
+      // Drop spaces that would lead a wrapped line; keep a source line's own
+      // leading indentation (before any wrap has happened).
+      if (lineWidth === 0 && wrapped) {
+        continue;
+      }
+      const charWidth = cellWidth(cell.text);
+      if (lineWidth > 0 && lineWidth + charWidth > width) {
+        flushLine();
+        continue;
+      }
+      line.push(cell);
+      lineWidth += charWidth;
+    } else {
+      word.push(cell);
+      wordWidth += cellWidth(cell.text);
+    }
+  }
+
+  flushWord();
+  flushLine();
+  return lines.map(renderChunks);
 }
 
 function renderInkBlock(lines: string[], width: number): string[] {
