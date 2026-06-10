@@ -63,50 +63,44 @@ export const siteConfig: SiteConfig = {
         {
           label: "The Hobbinomicon — deep dives on indie tabletop games",
           href: "https://www.youtube.com/@TheHobbinomicon",
-          external: true,
-          prefix: "~ watch"
+          external: true
         },
         {
           label: "Daily Hobby Vlog — behind the scenes of whatever's on the workbench",
           href: "https://www.youtube.com/@Hobbinomicon",
-          external: true,
-          prefix: "~ watch"
+          external: true
         },
         {
           label: "Hobbinomicon: Warmachine — painting & playing",
           href: "https://www.youtube.com/@TheHobbinomiconWarmachine",
-          external: true,
-          prefix: "~ watch"
+          external: true
         },
         {
           label: "Hobbinomicon: KDM — Kingdom Death: Monster",
           href: "https://www.youtube.com/@TheHobbinomiconKDM",
-          external: true,
-          prefix: "~ watch"
+          external: true
         },
         {
           label: "Alone in the Dungeon — solo wargames, ttrpgs, and philosophical rambling",
           href: "https://www.youtube.com/@AloneInTheDungeon",
-          external: true,
-          prefix: "~ watch"
+          external: true
         }
       ]
     },
     {
       title: "projects",
       items: [
-        { label: "hobbinomicon.com", href: "https://hobbinomicon.com", external: true, prefix: "~ open" },
+        { label: "hobbinomicon.com", href: "https://hobbinomicon.com", external: true },
         {
           label: "valtiare.com — writing & finished art",
           href: "https://valtiare.com",
-          external: true,
-          prefix: "~ open"
+          external: true
         },
         // TODO(matt): flip these to live links once each site is published.
-        { label: "yellowimp.com (coming soon)", prefix: "~ open" },
-        { label: "brickmancy.com (coming soon)", prefix: "~ open" },
-        { label: "minitrukk.com (coming soon)", prefix: "~ open" },
-        { label: "thetablesedge.com (coming soon)", prefix: "~ open" }
+        { label: "yellowimp.com (coming soon)" },
+        { label: "brickmancy.com (coming soon)" },
+        { label: "minitrukk.com (coming soon)" },
+        { label: "thetablesedge.com (coming soon)" }
       ]
     },
     {
@@ -115,10 +109,9 @@ export const siteConfig: SiteConfig = {
         {
           label: "eBay store",
           href: "https://www.ebay.com/usr/buzzardstradingpost",
-          external: true,
-          prefix: "~ shop"
+          external: true
         },
-        { label: "Yellow Imp store (coming soon)", prefix: "~ buy" }
+        { label: "Yellow Imp store (coming soon)" }
       ]
     },
     {
@@ -127,14 +120,12 @@ export const siteConfig: SiteConfig = {
         {
           label: "Instagram @hobbinomicon",
           href: "https://www.instagram.com/hobbinomicon/",
-          external: true,
-          prefix: "~ follow"
+          external: true
         },
         {
           label: "Discord — come hang in the server",
           href: "https://discord.gg/9kzUhhk86r",
-          external: true,
-          prefix: "~ join"
+          external: true
         }
         // TODO(matt): add Alone in the Dungeon IG + any other live handles.
       ]
@@ -142,8 +133,8 @@ export const siteConfig: SiteConfig = {
     {
       title: "contact",
       items: [
-        { label: "matt@hobbinomicon.com", href: "mailto:matt@hobbinomicon.com", prefix: "~ mail" },
-        { label: "Commissions Are Currently Open", linkLabel: "Commissions", href: "/commissions/", prefix: "~ hire" }
+        { label: "matt@hobbinomicon.com", href: "mailto:matt@hobbinomicon.com" },
+        { label: "Commissions Are Currently Open", linkLabel: "Commissions", href: "/commissions/" }
       ]
     }
   ]
