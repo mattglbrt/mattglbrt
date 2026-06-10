@@ -44,7 +44,8 @@
   }
 
   .home-pre {
-    padding-left: 20px;
+    padding-left: 8px;
+    padding-right: 8px;
   }
 
   .ascii-hero::after {
@@ -59,10 +60,6 @@
 }
 
 @media (max-width: 700px) {
-  :root {
-    --mobile-scale: 0.94;
-  }
-
   .image-lightbox-frame {
     padding: calc(var(--text-size) * 2) calc(var(--text-cell) * 2);
   }
@@ -70,35 +67,5 @@
   .image-lightbox-image {
     max-width: calc(100vw - var(--text-cell) * 4);
     max-height: 82vh;
-  }
-}
-
-@media (max-width: 620px) {
-  :root {
-    --mobile-scale: 0.85;
-  }
-}
-
-@media (max-width: 540px) {
-  :root {
-    --mobile-scale: 0.76;
-  }
-}
-
-@media (max-width: 470px) {
-  :root {
-    --mobile-scale: 0.68;
-  }
-}
-
-@media (max-width: 410px) {
-  :root {
-    --mobile-scale: 0.62;
-  }
-}
-
-@media (max-width: 360px) {
-  :root {
-    --mobile-scale: 0.56;
   }
 }
