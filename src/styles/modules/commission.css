@@ -1,6 +1,10 @@
 /* Behaves as a normal textmode-wrap (inline-block, centred, zoom-to-fit on
    mobile). The intro keeps the .textmode-pre fixed grid — no pre-wrap — so it
-   doesn't double-wrap against the zoom. */
+   doesn't double-wrap against the zoom. Looser line spacing keeps the longer
+   prose readable. */
+.commission-pre {
+  line-height: 1.5;
+}
 
 .commission-form {
   display: flex;

@@ -8,30 +8,28 @@ import { commissionStatus, commissionStatusLine, textmodeConfig } from "../../co
 // page and the home page "go" link retune together.
 const statusLine = commissionStatusLine[commissionStatus];
 
+// Each paragraph and service is one logical line so the renderer word-wraps it
+// cleanly to whatever column width the page is at — no hand-wrapped lines to
+// scramble. Blank lines separate the services so the list stays scannable.
 const intro = `~ commissions
 
-Commissions across the whole hobby: miniature painting, kitbashing, assembly,
-scale modeling, terrain building, and 3D printing.
+Commissions across the whole hobby: miniature painting, kitbashing, assembly, scale modeling, terrain building, and 3D printing.
 
-  > #[C|Miniature painting] — characters, units, and full armies, offered at two
-    levels. Prep tier: assembly, priming, and airbrushed base colors cut in — I
-    handle the tedious groundwork so you can go hard on the details yourself.
-    Or tabletop tier: a finished level I'd like to think lands a bit beyond
-    standard for most tables.
-  > #[C|Kitbashing] — conversions and combining kits into something that isn't
-    on any sprue.
-  > #[C|Mini assembly] — clean builds, gap-filled and ready for the brush.
-  > #[C|Scale modeling] — model kits built and finished to display standard.
-  > #[C|Terrain building] — tables, boards, and scenery built to match your
-    game and your models.
-  > #[C|3D printing] — printed minis, parts, and bits made to spec.
+> #[C|Miniature painting] — characters, units, and full armies, offered at two levels. Prep tier: assembly, priming, and airbrushed base colors cut in — I handle the tedious groundwork so you can go hard on the details yourself. Or tabletop tier: a finished level I'd like to think lands a bit beyond standard for most tables.
 
-How it works: reach out using the form below, or come hang in my Discord:
-https://discord.gg/9kzUhhk86r — tell me about your project, budget, and
-timeline for getting the models back. I'll give you a price and timeline for
-completion.
+> #[C|Kitbashing] — conversions and combining kits into something that isn't on any sprue.
 
-  status: ${statusLine}`;
+> #[C|Mini assembly] — clean builds, gap-filled and ready for the brush.
+
+> #[C|Scale modeling] — model kits built and finished to display standard.
+
+> #[C|Terrain building] — tables, boards, and scenery built to match your game and your models.
+
+> #[C|3D printing] — printed minis, parts, and bits made to spec.
+
+How it works: reach out using the form below, or come hang in my Discord: https://discord.gg/9kzUhhk86r — tell me about your project, budget, and timeline for getting the models back. I'll give you a price and timeline for completion.
+
+status: ${statusLine}`;
 
 const introHtml = renderAnsiText(intro, textmodeConfig.bodyWidth);
 const footerHtml = `\nret ${link("/", "<home>")}\n`;
