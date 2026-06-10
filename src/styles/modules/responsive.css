@@ -1,10 +1,19 @@
 @media (max-width: 760px) {
   :root {
-    --mobile-scale: 0.95;
+    --mobile-scale: 1;
   }
 
   body {
     padding: 8px 0;
+  }
+
+  /* Roomier line spacing on the text/navigation surfaces that have no
+     box-drawing art (the home link hub and the log body). The ASCII
+     wordmark, volume index, and phile header stay grid-locked at
+     line-height: 1 and are intentionally excluded. */
+  .home-pre:not(.ascii-pre),
+  .phile-body-pre {
+    line-height: 1.4;
   }
 
   .screen {
@@ -51,7 +60,7 @@
 
 @media (max-width: 700px) {
   :root {
-    --mobile-scale: 0.86;
+    --mobile-scale: 0.94;
   }
 
   .image-lightbox-frame {
@@ -66,30 +75,30 @@
 
 @media (max-width: 620px) {
   :root {
-    --mobile-scale: 0.76;
+    --mobile-scale: 0.85;
   }
 }
 
 @media (max-width: 540px) {
   :root {
-    --mobile-scale: 0.66;
+    --mobile-scale: 0.76;
   }
 }
 
 @media (max-width: 470px) {
   :root {
-    --mobile-scale: 0.58;
+    --mobile-scale: 0.68;
   }
 }
 
 @media (max-width: 410px) {
   :root {
-    --mobile-scale: 0.52;
+    --mobile-scale: 0.62;
   }
 }
 
 @media (max-width: 360px) {
   :root {
-    --mobile-scale: 0.47;
+    --mobile-scale: 0.56;
   }
 }

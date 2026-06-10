@@ -1,6 +1,6 @@
 .phile-wrap {
   position: relative;
-  width: calc(var(--text-cell) * 85);
+  width: calc(var(--text-cell) * 66);
   overflow-x: hidden;
 }
 
@@ -12,14 +12,14 @@
 .phile-header {
   position: relative;
   z-index: 2;
-  width: calc(var(--text-cell) * 85);
+  width: calc(var(--text-cell) * 66);
   height: calc(var(--text-size) * max(18, 17 + var(--phile-meta-lines)));
 }
 
 .phile-header-side {
   position: absolute;
   top: 0;
-  left: calc(var(--text-cell) * 60);
+  left: calc(var(--text-cell) * 40);
 }
 
 .phile-header-meta {
@@ -48,7 +48,7 @@
 
 .phile-image {
   margin: calc(var(--text-size) * 1) 0;
-  max-width: calc(var(--text-cell) * 80);
+  max-width: calc(var(--text-cell) * 60);
 }
 
 .phile-image img {

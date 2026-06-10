@@ -10,9 +10,9 @@ export type TextmodeConfig = {
 
 export const textmodeConfig: TextmodeConfig = {
   columns: 90,
-  bodyWidth: 80,
+  bodyWidth: 60,
   textIndent: 4,
-  articleArtIndent: 60,
+  articleArtIndent: 40,
   volumeArtIndent: 60,
   volumeRightColumn: 83,
   mobileFitBreakpoint: 760
