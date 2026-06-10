@@ -23,6 +23,7 @@
 
   .screen:has(.home-shell) {
     align-items: flex-start;
+    justify-content: flex-start;
     min-height: calc(100vh - 16px);
     padding-top: 10px;
     text-align: center;
@@ -71,5 +72,65 @@
   .image-lightbox-image {
     max-width: calc(100vw - var(--text-cell) * 4);
     max-height: 82vh;
+  }
+}
+
+/* CSS-only width fit. The JS auto-fit (--fit-scale) refines this when it
+   runs, but if it's slow or blocked (e.g. the in-Messages browser) these
+   caps still scale the fixed-width content down to fit the viewport so it
+   never overflows the edges. Tuned to ~viewport/506px (the home's content
+   width incl. gutters) at each step's lower edge, so it fills the width
+   without clipping. Ordered descending so the narrowest match wins. */
+@media (max-width: 520px) {
+  :root {
+    --mobile-scale: 0.97;
+  }
+}
+
+@media (max-width: 490px) {
+  :root {
+    --mobile-scale: 0.91;
+  }
+}
+
+@media (max-width: 460px) {
+  :root {
+    --mobile-scale: 0.85;
+  }
+}
+
+@media (max-width: 430px) {
+  :root {
+    --mobile-scale: 0.79;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --mobile-scale: 0.74;
+  }
+}
+
+@media (max-width: 375px) {
+  :root {
+    --mobile-scale: 0.69;
+  }
+}
+
+@media (max-width: 350px) {
+  :root {
+    --mobile-scale: 0.65;
+  }
+}
+
+@media (max-width: 330px) {
+  :root {
+    --mobile-scale: 0.61;
+  }
+}
+
+@media (max-width: 310px) {
+  :root {
+    --mobile-scale: 0.57;
   }
 }
