@@ -22,7 +22,9 @@
   }
 
   .screen:has(.home-shell) {
+    align-items: flex-start;
     min-height: calc(100vh - 16px);
+    padding-top: 10px;
     text-align: center;
   }
 
@@ -33,7 +35,9 @@
   }
 
   .home-shell {
-    transform: translateY(-6vh);
+    transform: none;
+    padding-left: 12px;
+    padding-right: 12px;
     zoom: min(var(--mobile-scale), var(--fit-scale));
   }
 
@@ -44,8 +48,8 @@
   }
 
   .home-pre {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-left: 0;
+    padding-right: 0;
   }
 
   .ascii-hero::after {
