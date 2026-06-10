@@ -13,7 +13,7 @@ export const textmodeConfig: TextmodeConfig = {
   bodyWidth: 49,
   textIndent: 4,
   articleArtIndent: 28,
-  volumeArtIndent: 60,
-  volumeRightColumn: 83,
+  volumeArtIndent: 28,
+  volumeRightColumn: 51,
   mobileFitBreakpoint: 760
 };

@@ -2,22 +2,29 @@
 import PreBlock from "../textmode/PreBlock.astro";
 import { link, textHtml } from "../../modules/textmode/core/html";
 
+// Kept narrow (~49 cols) so it fits the screen at the same scale as the
+// home and log on mobile. Box/divider widths are derived, not hand-drawn.
+const boxInner = 42;
+const dividerWidth = 49;
+const box = (text: string) => `  │ ${text.padEnd(boxInner)} │`;
+
 const lines = [
-  "0000000000401400 <_route_lookup>:",
-  "  401400: 48 8b 04 25 04 04 00 00  mov    rax, QWORD PTR ds:0x404",
-  "  401408: 0f 0b                    ud2",
-  "  40140a: cc                       int3",
+  "0000401400 <_route_lookup>:",
+  "  401400: 48 8b 04 25 04 04  mov rax,ds:0x404",
+  "  401408: 0f 0b              ud2",
+  "  40140a: cc                 int3",
   "",
-  "──[ SIGSEGV ]───────────────────────────────────────────────────────────────────",
+  `──[ SIGSEGV ]${"─".repeat(dividerWidth - 13)}`,
   "",
   "  fault addr : 0x0000000000000404",
   "  mapping    : not present",
   "  access     : read",
-  "  reason     : phile not linked into this page",
+  "  reason     : phile not linked here",
   "",
-  "  ┌───────────────────────────────────────────────────────────────────────────┐",
-  "  │ The requested route fell through the archive and hit unmapped text.       │",
-  "  └───────────────────────────────────────────────────────────────────────────┘",
+  `  ┌${"─".repeat(boxInner + 2)}┐`,
+  box("The requested route fell through the"),
+  box("archive and hit unmapped text."),
+  `  └${"─".repeat(boxInner + 2)}┘`,
   ""
 ];
 

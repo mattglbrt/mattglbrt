@@ -28,7 +28,7 @@ function renderToc(volume: Volume): string {
     ...lifeLines.slice(0, 14).map((_, row) => `${" ".repeat(artIndent)}${lifeFrameLineHtml(row)}`),
     `┌${"─".repeat(artIndent - 1)}${lifeFrameLineHtml(14)}`,
     `│ ${pad(title, artIndent - 2)}${lifeFrameLineHtml(15)}`,
-    `│ ${pad("                                    CONTENTS", artIndent - 2)}${lifeFrameLineHtml(16)}`,
+    `│ ${pad("CONTENTS".padStart(artIndent - 4), artIndent - 2)}${lifeFrameLineHtml(16)}`,
     frameLine(""),
     ...volume.philes.map((phile, index) =>
       renderTocLine(

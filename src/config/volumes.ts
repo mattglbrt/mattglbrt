@@ -21,7 +21,7 @@ export const defaultVolumeConfig = (number: number): VolumeConfig => ({
     by: "date",
     direction: "desc"
   },
-  postscript: ["  ──[ EOF ]──────────────────────────────────────────────────────────────────//───"]
+  postscript: ["  ──[ EOF ]──────────────────────────────//──"]
 });
 
 export const volumeConfigs = new Map<number, VolumeConfig>([
@@ -36,9 +36,10 @@ export const volumeConfigs = new Map<number, VolumeConfig>([
       },
       entryPrefix: "L",
       postscript: [
-        "  ──[ EOF ]──────────────────────────────────────────────────────────────────//───",
+        "  ──[ EOF ]──────────────────────────────//──",
         "",
-        "  Thanks for visiting my weird little corner of the internet.",
+        "  Thanks for visiting my weird little corner",
+        "  of the internet.",
         "",
         "  Matt Gilbert"
       ]
