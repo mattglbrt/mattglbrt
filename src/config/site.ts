@@ -98,8 +98,9 @@ export const siteConfig: SiteConfig = {
         },
         // TODO(matt): flip these to live links once each site is published.
         { label: "yellowimp.com (coming soon)" },
-        { label: "brickmancy.com (coming soon)" },
-        { label: "minitrukk.com (coming soon)" },
+        // Hidden until ready — re-add when live:
+        // { label: "brickmancy.com (coming soon)" },
+        // { label: "minitrukk.com (coming soon)" },
         { label: "thetablesedge.com (coming soon)" }
       ]
     },
