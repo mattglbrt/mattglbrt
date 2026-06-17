@@ -22,6 +22,12 @@ html:has(.home-shell) {
   padding-left: 20px;
 }
 
+/* Loosen line spacing on the link-hub body only. The .ascii-pre wordmark must
+   stay at line-height: 1 (from .textmode-pre) or the ASCII art pulls apart. */
+.home-pre:not(.ascii-pre) {
+  line-height: 1.5;
+}
+
 .ascii-hero {
   position: relative;
   display: inline-block;

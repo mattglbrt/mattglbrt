@@ -124,7 +124,7 @@ export const siteConfig: SiteConfig = {
           external: true
         },
         {
-          label: "Discord — come hang in the server",
+          label: "Discord — come hang out in the server",
           href: "https://discord.gg/9kzUhhk86r",
           external: true
         }
