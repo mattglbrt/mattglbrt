@@ -52,7 +52,7 @@ Footer: attribution line — **"All artwork and creative content by Matt Gilbert
 ## 7. The link hub — ON THE HOMEPAGE (link OUT)
 Directory of everything Matt makes, rendered **directly on the home page** (not a separate route). Pull live URLs from `businesses/mdg-growth/PROFILES.md`. Group sensibly:
 - **YouTube channels:** the 5 live channels above.
-- **Brand sites:** hobbinomicon.com, yellowimp.com, brickmancy.com, minitrukk.com, thetablesedge.com, mdggrowth.com, valtiare.com.
+- **Brand sites:** hobbinomicon.com, yellowimp.com, brickmancy.com, minitrukk.com, thetablesedge.com, mdggrowth.com, aloneinthedungeon.com.
 - **Shop:** Buzzard's Trading Post (eBay store), Yellow Imp store (when live).
 - **Social:** Instagram (Alone in the Dungeon own; Warmachine shared) + others as claimed (see PROFILES handle tracker).
 - **Commissions:** internal link to the Commissions page.

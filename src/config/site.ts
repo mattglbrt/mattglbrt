@@ -92,8 +92,8 @@ export const siteConfig: SiteConfig = {
       items: [
         { label: "hobbinomicon.com", href: "https://hobbinomicon.com", external: true },
         {
-          label: "valtiare.com — writing & finished art",
-          href: "https://valtiare.com",
+          label: "aloneinthedungeon.com — writing & finished art",
+          href: "https://aloneinthedungeon.com",
           external: true
         },
         // TODO(matt): flip these to live links once each site is published.
