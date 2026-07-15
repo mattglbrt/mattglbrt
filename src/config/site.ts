@@ -49,7 +49,6 @@ export const siteConfig: SiteConfig = {
       title: "go",
       items: [
         { label: "Videos — latest from the channels", linkLabel: "Videos", href: "/videos/" },
-        { label: "Log — the workbench notebook", linkLabel: "Log", href: "/volume/1/" },
         {
           label: `Commissions — ${commissionStatusShort[commissionStatus]}`,
           linkLabel: "Commissions",
@@ -61,23 +60,8 @@ export const siteConfig: SiteConfig = {
       title: "channels",
       items: [
         {
-          label: "The Hobbinomicon — deep dives on indie tabletop games",
-          href: "https://www.youtube.com/@TheHobbinomicon",
-          external: true
-        },
-        {
-          label: "Daily Hobby Vlog — behind the scenes of whatever's on the workbench",
+          label: "The Hobbinomicon — indie tabletop games, painting & everything on the workbench",
           href: "https://www.youtube.com/@Hobbinomicon",
-          external: true
-        },
-        {
-          label: "Hobbinomicon: Warmachine — painting & playing",
-          href: "https://www.youtube.com/@TheHobbinomiconWarmachine",
-          external: true
-        },
-        {
-          label: "Hobbinomicon: KDM — Kingdom Death: Monster",
-          href: "https://www.youtube.com/@TheHobbinomiconKDM",
           external: true
         },
         {
@@ -92,7 +76,7 @@ export const siteConfig: SiteConfig = {
       items: [
         { label: "hobbinomicon.com", href: "https://hobbinomicon.com", external: true },
         {
-          label: "aloneinthedungeon.com — writing & finished art",
+          label: "aloneinthedungeon.com — my personal hobby blog: writing & finished art",
           href: "https://aloneinthedungeon.com",
           external: true
         },

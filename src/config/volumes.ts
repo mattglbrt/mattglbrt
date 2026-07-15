@@ -24,28 +24,9 @@ export const defaultVolumeConfig = (number: number): VolumeConfig => ({
   postscript: ["  ──[ EOF ]──────────────────────────────//──"]
 });
 
-export const volumeConfigs = new Map<number, VolumeConfig>([
-  [
-    1,
-    {
-      title: "Log",
-      listLabel: "Log",
-      phileSort: {
-        by: "date",
-        direction: "desc"
-      },
-      entryPrefix: "L",
-      postscript: [
-        "  ──[ EOF ]──────────────────────────────//──",
-        "",
-        "  Thanks for visiting my weird little corner",
-        "  of the internet.",
-        "",
-        "  Matt Gilbert"
-      ]
-    }
-  ]
-]);
+// The on-site Log has been retired — Matt's personal hobby blog now lives at
+// aloneinthedungeon.com. No custom volumes remain.
+export const volumeConfigs = new Map<number, VolumeConfig>([]);
 
 export function volumeConfig(number: number): VolumeConfig {
   return volumeConfigs.get(number) ?? defaultVolumeConfig(number);

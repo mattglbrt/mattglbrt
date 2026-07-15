@@ -20,13 +20,10 @@ export type VideosConfig = {
 export const videosConfig: VideosConfig = {
   latestCount: 12,
   channels: [
+    // Everything's consolidated into the one Hobbinomicon channel now — the old
+    // vlog and per-game side channels are retired.
     {
       name: "The Hobbinomicon",
-      channelId: "UCbR2bbWKoxPvSHJfkmPGetg",
-      url: "https://www.youtube.com/@TheHobbinomicon"
-    },
-    {
-      name: "Daily Hobby Vlog",
       channelId: "UCloue_Zf7JyQ7rhyvxW7zSg",
       url: "https://www.youtube.com/@Hobbinomicon"
     },
@@ -34,18 +31,6 @@ export const videosConfig: VideosConfig = {
       name: "Alone in the Dungeon",
       channelId: "UCfUblx_6u1hhVDNrMbNQdkA",
       url: "https://www.youtube.com/@AloneInTheDungeon"
-    },
-    // These channels are live but have no uploads yet; the feed merge handles
-    // empty channels gracefully and they'll auto-appear on the first upload.
-    {
-      name: "Hobbinomicon: Warmachine",
-      channelId: "UCjDu0HF6SdLgJLb7d-zxFtQ",
-      url: "https://www.youtube.com/@TheHobbinomiconWarmachine"
-    },
-    {
-      name: "Hobbinomicon: KDM",
-      channelId: "UC8605grw5cw-xlThSBW304g",
-      url: "https://www.youtube.com/@TheHobbinomiconKDM"
     }
   ]
 };
