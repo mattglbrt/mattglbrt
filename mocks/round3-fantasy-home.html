@@ -12,7 +12,7 @@
   rounded feature thumbs with blue headline links. All textures procedural.
 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
 <style>
   * { box-sizing:border-box; margin:0; padding:0; }
   :root { --maroon:#6e1410; --maroon-dk:#3f0a08; --blue:#0000cc; --parch-ink:#2a2118; }
@@ -39,8 +39,8 @@
   /* ---- maroon top bar ---- */
   .topbar { background:linear-gradient(180deg,#8c2318 0%, #5c100b 60%, #3f0a08 100%);
     border-bottom:2px solid #240403; display:flex; align-items:center; gap:18px; padding:6px 14px; flex-wrap:wrap; }
-  .topbar .gw { font-family:Cinzel,serif; font-weight:900; font-size:14px; letter-spacing:0.02em;
-    background:linear-gradient(180deg,#ffe98a,#f0a01c 55%,#c85a12); -webkit-background-clip:text; background-clip:text; color:transparent;
+  .topbar .gw { font-family:"IM Fell DW Pica",serif; font-weight:400; font-size:16px; letter-spacing:0.06em;
+    background:linear-gradient(180deg,#fff0ae,#f7b11f 55%,#d4571a); -webkit-background-clip:text; background-clip:text; color:transparent;
     filter:drop-shadow(1px 1px 0 #1c0503); }
   .topbar nav { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
   .topbar nav a { color:#f3e9db; text-decoration:none; font-size:11px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; }
@@ -58,8 +58,8 @@
   @media (max-width:720px){ .cols { grid-template-columns:1fr; } }
 
   aside { padding:14px 12px 40px 14px; font-size:11.5px; }
-  .sb-mark { font-family:Cinzel,serif; font-weight:900; font-size:17px; letter-spacing:0.01em; margin-bottom:12px;
-    background:linear-gradient(180deg,#ffe98a 5%,#f3b220 40%,#c0301c 85%); -webkit-background-clip:text; background-clip:text; color:transparent;
+  .sb-mark { font-family:"IM Fell DW Pica",serif; font-weight:400; font-size:19px; letter-spacing:0.06em; margin-bottom:12px;
+    background:linear-gradient(180deg,#fff0ae 5%,#f7b11f 45%,#7a1a0e 90%); -webkit-background-clip:text; background-clip:text; color:transparent;
     filter:drop-shadow(1px 1px 0 #2a0c08); }
   aside h3 { font-size:11.5px; color:var(--maroon); font-weight:bold; margin:12px 0 3px; }
   aside h3.center { text-align:center; text-transform:uppercase; font-size:11px; letter-spacing:0.02em; color:#1a1a1a; margin-top:18px; }
@@ -80,11 +80,11 @@
 
   /* chrome logo + subtitle */
   .hero { text-align:center; padding:20px 14px 6px; }
-  .chrome { font-family:Cinzel,serif; font-weight:900; font-size:clamp(38px,7.6vw,70px); line-height:0.95; letter-spacing:-0.005em;
-    background:linear-gradient(180deg,#fff6c4 0%, #ffe064 22%, #f7a81b 45%, #e55313 68%, #a01210 88%, #5e0a08 100%);
+  .chrome { font-family:"IM Fell DW Pica",serif; font-weight:400; font-size:clamp(42px,8.4vw,78px); line-height:0.95; letter-spacing:0.07em;
+    background:linear-gradient(180deg,#fff0ae 0%, #f7b11f 40%, #d4571a 72%, #7a1a0e 100%);
     -webkit-background-clip:text; background-clip:text; color:transparent;
-    -webkit-text-stroke:1.5px #2a0a06;
-    filter:drop-shadow(0 1px 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(2px 4px 2px rgba(40,10,5,0.55)); }
+    -webkit-text-stroke:1px #35150a;
+    filter:drop-shadow(0 2px 2px rgba(40,12,4,0.5)); }
   .subtitle { font-size:clamp(13px,2.2vw,19px); font-weight:bold; letter-spacing:0.06em; margin-top:6px; color:#000; }
 
   /* welcome row */

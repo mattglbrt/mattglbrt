@@ -20,13 +20,19 @@ the leading direction, built to Matt's Wayback screenshots). Brief rewritten
    consolidated channel list with Matt first.
 5. Content: gallery photography (~16 shots; fresh commission photos after
    Oct 30), portrait, final link list (Discord/Threads/Substack/eBay).
-6. Ship: 301 /commissions → yellowimp.com/commissions; remove Astro code after
-   the Hugo port serves.
+6. Ship: 301 /commissions → yellowimp.com/commissions; tag `v1-entropic`, then
+   remove Astro code after the Hugo port serves.
+
+## Notes
+- Matt's 10-29 planner slot ("content session", from the orchestrator handoff) is
+  replaced by mock iteration (Next #1). The Log is retired, so "first Log entries" is gone.
+- Uncommitted WIP in `mocks/` (round-3 edits + `wordmark-test.html`): Matt's,
+  in progress.
 
 ## Blockers
-- Photography — Matt's commission queue wraps Oct 30; shoot pieces before they ship.
-- Yellow Imp launch (Oct 31) owns Matt's focus until Nov; mock iteration is the
-  only expected site work before then.
+- Matt: final vision notes + mock approval (still being worked out as of 10-21).
+- Matt: photography. The commission queue wraps Oct 30; shoot the pieces before they ship.
+- (not blocking) Yellow Imp launch (Oct 31) has Matt's focus until November.
 
 ## Recently done
 - 2026-10-21 — Direction chosen: love-letter redesign, Hugo build, mocks-first

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wordmark test — IM Fell DW Pica</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; }
+  body { background:#2a2118; font-family:Arial,sans-serif; padding:24px 12px 60px; }
+  .strip { max-width:860px; margin:0 auto 22px; }
+  .lbl { color:#c9bda0; font-size:12px; font-weight:bold; margin-bottom:6px; letter-spacing:0.08em; }
+  .card { text-align:center; padding:34px 14px 26px; border:1px solid #6b5c3e;
+    background-color:#e9e2d2;
+    background-image:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,253,246,0.8) 0%, rgba(255,253,246,0) 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='5' seed='14'/%3E%3CfeColorMatrix values='0 0 0 0 0.58 0 0 0 0 0.5 0 0 0 0 0.36 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23p)'/%3E%3C/svg%3E"); }
+  .wm { font-family:"IM Fell DW Pica",serif; font-weight:400; font-size:clamp(40px,8vw,72px); line-height:1; letter-spacing:0.07em; }
+  .sub { font-size:clamp(12px,2vw,17px); font-weight:bold; letter-spacing:0.08em; margin-top:8px; color:#000; }
+
+  /* A — clean gold, no halo */
+  .a .wm { background:linear-gradient(180deg,#ffe98a 0%, #f0b32a 45%, #c96a14 78%, #8a3d0c 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(1px 2px 1px rgba(60,22,5,0.45)); }
+
+  /* B — letterpress ink */
+  .b .wm { background:linear-gradient(180deg,#3a1c10 0%, #241009 55%, #170a05 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 1px 0 rgba(255,252,240,0.55); }
+
+  /* C — ink + maroon, fleuron flanked */
+  .c .wm { color:#5c100b; text-shadow:0 1px 0 rgba(255,252,240,0.5); }
+  .c .fl { color:#8a6b28; font-size:0.55em; vertical-align:0.28em; margin:0 14px; }
+
+  /* D — gold with dark edge only */
+  .d .wm { background:linear-gradient(180deg,#fff0ae 0%, #f7b11f 40%, #d4571a 72%, #7a1a0e 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    -webkit-text-stroke:1px #35150a;
+    filter:drop-shadow(0 2px 2px rgba(40,12,4,0.5)); }
+</style>
+</head>
+<body>
+  <div class="strip a"><div class="lbl">A — CLEAN GOLD (no halo, no stroke, loose tracking)</div>
+    <div class="card"><div class="wm">MATTGLBRT</div><div class="sub">MINIATURES, TERRAIN &amp; TALL TALES</div></div></div>
+
+  <div class="strip b"><div class="lbl">B — LETTERPRESS INK (pressed into the parchment)</div>
+    <div class="card"><div class="wm">MATTGLBRT</div><div class="sub">MINIATURES, TERRAIN &amp; TALL TALES</div></div></div>
+
+  <div class="strip c"><div class="lbl">C — RUBRICATED INK (printer's maroon + fleurons)</div>
+    <div class="card"><div class="wm"><span class="fl">❦</span>MATTGLBRT<span class="fl">❦</span></div><div class="sub">MINIATURES, TERRAIN &amp; TALL TALES</div></div></div>
+
+  <div class="strip d"><div class="lbl">D — EDGED GOLD (dark outline, single shadow, no white)</div>
+    <div class="card"><div class="wm">MATTGLBRT</div><div class="sub">MINIATURES, TERRAIN &amp; TALL TALES</div></div></div>
+</body>
+</html>

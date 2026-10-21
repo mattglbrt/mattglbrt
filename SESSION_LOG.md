@@ -4,6 +4,30 @@ Append-only. **Newest entry first.**
 
 ---
 
+## 2026-10-21 (Claude Code) — Orient + handoff close-out; rebuild confirmed
+
+**Context:** Started from the orchestrator's HANDOFF ("Wake: content session",
+planned Thu 10-29; commissions-moved-to-Yellow-Imp question).
+
+**What happened:** Orient flagged that STATUS/claude.md had drifted from git:
+`35e7c7f` (07-15) had already retired the on-site Log and consolidated to one
+Hobbinomicon channel. Matt said he wants to rebuild the site from the ground
+up; the vision is still being finished. No code changed in this session.
+Proposed safety plan for the rebuild: tag the Astro site before removal, build on
+a branch, keep `main` serving until approval. The brief (claude.md) has since
+been rewritten (Cowork session below) and already covers that.
+
+**Handoff items addressed:** (1) Commissions: answered by the new brief. External
+link to Yellow Imp, plus a 301 from `/commissions`. (2) Content session (channel
+IDs, bio, links, Log entries): replaced by the redesign. The Log is retired, and
+content asks are now Next #4–5 of the Hugo plan. HANDOFF.md deleted.
+
+**Open:** Uncommitted round-3 mock edits plus `mocks/wordmark-test.html` are Matt's
+in-progress work and were left uncommitted. Suggest a `v1-entropic` tag before
+the Astro code is removed.
+
+---
+
 ## 2026-10-21 — The love letter: full redesign direction + Hugo decision
 
 **Context:** Matt rejected the textmode direction entirely (all four problems: no

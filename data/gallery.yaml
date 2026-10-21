@@ -1,0 +1,143 @@
+# data/gallery.yaml — The Painted Works Catalog
+# Seeded 2026-10-21 from painted-minis-2026.md (canonical through Aug 11).
+# Matt: fill `img` (shot list in CONTENT-PACK §9) and `video` (URL or none),
+# add post-August finishes at the bottom, reshuffle categories freely.
+# pack = the parenthetical line, in catalog voice. commission: true credits the client era.
+
+lords_and_heroes:
+  - name: War Prophet
+    system: Trench Crusade
+    pack: "1 resin model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Trench Pilgrim Communicant
+    system: Trench Crusade
+    pack: "1 devoted model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Castigator
+    system: Trench Crusade
+    pack: "1 resin model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Communicant Mercenary
+    system: Trench Crusade
+    pack: "1 resin model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: The Butcher
+    system: Warmachine
+    pack: "1 warcaster"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Dwarf Witch
+    system: one-off
+    pack: "1 metal model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Necromancer
+    system: Reaper
+    pack: "1 metal model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Child of Gomb
+    system: Daemon Prince
+    pack: "kitbash · 1 model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Buer
+    system: Miscast
+    pack: "1 strange model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Permadeath Mini
+    system: Miscast
+    pack: "1 doomed model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Earth Minion
+    system: Mage Knight
+    pack: "1 rescued model"
+    year: 2026
+    img: TODO
+    video: TODO
+
+core_units:
+  - name: Infinity Strike Team
+    system: Infinity
+    pack: "10 metal models"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Trench Pilgrims
+    system: Trench Crusade
+    pack: "warband · Nun, Pilgrim & the Wretched ×2"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Ice King's Dusk
+    system: Warmachine
+    pack: "the army · painted on the channel"
+    year: 2026
+    img: TODO
+    video: TODO
+  # TODO Matt: All-Dwarf Shadowdark party when mustered
+
+special_units:
+  - name: Anchorite Shrine
+    system: Trench Crusade
+    pack: "terrain piece"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Crucible Guard Toro
+    system: Warmachine
+    pack: "1 warjack"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: The Outhouse
+    system: terrain
+    pack: "1 humble model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: The Coffee Cup
+    system: scale model
+    pack: "yes, really"
+    year: 2026
+    img: TODO
+    video: TODO
+
+rare_units:
+  - name: Moss Giant
+    system: Dolmenwood
+    pack: "1 large model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Goat Scholar
+    system: Dolmenwood
+    pack: "1 learned model"
+    year: 2026
+    img: TODO
+    video: TODO
+  - name: Skelly Joe
+    system: "Mörk Borg"
+    pack: "1 bony model"
+    year: 2026
+    img: TODO
+    video: TODO
+
+# --- post-August finishes: add below (Dusk pieces, Crucible Guard video model,
+# --- commission work w/ commission: true, anything else off the bench) ---
