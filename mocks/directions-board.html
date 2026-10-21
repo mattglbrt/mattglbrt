@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mattglbrt.com — three directions</title>
+<style>
+  * { box-sizing:border-box; margin:0; }
+  body { background:#111; color:#eee; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; padding:28px 16px 80px; }
+  .intro { max-width:760px; margin:0 auto 34px; }
+  .intro h1 { font-size:24px; font-weight:750; }
+  .intro p { color:#aaa; font-size:14px; margin-top:6px; line-height:1.5; }
+  .dir { max-width:1000px; margin:0 auto 46px; }
+  .dir-label { display:flex; justify-content:space-between; align-items:baseline; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+  .dir-label h2 { font-size:18px; font-weight:750; }
+  .dir-label span { font-size:12.5px; color:#999; }
+  .mock { border-radius:14px; overflow:hidden; border:1px solid rgba(255,255,255,0.12); }
+
+  /* ============ 1 · THE PLINTH — editorial gallery ============ */
+  .plinth { background:#f4f1ea; color:#1c1a16; padding:38px 34px 34px; font-family:Georgia,"Times New Roman",serif; }
+  .plinth .nav { display:flex; justify-content:space-between; font-family:system-ui,sans-serif; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:#8a8378; margin-bottom:40px; }
+  .plinth h1 { font-size:44px; font-weight:400; letter-spacing:-0.01em; line-height:1.08; max-width:14em; }
+  .plinth h1 i { font-style:italic; }
+  .plinth .sub { font-family:system-ui,sans-serif; font-size:13px; color:#6d675c; margin-top:12px; }
+  .plinth .works { display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:16px; margin-top:34px; }
+  .plinth .work { background:#fff; padding:12px 12px 10px; box-shadow:0 1px 2px rgba(28,26,22,0.12), 0 8px 24px rgba(28,26,22,0.08); }
+  .plinth .img { aspect-ratio:4/5; background:linear-gradient(145deg,#d8d2c4,#b9b2a1); }
+  .plinth .work:first-child .img { aspect-ratio:auto; height:100%; min-height:240px; }
+  .plinth .placard { font-family:system-ui,sans-serif; font-size:10.5px; color:#6d675c; margin-top:9px; line-height:1.5; }
+  .plinth .placard b { display:block; font-family:Georgia,serif; font-style:italic; font-weight:400; font-size:13.5px; color:#1c1a16; }
+  .plinth .foot { margin-top:26px; font-family:system-ui,sans-serif; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:#8a8378; }
+
+  /* ============ 2 · THE CABINET — dark curiosity case ============ */
+  .cabinet { background:radial-gradient(130% 110% at 50% -10%, #241d14 0%, #120e09 55%, #0a0806 100%); color:#e8dec8; padding:38px 34px; font-family:Georgia,serif; }
+  .cabinet .nav { display:flex; justify-content:center; gap:26px; font-size:11.5px; letter-spacing:0.22em; text-transform:uppercase; color:#8f7b55; margin-bottom:34px; }
+  .cabinet h1 { text-align:center; font-size:38px; font-weight:400; color:#f0e6cf; }
+  .cabinet .rule { width:140px; height:1px; margin:14px auto 8px; background:linear-gradient(90deg,transparent,#8f7b55,transparent); }
+  .cabinet .sub { text-align:center; font-style:italic; font-size:14px; color:#a89470; }
+  .cabinet .case { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin-top:32px; }
+  .cabinet .relic { background:#0c0a07; border:1px solid #3a2f1f; box-shadow:inset 0 0 34px rgba(0,0,0,0.85), 0 2px 10px rgba(0,0,0,0.6); padding:14px; }
+  .cabinet .img { aspect-ratio:1/1.1; background:radial-gradient(80% 70% at 50% 32%, #4a3a22 0%, #171208 70%); }
+  .cabinet .plaque { margin:12px auto 0; width:fit-content; background:linear-gradient(180deg,#b99d62,#8f7b4a); color:#1c150a; font-family:system-ui,sans-serif; font-size:10px; font-weight:650; letter-spacing:0.1em; text-transform:uppercase; padding:3px 12px; border-radius:2px; }
+  .cabinet .foot { text-align:center; margin-top:28px; font-size:12px; font-style:italic; color:#8f7b55; }
+
+  /* ============ 3 · THE WORKBENCH — craftsman studio ============ */
+  .bench2 { background:#23241f; color:#edece6; padding:34px; font-family:system-ui,sans-serif; }
+  .bench2 .nav { display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; }
+  .bench2 .mark { font-weight:800; font-size:15px; letter-spacing:0.02em; background:#e8a93d; color:#23241f; padding:4px 10px; border-radius:4px; }
+  .bench2 .navl { font-size:12px; font-weight:650; color:#b9b8ad; letter-spacing:0.06em; text-transform:uppercase; display:flex; gap:18px; }
+  .bench2 h1 { font-size:40px; font-weight:800; letter-spacing:-0.025em; line-height:1.05; max-width:15em; }
+  .bench2 h1 mark { background:none; color:#e8a93d; }
+  .bench2 .sub { color:#b9b8ad; font-size:13.5px; margin-top:10px; }
+  .bench2 .strip { margin-top:28px; display:grid; grid-template-columns:repeat(4,1fr); gap:12px; }
+  .bench2 .card { background:#2c2d27; border:1px solid rgba(255,255,255,0.08); border-radius:10px; overflow:hidden; }
+  .bench2 .img { aspect-ratio:4/5; background:linear-gradient(160deg,#3a3b33,#262720); }
+  .bench2 .cap { padding:9px 11px; font-size:11px; color:#b9b8ad; }
+  .bench2 .cap b { display:block; color:#edece6; font-size:12.5px; }
+  .bench2 .now { margin-top:22px; border:1px dashed rgba(232,169,61,0.5); border-radius:10px; padding:11px 14px; font-size:12px; color:#e8a93d; font-weight:650; }
+  .bench2 .now span { color:#b9b8ad; font-weight:400; }
+
+  .notes { max-width:1000px; margin:12px auto 0; font-size:12.5px; color:#999; line-height:1.55; }
+  .notes b { color:#ddd; }
+</style>
+</head>
+<body>
+  <div class="intro">
+    <h1>mattglbrt.com — three new directions</h1>
+    <p>Grey boxes are where your photography goes — every direction is built around the work being huge. Same Astro engine underneath all three (videos feed, log, the lot). React to the <em>feeling</em>, not the placeholder boxes.</p>
+  </div>
+
+  <div class="dir">
+    <div class="dir-label"><h2>1 · The Plinth</h2><span>editorial monograph · gallery-white · "take me seriously as an artist"</span></div>
+    <div class="mock plinth">
+      <div class="nav"><span>mattglbrt</span><span>work &nbsp; log &nbsp; videos &nbsp; about</span></div>
+      <h1>Small monsters, <i>carefully painted.</i></h1>
+      <div class="sub">Matt Gilbert — miniature painter, terrain builder &amp; writer. The hands behind The Hobbinomicon, Alone in the Dungeon &amp; Yellow Imp.</div>
+      <div class="works">
+        <div class="work"><div class="img"></div><div class="placard"><b>Moss Giant</b>Dolmenwood · acrylics · 54mm · 2026</div></div>
+        <div class="work"><div class="img"></div><div class="placard"><b>War Prophet</b>Trench Crusade · 2026</div></div>
+        <div class="work"><div class="img"></div><div class="placard"><b>Ice King's Dusk</b>Warmachine · army · 2026</div></div>
+      </div>
+      <div class="foot">All artwork by Matt Gilbert · no AI-generated art · © MDG Growth</div>
+    </div>
+  </div>
+
+  <div class="dir">
+    <div class="dir-label"><h2>2 · The Cabinet</h2><span>dark curiosity case · candlelight &amp; brass · in-world atmosphere</span></div>
+    <div class="mock cabinet">
+      <div class="nav"><span>The Work</span><span>Field Notes</span><span>Moving Pictures</span><span>The Keeper</span></div>
+      <h1>The Cabinet of Matt Gilbert</h1>
+      <div class="rule"></div>
+      <div class="sub">painter of small monsters · keeper of the deep end of the dungeon</div>
+      <div class="case">
+        <div class="relic"><div class="img"></div><div class="plaque">Moss Giant · Dolmenwood</div></div>
+        <div class="relic"><div class="img"></div><div class="plaque">War Prophet · Trench Crusade</div></div>
+        <div class="relic"><div class="img"></div><div class="plaque">Child of Gomb · Kitbash</div></div>
+      </div>
+      <div class="foot">Every piece herein by the keeper's own hand — no machine-made art.</div>
+    </div>
+  </div>
+
+  <div class="dir">
+    <div class="dir-label"><h2>3 · The Workbench</h2><span>craftsman studio · warm + bold · alive, process-forward</span></div>
+    <div class="mock bench2">
+      <div class="nav"><div class="mark">MG</div><div class="navl"><span>Work</span><span>Bench</span><span>Log</span><span>Videos</span></div></div>
+      <h1>I paint small monsters and build <mark>the worlds they fight over.</mark></h1>
+      <div class="sub">Matt Gilbert · miniature painter, terrain builder &amp; writer · Hobbinomicon — Alone in the Dungeon — Yellow Imp</div>
+      <div class="strip">
+        <div class="card"><div class="img"></div><div class="cap"><b>Ice King's Dusk</b>Warmachine · army</div></div>
+        <div class="card"><div class="img"></div><div class="cap"><b>Moss Giant</b>Dolmenwood</div></div>
+        <div class="card"><div class="img"></div><div class="cap"><b>Necromancer</b>Reaper</div></div>
+        <div class="card"><div class="img"></div><div class="cap"><b>Dwarf Witch</b>one-off</div></div>
+      </div>
+      <div class="now">ON THE BENCH RIGHT NOW &nbsp;<span>— pulled live from the grind board: Dusk shock troopers · Motley Crews warband · commission queue clear 10.30</span></div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <b>What's shared:</b> all three keep the Astro machinery (auto-fed Videos, the Log and its .phile posts migrated, daily rebuilds), kill the commissions page in favor of a Yellow Imp link, and carry the no-AI line + © MDG Growth.
+    <b>What differs:</b> 1 frames you as a fine artist (quietest, most timeless). 2 is in-world theater (most atmospheric, most "only Matt could own this"). 3 is the working studio (most alive — and it can literally pull "on the bench" from your grind board's API, a thing no other artist site can do).
+  </div>
+</body>
+</html>

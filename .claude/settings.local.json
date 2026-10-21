@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pnpm build *)",
+      "Bash(cp /tmp/shot.mjs /Users/mattglbrt/Documents/dev/mattglbrt/_shot.mjs)",
+      "Bash(node _shot.mjs)",
+      "Bash(npx playwright *)",
+      "Bash(node *)",
+      "Bash(pkill -f \"astro preview\")",
+      "Bash(rm -f /tmp/shot*.png /tmp/shot.mjs /tmp/preview.log)",
+      "Bash(git add *)",
+      "Bash(awk '{print $2, $11, $12, $13, $14}')",
+      "Bash(lsof -nP -iTCP -sTCP:LISTEN)",
+      "Bash(curl -s http://localhost:4321/)",
+      "Bash(curl -s http://localhost:4322/)",
+      "Bash(pnpm check *)",
+      "Bash(curl -s http://localhost:4322/commissions/)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(git push *)",
+      "Bash(git rm *)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(git commit *)",
+      "Bash(pnpm exec *)",
+      "Bash(pkill -f \"http-server\")",
+      "Bash(pkill -f http-server)",
+      "Bash(sed -n '1,60p' src/modules/textmode/core/layout.ts)",
+      "Bash(curl -s -m 10 -o /dev/null -w \"%{http_code}\\\\n\" \"https://www.youtube.com/feeds/videos.xml?channel_id=UCbR2bbWKoxPvSHJfkmPGetg\")",
+      "Bash(curl -s -m 10 \"https://www.youtube.com/feeds/videos.xml?channel_id=UCbR2bbWKoxPvSHJfkmPGetg\")",
+      "Bash(curl -sL -m 20 \"https://mattglbrt.com/videos\" -o /tmp/vid.html -w \"Final HTTP %{http_code}, URL: %{url_effective}\\\\n\")",
+      "Read(//private/tmp/**)"
+    ]
+  }
+}

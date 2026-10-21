@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATTGLBRT — Painter of Small Monsters</title>
+<!--
+  mattglbrt.com — round 1 concept: "the love letter"
+  Early-2000s fantasy-gaming web (games-workshop.com / mageknight.com / worldofwarcraft.com era),
+  rebuilt with modern CSS: every texture is procedural (SVG feTurbulence + gradients),
+  zero image assets, fully responsive.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+
+  :root {
+    --gold:#c9a44c; --gold-hi:#f0d78c; --gold-dk:#8a6b28;
+    --blood:#8c1f1f; --blood-hi:#b53030;
+    --stone:#1a1c22; --stone-hi:#2b2e38;
+    --parch:#e3d3a8; --parch-dk:#cdb983; --ink:#2a2114;
+    --link:#e5c56a;
+  }
+
+  /* ---- procedural textures ---- */
+  body {
+    background-color:#0b0c10;
+    background-image:
+      radial-gradient(120% 60% at 50% 0%, rgba(42,52,84,0.5) 0%, rgba(11,12,16,0) 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 0.08 0 0 0 0 0.085 0 0 0 0 0.11 0 0 0 0.55 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23s)'/%3E%3C/svg%3E");
+    font-family:Verdana,Geneva,sans-serif; color:#d8d2c0;
+    padding:18px 10px 60px;
+  }
+  .parchment {
+    background-color:var(--parch);
+    background-image:
+      radial-gradient(130% 100% at 50% 0%, rgba(255,250,225,0.65) 0%, rgba(255,250,225,0) 55%),
+      radial-gradient(100% 120% at 50% 110%, rgba(120,90,40,0.33) 0%, rgba(120,90,40,0) 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.045' numOctaves='5' seed='11'/%3E%3CfeColorMatrix values='0 0 0 0 0.52 0 0 0 0 0.42 0 0 0 0 0.22 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23p)'/%3E%3C/svg%3E");
+    color:var(--ink);
+  }
+
+  /* ---- the great frame ---- */
+  .shell { max-width:1000px; margin:0 auto; position:relative;
+    border:3px solid #050505;
+    box-shadow:0 0 0 1px var(--gold-dk), 0 0 0 4px #15161b, 0 0 0 5px rgba(201,164,76,0.5), 0 26px 60px rgba(0,0,0,0.8);
+    background:var(--stone);
+  }
+  .corner { position:absolute; width:26px; height:26px; z-index:5;
+    background:
+      radial-gradient(circle at 50% 50%, var(--gold-hi) 0%, var(--gold) 34%, var(--gold-dk) 62%, #3a2d10 100%);
+    border:1px solid #050505; transform:rotate(45deg);
+    box-shadow:inset 0 2px 3px rgba(255,240,190,0.65), inset 0 -3px 4px rgba(0,0,0,0.6), 0 0 10px rgba(201,164,76,0.4);
+  }
+  .c-tl{top:-13px;left:-13px} .c-tr{top:-13px;right:-13px}
+  .c-bl{bottom:-13px;left:-13px} .c-br{bottom:-13px;right:-13px}
+
+  /* ---- banner ---- */
+  .banner { position:relative; padding:46px 20px 30px; text-align:center; overflow:hidden;
+    background:
+      radial-gradient(70% 130% at 50% 108%, rgba(140,31,31,0.55) 0%, rgba(140,31,31,0) 55%),
+      radial-gradient(55% 90% at 50% 40%, rgba(80,96,160,0.4) 0%, rgba(26,28,34,0) 70%),
+      linear-gradient(180deg, #23252e 0%, #15161b 100%);
+    border-bottom:1px solid #050505; box-shadow:0 1px 0 rgba(201,164,76,0.35) inset, 0 -1px 0 rgba(201,164,76,0.35) inset;
+  }
+  .banner::before { content:""; position:absolute; inset:8px; border:1px solid rgba(201,164,76,0.28); pointer-events:none; }
+  .sigil { font-family:"Cinzel Decorative",serif; font-weight:900;
+    font-size:clamp(34px,7.5vw,68px); letter-spacing:0.06em; line-height:1;
+    background:linear-gradient(180deg, #fff3cf 0%, var(--gold-hi) 28%, var(--gold) 55%, var(--gold-dk) 78%, #5e4617 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 2px 0 #000) drop-shadow(0 4px 8px rgba(0,0,0,0.9));
+  }
+  .banner .motto { margin-top:10px; font-family:Cinzel,serif; font-weight:600;
+    font-size:clamp(11px,1.8vw,15px); letter-spacing:0.34em; text-transform:uppercase; color:#b9a97d;
+    text-shadow:0 1px 0 #000; }
+  .banner .motto::before, .banner .motto::after { content:" ✦ "; color:var(--blood-hi); }
+
+  /* ---- nav: beveled stone buttons ---- */
+  nav { display:flex; flex-wrap:wrap; justify-content:center; gap:4px; padding:8px;
+    background:linear-gradient(180deg,#101117,#1b1d25); border-bottom:2px solid #050505;
+    box-shadow:0 -1px 0 rgba(201,164,76,0.3) inset; }
+  nav a { font-size:11px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+    color:#e8dcb8; text-decoration:none; text-shadow:0 -1px 0 rgba(0,0,0,0.9);
+    padding:9px 18px; border:1px solid #06070a; border-radius:3px;
+    background:linear-gradient(180deg, #3a3e4c 0%, #262935 45%, #171922 55%, #20232d 100%);
+    box-shadow:inset 0 1px 0 rgba(220,225,255,0.22), inset 0 -2px 3px rgba(0,0,0,0.65), 0 1px 2px rgba(0,0,0,0.7); }
+  nav a:hover { color:#fff;
+    background:linear-gradient(180deg, #5a4a26 0%, #3e3015 45%, #2a2008 55%, #35290e 100%);
+    box-shadow:inset 0 1px 0 rgba(240,215,140,0.5), inset 0 -2px 3px rgba(0,0,0,0.65), 0 0 12px rgba(201,164,76,0.55); }
+  nav a.here { color:var(--gold-hi); border-color:var(--gold-dk);
+    box-shadow:inset 0 2px 6px rgba(0,0,0,0.8), 0 0 8px rgba(201,164,76,0.35); }
+
+  /* ---- news ticker ---- */
+  .ticker { overflow:hidden; white-space:nowrap; background:#07080b; border-bottom:1px solid rgba(201,164,76,0.35);
+    font-size:10.5px; letter-spacing:0.08em; color:#b3a26e; padding:5px 0; }
+  .ticker span { display:inline-block; padding-left:100%; animation:tick 36s linear infinite; }
+  @keyframes tick { to { transform:translateX(-100%);} }
+  .ticker b { color:var(--blood-hi); font-weight:700; }
+
+  /* ---- layout ---- */
+  .cols { display:grid; grid-template-columns:250px 1fr; gap:14px; padding:14px; }
+  @media (max-width:760px){ .cols { grid-template-columns:1fr; } }
+
+  /* ---- module chrome ---- */
+  .mod { border:1px solid #06070a; box-shadow:0 0 0 1px rgba(201,164,76,0.4), 0 3px 10px rgba(0,0,0,0.55); margin-bottom:14px; background:#14151b; }
+  .mod-cap { position:relative; font-family:Cinzel,serif; font-weight:700; font-size:13px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--gold-hi); text-shadow:0 1px 0 #000, 0 0 14px rgba(201,164,76,0.4);
+    text-align:center; padding:8px 10px 7px;
+    background:linear-gradient(180deg,#30333f 0%, #1b1d25 55%, #121319 100%);
+    border-bottom:1px solid #050505; box-shadow:inset 0 1px 0 rgba(220,225,255,0.18), 0 1px 0 rgba(201,164,76,0.35); }
+  .mod-cap::before, .mod-cap::after { content:"◆"; position:absolute; top:50%; transform:translateY(-52%); font-size:9px; color:var(--blood-hi); text-shadow:0 0 6px rgba(181,48,48,0.8); }
+  .mod-cap::before { left:10px; } .mod-cap::after { right:10px; }
+  .mod-body { padding:12px; font-size:11.5px; line-height:1.65; }
+  .mod-body.parchment { box-shadow:inset 0 0 26px rgba(90,65,25,0.4); }
+
+  /* sidebar news */
+  .news dt { font-family:Cinzel,serif; font-weight:700; font-size:11px; color:var(--blood); letter-spacing:0.06em; margin-top:10px; }
+  .news dt:first-child { margin-top:0; }
+  .news dd { margin:2px 0 0; }
+  .news a { color:#5a3c12; font-weight:700; }
+  .realms { list-style:none; }
+  .realms li { padding:7px 2px; border-bottom:1px solid rgba(90,65,25,0.3); }
+  .realms li:last-child { border-bottom:none; }
+  .realms a { color:#5a3c12; font-weight:700; text-decoration:none; }
+  .realms a:hover { color:var(--blood); }
+  .realms .sub { display:block; font-size:10px; color:#7a6336; }
+  .realms li::before { content:"◆ "; color:var(--blood); font-size:9px; }
+  .soon { filter:grayscale(0.4); opacity:0.75; }
+  .soon .sub::after { content:" — the gates open soon"; font-style:italic; }
+
+  /* welcome panel */
+  .drop::first-letter { font-family:"Cinzel Decorative",serif; font-size:40px; float:left; line-height:0.85; padding:4px 7px 0 0; color:var(--blood); }
+
+  /* ---- the gallery: unit cards ---- */
+  .gallery { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; padding:12px; }
+  .unit { position:relative; border:1px solid #06070a; background:#0d0e13;
+    box-shadow:0 0 0 1px rgba(201,164,76,0.45), inset 0 0 0 1px rgba(0,0,0,0.8), 0 3px 8px rgba(0,0,0,0.6); }
+  .unit .art { aspect-ratio:3/4; position:relative; overflow:hidden;
+    background:
+      radial-gradient(85% 70% at 50% 34%, #3d4258 0%, #181a22 72%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='2' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.14 0 0 0 0.35 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23g)'/%3E%3C/svg%3E"); }
+  .unit .art img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .unit .art::after { content:""; position:absolute; inset:0; box-shadow:inset 0 0 22px rgba(0,0,0,0.85); pointer-events:none; }
+  .unit .plate { font-family:Cinzel,serif; font-weight:700; font-size:11px; letter-spacing:0.08em; text-align:center; color:var(--gold-hi);
+    text-shadow:0 1px 0 #000; padding:7px 6px 2px;
+    background:linear-gradient(180deg,#262935,#14151b); border-top:1px solid rgba(201,164,76,0.5); }
+  .unit .faction { text-align:center; font-size:9px; letter-spacing:0.12em; text-transform:uppercase; color:#8d8468; padding:0 6px 8px; }
+  .burst { position:absolute; top:-9px; right:-9px; z-index:3; background:radial-gradient(circle, #ffd76a, var(--blood) 70%);
+    color:#fff; font-size:9px; font-weight:700; letter-spacing:0.06em; padding:7px 6px; border-radius:50%;
+    transform:rotate(14deg); border:1px solid #000; text-shadow:0 1px 0 #000; box-shadow:0 2px 6px rgba(0,0,0,0.7); }
+
+  /* dividers & footer */
+  .rule { height:3px; margin:0 14px; background:linear-gradient(90deg, transparent, var(--gold-dk) 20%, var(--gold-hi) 50%, var(--gold-dk) 80%, transparent); opacity:0.7; border-radius:2px; }
+  footer { text-align:center; padding:18px 14px 22px; font-size:10px; color:#8d8468; line-height:1.9; }
+  footer .oath { font-family:Cinzel,serif; font-size:11px; letter-spacing:0.14em; color:var(--gold); text-transform:uppercase; }
+  footer .counter { font-family:"Courier New",monospace; background:#000; color:#7CFC00; padding:1px 7px; border:1px solid #333; letter-spacing:2px; }
+  a { color:var(--link); }
+</style>
+</head>
+<body>
+<div class="shell">
+  <div class="corner c-tl"></div><div class="corner c-tr"></div>
+  <div class="corner c-bl"></div><div class="corner c-br"></div>
+
+  <div class="banner">
+    <div class="sigil">MATTGLBRT</div>
+    <div class="motto">Painter of Small Monsters · Builder of Their Worlds</div>
+  </div>
+
+  <nav>
+    <a class="here" href="/">⌂ The Keep</a>
+    <a href="/work">The Gallery</a>
+    <a href="/log">The Chronicle</a>
+    <a href="/videos">Moving Pictures</a>
+    <a href="/about">The Painter</a>
+  </nav>
+
+  <div class="ticker"><span><b>+++ DISPATCHES +++</b> &nbsp; The Yellow Imp store opens its gates OCT 31 — All Hallows' Eve &nbsp;✦&nbsp; Commission scrolls now received at the Yellow Imp painting studio &nbsp;✦&nbsp; New chronicle entry: field notes from the deep end of the dungeon &nbsp;✦&nbsp; The Ice King's Dusk marches — follow the campaign on the Warmachine channel &nbsp;<b>+++</b></span></div>
+
+  <div class="cols">
+    <aside>
+      <div class="mod">
+        <div class="mod-cap">Dispatches</div>
+        <div class="mod-body parchment news">
+          <dl>
+            <dt>31 · OCT · 2026</dt><dd><a href="https://yellowimp.com">The Yellow Imp store opens</a> — monsters, adventurers &amp; the strange things between.</dd>
+            <dt>21 · OCT · 2026</dt><dd>The commission queue closes for the season; the <a href="https://yellowimp.com/commissions">painting studio</a> reopens under the Imp's banner.</dd>
+            <dt>FROM THE CHRONICLE</dt><dd><a href="/log">Latest field notes from the dungeon →</a></dd>
+          </dl>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="mod-cap">The Realms</div>
+        <div class="mod-body parchment">
+          <ul class="realms">
+            <li><a href="https://hobbinomicon.com">The Hobbinomicon</a><span class="sub">indie tabletop · boards · the daily grind</span></li>
+            <li><a href="https://aloneinthedungeon.com">Alone in the Dungeon</a><span class="sub">solo wargames &amp; RPGs, played to the hilt</span></li>
+            <li><a href="https://yellowimp.com">Yellow Imp Miniatures</a><span class="sub">the company · store &amp; painting studio</span></li>
+            <li class="soon"><span style="font-weight:700;color:#5a3c12">Minitrukk</span><span class="sub">—</span></li>
+            <li class="soon"><span style="font-weight:700;color:#5a3c12">The Table's Edge</span><span class="sub">—</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mod">
+        <div class="mod-cap">Join the Muster</div>
+        <div class="mod-body parchment" style="text-align:center">
+          <a href="#">Discord</a> · <a href="#">Threads</a> · <a href="#">Substack</a><br>
+          <span style="font-size:10px;color:#7a6336">ravens also accepted:</span><br>
+          <a href="mailto:matt@hobbinomicon.com">matt@hobbinomicon.com</a>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="mod">
+        <div class="mod-cap">Well Met, Traveler</div>
+        <div class="mod-body parchment drop" style="font-size:12.5px">
+          Matt Gilbert — miniature painter, terrain builder &amp; writer, hobbying from the deep end of the dungeon.
+          This keep is the one room where all the work hangs on the same wall: the painted monsters, the boards they
+          fight over, the chronicles written about both. Nothing is sold here — the <b>Realms</b> at left will gladly
+          take your gold. This hall is for looking.
+        </div>
+      </div>
+
+      <div class="mod">
+        <div class="mod-cap">The Gallery</div>
+        <div class="gallery">
+          <div class="unit"><span class="burst">NEW!</span><div class="art"><img src="/gallery/ice-kings-dusk.jpg" alt="" onerror="this.remove()"></div><div class="plate">Ice King's Dusk</div><div class="faction">Warmachine · the army</div></div>
+          <div class="unit"><div class="art"><img src="/gallery/war-prophet.jpg" alt="" onerror="this.remove()"></div><div class="plate">War Prophet</div><div class="faction">Trench Crusade</div></div>
+          <div class="unit"><div class="art"><img src="/gallery/moss-giant.jpg" alt="" onerror="this.remove()"></div><div class="plate">Moss Giant</div><div class="faction">Dolmenwood</div></div>
+          <div class="unit"><div class="art"><img src="/gallery/gomb.jpg" alt="" onerror="this.remove()"></div><div class="plate">Child of Gomb</div><div class="faction">Daemon Prince · Kitbash</div></div>
+          <div class="unit"><div class="art"><img src="/gallery/necromancer.jpg" alt="" onerror="this.remove()"></div><div class="plate">Necromancer</div><div class="faction">Reaper</div></div>
+          <div class="unit"><div class="art"><img src="/gallery/dwarf-witch.jpg" alt="" onerror="this.remove()"></div><div class="plate">Dwarf Witch</div><div class="faction">One-off</div></div>
+        </div>
+        <div class="rule"></div>
+        <div class="mod-body" style="text-align:center;color:#9a916f;font-size:10.5px">sixty-two miniatures painted in the year of our grind 2026 · <a href="/work">enter the full gallery →</a></div>
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <span class="oath">All artwork by the painter's own hand — no AI-generated art</span><br>
+    © MDG Growth LLC · est. 2026 · <span class="counter">VISITORS 004,217</span><br>
+    best viewed at 1024×768 in a darkened room · you are not required to clear your browser cache, but it couldn't hurt
+  </footer>
+</div>
+</body>
+</html>

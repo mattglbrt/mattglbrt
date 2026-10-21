@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATTGLBRT — Miniatures, Terrain &amp; Tall Tales</title>
+<!--
+  mattglbrt.com — round 3: the FANTASY skin, built to the 2006
+  us.games-workshop.com/games/warhammer captures. Parchment ground with torn
+  side ribbons · maroon top bar · red-gold chrome logo · parchment sidebar with
+  maroon headers · white canvas · welcome row (portrait / lead / product box) ·
+  rounded feature thumbs with blue headline links. All textures procedural.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  :root { --maroon:#6e1410; --maroon-dk:#3f0a08; --blue:#0000cc; --parch-ink:#2a2118; }
+
+  /* ---- parchment ground ---- */
+  body {
+    background-color:#e9e2d2;
+    background-image:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,253,246,0.8) 0%, rgba(255,253,246,0) 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='5' seed='14'/%3E%3CfeColorMatrix values='0 0 0 0 0.58 0 0 0 0 0.5 0 0 0 0 0.36 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23p)'/%3E%3C/svg%3E");
+    font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#1a1a1a;
+  }
+  /* torn side ribbons */
+  .tear { position:fixed; top:0; bottom:0; width:46px; z-index:0; pointer-events:none;
+    background-color:#d9cfb8;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.06' numOctaves='4' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.25 0 0 0 0.3 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23t)'/%3E%3C/svg%3E");
+    filter:drop-shadow(0 0 6px rgba(60,45,20,0.45)); }
+  .tear.l { left:0; clip-path:polygon(0 0,100% 0,72% 2%,95% 5%,70% 8%,88% 12%,66% 15%,92% 19%,71% 23%,86% 27%,64% 31%,90% 36%,70% 40%,84% 45%,65% 49%,91% 54%,69% 58%,87% 63%,63% 67%,89% 72%,70% 76%,85% 81%,66% 85%,92% 90%,71% 94%,88% 98%,100% 100%,0 100%); }
+  .tear.r { right:0; clip-path:polygon(100% 0,0 0,28% 2%,5% 5%,30% 8%,12% 12%,34% 15%,8% 19%,29% 23%,14% 27%,36% 31%,10% 36%,30% 40%,16% 45%,35% 49%,9% 54%,31% 58%,13% 63%,37% 67%,11% 72%,30% 76%,15% 81%,34% 85%,8% 90%,29% 94%,12% 98%,0 100%,100% 100%); }
+  @media (max-width:860px){ .tear { display:none; } }
+
+  .page { position:relative; z-index:1; max-width:920px; margin:0 auto; }
+
+  /* ---- maroon top bar ---- */
+  .topbar { background:linear-gradient(180deg,#8c2318 0%, #5c100b 60%, #3f0a08 100%);
+    border-bottom:2px solid #240403; display:flex; align-items:center; gap:18px; padding:6px 14px; flex-wrap:wrap; }
+  .topbar .gw { font-family:Cinzel,serif; font-weight:900; font-size:14px; letter-spacing:0.02em;
+    background:linear-gradient(180deg,#ffe98a,#f0a01c 55%,#c85a12); -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(1px 1px 0 #1c0503); }
+  .topbar nav { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .topbar nav a { color:#f3e9db; text-decoration:none; font-size:11px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; }
+  .topbar nav a:hover { color:#ffd978; text-decoration:underline; }
+  .topbar nav .dot { color:#caa06a; font-size:9px; }
+
+  /* orange promo slot */
+  .promo { background:linear-gradient(180deg,#ffb23e 0%,#f4731c 55%,#d94e10 100%);
+    border-bottom:2px solid #7a2a05; padding:12px 18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .promo b { font-size:22px; color:#fff; text-shadow:1px 2px 0 rgba(122,42,5,0.75); }
+  .promo a { color:#3a1402; font-weight:bold; }
+
+  /* ---- columns: parchment sidebar + white canvas ---- */
+  .cols { display:grid; grid-template-columns:172px 1fr; gap:0; }
+  @media (max-width:720px){ .cols { grid-template-columns:1fr; } }
+
+  aside { padding:14px 12px 40px 14px; font-size:11.5px; }
+  .sb-mark { font-family:Cinzel,serif; font-weight:900; font-size:17px; letter-spacing:0.01em; margin-bottom:12px;
+    background:linear-gradient(180deg,#ffe98a 5%,#f3b220 40%,#c0301c 85%); -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(1px 1px 0 #2a0c08); }
+  aside h3 { font-size:11.5px; color:var(--maroon); font-weight:bold; margin:12px 0 3px; }
+  aside h3.center { text-align:center; text-transform:uppercase; font-size:11px; letter-spacing:0.02em; color:#1a1a1a; margin-top:18px; }
+  aside ul { list-style:none; }
+  aside li { padding:1.5px 0; }
+  aside li a { color:#201a12; text-decoration:none; }
+  aside li a:hover { color:var(--maroon); text-decoration:underline; }
+  aside li.sub::before { content:"- "; }
+  aside li.now a { color:var(--maroon); font-weight:bold; }
+
+  main { background:#fff; border-left:1px solid #b9ad92; min-width:0; box-shadow:-2px 0 6px rgba(80,60,30,0.15); }
+
+  /* icon strip on parchment tint */
+  .icons { background:linear-gradient(180deg,#efe7d3,#ded2b4); border:1px solid #8c8068; border-left:none; border-right:none;
+    display:flex; align-items:center; justify-content:center; gap:10px; padding:4px 8px; color:#241c10; }
+  .icons .g { font-size:12px; opacity:0.85; }
+  .icons .label { font-size:11px; font-weight:bold; letter-spacing:0.16em; }
+
+  /* chrome logo + subtitle */
+  .hero { text-align:center; padding:20px 14px 6px; }
+  .chrome { font-family:Cinzel,serif; font-weight:900; font-size:clamp(38px,7.6vw,70px); line-height:0.95; letter-spacing:-0.005em;
+    background:linear-gradient(180deg,#fff6c4 0%, #ffe064 22%, #f7a81b 45%, #e55313 68%, #a01210 88%, #5e0a08 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    -webkit-text-stroke:1.5px #2a0a06;
+    filter:drop-shadow(0 1px 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(2px 4px 2px rgba(40,10,5,0.55)); }
+  .subtitle { font-size:clamp(13px,2.2vw,19px); font-weight:bold; letter-spacing:0.06em; margin-top:6px; color:#000; }
+
+  /* welcome row */
+  .welcome { display:grid; grid-template-columns:150px 1fr 170px; gap:16px; padding:18px 16px; align-items:start; }
+  @media (max-width:760px){ .welcome { grid-template-columns:1fr; } }
+  .portrait { text-align:center; font-size:11px; font-weight:bold; }
+  .portrait .frame { border:1px solid #777; border-radius:10px; overflow:hidden; aspect-ratio:3/4; margin-bottom:5px;
+    background:radial-gradient(90% 80% at 50% 34%, #76614a 0%, #2c2318 78%); position:relative; }
+  .portrait .frame img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .welcome .lead { font-size:12.5px; line-height:1.55; }
+  .welcome .lead .w { font-weight:bold; font-style:italic; }
+  .welcome .lead p + p { margin-top:10px; }
+  .product { text-align:center; font-size:11.5px; }
+  .product .box { border:2px solid #000; aspect-ratio:4/5; margin-bottom:6px;
+    background:radial-gradient(95% 85% at 50% 30%, #8c2318 0%, #2b0605 80%); position:relative; overflow:hidden; }
+  .product .box img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .product b { display:block; }
+  .product .buy { font-weight:bold; }
+  .product .q { display:inline-block; width:14px; height:14px; border-radius:50%; background:#c00; color:#fff; font-weight:bold; font-size:10px; line-height:14px; }
+
+  /* feature teasers */
+  .features { display:grid; grid-template-columns:1fr 1fr; gap:4px 22px; padding:6px 16px 18px; }
+  @media (max-width:760px){ .features { grid-template-columns:1fr; } }
+  .feat { display:grid; grid-template-columns:118px 1fr; gap:12px; padding:13px 0; border-top:2px groove #e4e4e4; }
+  .feat .thumb { width:118px; aspect-ratio:4/3; border:1px solid #888; border-radius:10px; overflow:hidden; position:relative;
+    background:radial-gradient(90% 80% at 50% 35%, #6a7186 0%, #272b38 80%); }
+  .feat .thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .feat h4 a { font-size:13px; color:var(--blue); }
+  .feat p { font-size:11px; line-height:1.5; margin-top:3px; }
+
+  /* captioned image table (VILLAGE/CITY pattern) */
+  .caps-table { margin:4px 16px 18px; display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:760px){ .caps-table { grid-template-columns:1fr; } }
+  .capbox { border:1px solid #000; }
+  .capbox .h { background:#000; color:#fff; font-weight:bold; font-size:11.5px; letter-spacing:0.1em; text-align:center; padding:3px; text-transform:uppercase; }
+  .capbox .im { aspect-ratio:16/8; background:radial-gradient(90% 80% at 50% 35%, #5e6478 0%, #22242e 80%); position:relative; }
+  .capbox .im img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .capbox .cap { background:#000; color:#fff; font-size:10px; font-style:italic; text-align:center; padding:2px 4px; }
+
+  /* footer */
+  .footlinks { text-align:center; font-size:11px; padding:14px; border-top:1px solid #ccc; line-height:1.9; }
+  .legal { text-align:center; color:#555; font-size:10px; line-height:1.7; padding:0 26px 26px; }
+  .legal .counter { font-family:"Courier New",monospace; background:#000; color:#7CFC00; padding:1px 7px; border:1px solid #444; letter-spacing:2px; }
+  a { color:var(--blue); }
+  a:visited { color:#551a8b; }
+</style>
+</head>
+<body>
+<div class="tear l"></div><div class="tear r"></div>
+<div class="page">
+
+  <div class="topbar">
+    <span class="gw">MATTGLBRT</span>
+    <nav>
+      <a href="https://hobbinomicon.com">The Hobbinomicon</a><span class="dot">●</span>
+      <a href="https://aloneinthedungeon.com">Alone in the Dungeon</a><span class="dot">●</span>
+      <a href="https://yellowimp.com">Yellow Imp</a>
+    </nav>
+  </div>
+
+  <div class="promo">
+    <b>THE YELLOW IMP STORE OPENS OCT 31</b>
+    <a href="https://yellowimp.com">Enter the store &raquo;</a>
+  </div>
+
+  <div class="cols">
+    <aside>
+      <div class="sb-mark">MATTGLBRT</div>
+
+      <h3>Getting Started with Matt</h3>
+      <ul><li><a href="/about">Who is this guy?</a></li></ul>
+
+      <h3>The Miniatures Gallery</h3>
+      <ul><li class="now"><a href="/work">Painted Works Catalog</a></li></ul>
+
+      <h3>Gaming</h3>
+      <ul>
+        <li class="sub"><a href="https://www.youtube.com/@Hobbinomicon">The Hobbinomicon</a></li>
+        <li class="sub"><a href="#">Warmachine Channel</a></li>
+        <li class="sub"><a href="#">KDM Channel</a></li>
+        <li class="sub"><a href="https://www.youtube.com/@AloneInTheDungeon">Alone in the Dungeon</a></li>
+      </ul>
+
+      <h3>Painting and Modeling</h3>
+      <ul>
+        <li class="sub"><a href="/work">The Gallery</a></li>
+        <li class="sub"><a href="https://yellowimp.com/commissions">Commissions (Yellow Imp)</a></li>
+        <li class="sub"><a href="/log">Techniques, Tips &amp; Tools</a></li>
+      </ul>
+
+      <h3>Scenery and Terrain</h3>
+      <ul>
+        <li class="sub"><a href="#">Boards &amp; Builds</a></li>
+      </ul>
+
+      <h3 class="center">Realms of the<br>MDG World</h3>
+      <ul style="text-align:left">
+        <li><a href="https://hobbinomicon.com">Hobbinomicon</a></li>
+        <li><a href="https://aloneinthedungeon.com">Alone in the Dungeon</a></li>
+        <li><a href="https://yellowimp.com">Yellow Imp</a></li>
+        <li>Minitrukk <span style="color:#8a7d64">(soon)</span></li>
+        <li>The Table's Edge <span style="color:#8a7d64">(soon)</span></li>
+      </ul>
+
+      <h3 class="center">Supplements</h3>
+      <ul>
+        <li><a href="/log">The Chronicle</a></li>
+        <li><a href="#">Guestbook</a></li>
+        <li><a href="#">Discord</a></li>
+        <li><a href="#">Threads</a> · <a href="#">Substack</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <div class="icons">
+        <span class="g">☠</span><span class="g">⚔</span><span class="g">🛡</span><span class="g">⚒</span>
+        <span class="label">THE WORKS OF MATTGLBRT</span>
+        <span class="g">⚒</span><span class="g">🛡</span><span class="g">⚔</span><span class="g">☠</span>
+      </div>
+
+      <div class="hero">
+        <div class="chrome">MATTGLBRT</div>
+        <div class="subtitle">MINIATURES, TERRAIN &amp; TALL TALES</div>
+      </div>
+
+      <div class="welcome">
+        <div class="portrait">
+          <div class="frame"><img src="/gallery/portrait.jpg" alt="" onerror="this.remove()"></div>
+          Matt Gilbert,<br>the Painter
+        </div>
+        <div class="lead">
+          <p><span class="w">Welcome</span> <b>to the workshop of Matt Gilbert.</b> If you are new here, we suggest you start with a quick <a href="https://www.youtube.com/@Hobbinomicon">intro tour</a>.</p>
+          <p>Generals, dungeon-delvers, and painters of small monsters will all find something on these shelves: painted warbands and the boards they fight over, long solo campaigns written from the deep end of the dungeon, and the occasional coffee cup, carefully based. Find the newest work in our <a href="/work">Gallery section</a>.</p>
+        </div>
+        <div class="product">
+          <div class="box"><img src="/gallery/yellowimp-box.jpg" alt="" onerror="this.remove()"></div>
+          <b>Yellow Imp Miniatures</b>
+          <span class="buy">from $12.00</span> 🛒 <span class="q">?</span><br>
+          <a href="https://yellowimp.com">Visit the store</a>
+        </div>
+      </div>
+
+      <div class="features">
+        <div class="feat">
+          <div class="thumb"><img src="/gallery/tc-art.jpg" alt="" onerror="this.remove()"></div>
+          <div><h4><a href="/work#trench-crusade">Trench Crusade Gallery</a></h4>
+          <p>After months at the bench, nine warriors of the trenches stand complete — the War Prophet, the Communicant, the Wretched and their kin. Check out this gallery of grim and devoted works.</p></div>
+        </div>
+        <div class="feat">
+          <div class="thumb"><img src="/gallery/dusk-art.jpg" alt="" onerror="this.remove()"></div>
+          <div><h4><a href="/work#warmachine">Ice King's Dusk Preview</a></h4>
+          <p>If you're dying to know what marches out of the cold, look no further. This campaign follows the army model by model — painted live on the Warmachine channel.</p></div>
+        </div>
+        <div class="feat">
+          <div class="thumb"><img src="/gallery/dolmenwood-art.jpg" alt="" onerror="this.remove()"></div>
+          <div><h4><a href="/work#dolmenwood">Dolmenwood Miniatures Gallery</a></h4>
+          <p>Travelers mustering their own expedition into the Wood should visit this gallery — the Moss Giant and the Goat Scholar await, with descriptions and tall tales included.</p></div>
+        </div>
+        <div class="feat">
+          <div class="thumb"><img src="/gallery/chronicle-art.jpg" alt="" onerror="this.remove()"></div>
+          <div><h4><a href="/log">The Chronicle</a></h4>
+          <p>Field reports, campaign journals, and philosophical rambling from the deep end of the dungeon. Updated whenever the keeper has something worth saying.</p></div>
+        </div>
+      </div>
+
+      <div class="caps-table">
+        <div class="capbox"><div class="h">The Painting Studio</div><div class="im"><img src="/gallery/studio.jpg" alt="" onerror="this.remove()"></div><div class="cap">Commissions taken through Yellow Imp — conversation first, always.</div></div>
+        <div class="capbox"><div class="h">On the Bench</div><div class="im"><img src="/gallery/bench.jpg" alt="" onerror="this.remove()"></div><div class="cap">What the hands are up to this very week.</div></div>
+      </div>
+
+      <div class="footlinks">
+        <a href="/">Home</a> | <a href="/about">About the Painter</a> | <a href="/work">Gallery</a> | <a href="/log">Chronicle</a> | <a href="/videos">Videos</a> | <a href="#">Guestbook</a> | <a href="https://yellowimp.com/commissions">Commissions</a> | <a href="#">Site Map</a>
+      </div>
+      <div class="legal">
+        All artwork and creative content by Matt Gilbert — no AI-generated art.<br>
+        <a href="#">Copyright</a> © MDG Growth LLC 2026. Variably registered in the deep end of the dungeon.<br>
+        <span class="counter">VISITORS 004,217</span> · best viewed at 1024×768
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

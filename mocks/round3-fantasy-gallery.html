@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Painted Works of MATTGLBRT — Miniatures Catalog</title>
+<!--
+  mattglbrt.com/work — round 3 companion: the GALLERY as a 2006 GW
+  "Miniature Range" catalog page (built to the Orcs & Goblins capture).
+  Category sections · 4-up product grid · pack-info parentheticals ·
+  icon legend at the bottom. Fantasy skin (parchment + torn ribbons).
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  :root { --maroon:#6e1410; --blue:#0000cc; }
+  body {
+    background-color:#e9e2d2;
+    background-image:
+      radial-gradient(120% 90% at 50% 0%, rgba(255,253,246,0.8) 0%, rgba(255,253,246,0) 55%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.03' numOctaves='5' seed='14'/%3E%3CfeColorMatrix values='0 0 0 0 0.58 0 0 0 0 0.5 0 0 0 0 0.36 0 0 0 0.22 0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23p)'/%3E%3C/svg%3E");
+    font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#1a1a1a;
+  }
+  .tear { position:fixed; top:0; bottom:0; width:46px; z-index:0; pointer-events:none; background-color:#d9cfb8;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.06' numOctaves='4' seed='3'/%3E%3CfeColorMatrix values='0 0 0 0 0.45 0 0 0 0 0.38 0 0 0 0 0.25 0 0 0 0.3 0'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23t)'/%3E%3C/svg%3E");
+    filter:drop-shadow(0 0 6px rgba(60,45,20,0.45)); }
+  .tear.l { left:0; clip-path:polygon(0 0,100% 0,72% 2%,95% 5%,70% 8%,88% 12%,66% 15%,92% 19%,71% 23%,86% 27%,64% 31%,90% 36%,70% 40%,84% 45%,65% 49%,91% 54%,69% 58%,87% 63%,63% 67%,89% 72%,70% 76%,85% 81%,66% 85%,92% 90%,71% 94%,88% 98%,100% 100%,0 100%); }
+  .tear.r { right:0; clip-path:polygon(100% 0,0 0,28% 2%,5% 5%,30% 8%,12% 12%,34% 15%,8% 19%,29% 23%,14% 27%,36% 31%,10% 36%,30% 40%,16% 45%,35% 49%,9% 54%,31% 58%,13% 63%,37% 67%,11% 72%,30% 76%,15% 81%,34% 85%,8% 90%,29% 94%,12% 98%,0 100%,100% 100%); }
+  @media (max-width:860px){ .tear { display:none; } }
+
+  .page { position:relative; z-index:1; max-width:920px; margin:0 auto; }
+  .topbar { background:linear-gradient(180deg,#8c2318 0%, #5c100b 60%, #3f0a08 100%); border-bottom:2px solid #240403;
+    display:flex; align-items:center; gap:18px; padding:6px 14px; flex-wrap:wrap; }
+  .topbar .gw { font-family:Cinzel,serif; font-weight:900; font-size:14px;
+    background:linear-gradient(180deg,#ffe98a,#f0a01c 55%,#c85a12); -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(1px 1px 0 #1c0503); }
+  .topbar nav { display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
+  .topbar nav a { color:#f3e9db; text-decoration:none; font-size:11px; font-weight:bold; letter-spacing:0.1em; text-transform:uppercase; }
+  .topbar nav a:hover { color:#ffd978; text-decoration:underline; }
+  .topbar nav .dot { color:#caa06a; font-size:9px; }
+
+  .cols { display:grid; grid-template-columns:172px 1fr; }
+  @media (max-width:720px){ .cols { grid-template-columns:1fr; } }
+  aside { padding:14px 12px 40px 14px; font-size:11.5px; }
+  aside h3 { font-size:11.5px; color:var(--maroon); font-weight:bold; margin:12px 0 3px; }
+  aside ul { list-style:none; }
+  aside li { padding:1.5px 0; }
+  aside li a { color:#201a12; text-decoration:none; }
+  aside li a:hover { color:var(--maroon); text-decoration:underline; }
+  aside li.sub::before { content:"- "; }
+  aside li.now { color:var(--maroon); font-weight:bold; }
+
+  main { background:#fff; border-left:1px solid #b9ad92; box-shadow:-2px 0 6px rgba(80,60,30,0.15); padding-bottom:10px; min-width:0; }
+
+  /* intro row */
+  .intro { display:grid; grid-template-columns:120px 1fr; gap:16px; padding:18px 16px 14px; }
+  @media (max-width:640px){ .intro { grid-template-columns:1fr; } }
+  .intro .book { text-align:center; font-size:11px; font-weight:bold; }
+  .intro .book .im { border:1px solid #555; aspect-ratio:3/4; margin-bottom:5px;
+    background:radial-gradient(90% 80% at 50% 30%, #8c2318 0%, #2b0605 85%); position:relative; overflow:hidden; }
+  .intro .book .im img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .intro h1 { font-size:15px; text-align:center; margin-bottom:8px; }
+  .intro p { text-align:justify; line-height:1.55; font-size:11.5px; }
+  .intro p + p { margin-top:8px; }
+  .intro .tally { text-align:center; margin-top:8px; font-weight:bold; }
+  .centerlink { text-align:center; font-weight:bold; margin:4px 0 8px; }
+  .centerlink a { color:var(--blue); }
+
+  /* category sections */
+  h2.cat { font-size:14px; font-weight:bold; color:#4a1208; padding:14px 16px 2px; }
+  .range { display:grid; grid-template-columns:repeat(4,1fr); gap:18px 14px; padding:10px 16px 16px; border-bottom:1px solid #ddd; }
+  @media (max-width:760px){ .range { grid-template-columns:repeat(2,1fr); } }
+  .item { text-align:center; font-size:11px; line-height:1.45; }
+  .item .ph { aspect-ratio:1/1; margin-bottom:5px; position:relative;
+    background:radial-gradient(90% 85% at 50% 40%, #f3f3f0 0%, #d9d9d2 80%); border:1px solid #e2e2da; }
+  .item .ph img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .item b { display:block; }
+  .item .pack { color:#333; }
+  .item .acts { margin-top:4px; font-size:12px; }
+  .item .acts a { text-decoration:none; margin:0 3px; }
+  .sketch { margin:12px 16px; border:1px solid #000; aspect-ratio:16/5;
+    background:
+      radial-gradient(100% 90% at 30% 40%, rgba(90,70,40,0.25) 0%, rgba(90,70,40,0) 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='s'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.05' numOctaves='4' seed='21'/%3E%3CfeColorMatrix values='0 0 0 0 0.75 0 0 0 0 0.68 0 0 0 0 0.52 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23s)'/%3E%3C/svg%3E"),
+      #efe8d4; position:relative; }
+  .sketch img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .sketch .lbl { position:absolute; bottom:4px; right:8px; font-size:9.5px; font-style:italic; color:#6b5c3e; }
+
+  /* legend */
+  .legend { margin:16px; border-top:1px solid #aaa; padding-top:10px; font-size:11px; line-height:1.8; }
+  .legend .ic { display:inline-block; width:18px; text-align:center; }
+
+  .footlinks { text-align:center; font-size:11px; padding:12px; border-top:1px solid #ccc; line-height:1.9; }
+  .legal { text-align:center; color:#555; font-size:10px; line-height:1.7; padding:0 26px 22px; }
+  a { color:var(--blue); }
+  a:visited { color:#551a8b; }
+</style>
+</head>
+<body>
+<div class="tear l"></div><div class="tear r"></div>
+<div class="page">
+  <div class="topbar">
+    <span class="gw">MATTGLBRT</span>
+    <nav>
+      <a href="https://hobbinomicon.com">The Hobbinomicon</a><span class="dot">●</span>
+      <a href="https://aloneinthedungeon.com">Alone in the Dungeon</a><span class="dot">●</span>
+      <a href="https://yellowimp.com">Yellow Imp</a>
+    </nav>
+  </div>
+
+  <div class="cols">
+    <aside>
+      <h3>The Miniatures Gallery</h3>
+      <ul>
+        <li class="now">Painted Works Catalog</li>
+        <li class="sub"><a href="#lords">Lords and Heroes</a></li>
+        <li class="sub"><a href="#core">Core Units</a></li>
+        <li class="sub"><a href="#special">Special Units</a></li>
+        <li class="sub"><a href="#rare">Rare Units</a></li>
+      </ul>
+      <h3>Elsewhere</h3>
+      <ul>
+        <li class="sub"><a href="/">Home</a></li>
+        <li class="sub"><a href="/log">The Chronicle</a></li>
+        <li class="sub"><a href="/videos">Videos</a></li>
+        <li class="sub"><a href="https://yellowimp.com/commissions">Commissions</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <div class="intro">
+        <div class="book">
+          <div class="im"><img src="/gallery/catalog-cover.jpg" alt="" onerror="this.remove()"></div>
+          The Painted Works<br>of 2026
+        </div>
+        <div>
+          <h1>The MATTGLBRT Painted Miniature Range</h1>
+          <p>The Painted Works Catalog is the perfect place to visit if you were wondering what comes off this particular workbench. Not only does it act as an online checklist, a colorful model gallery, and an informative encyclopedia of silly and savage little warriors, but every entry links to the video where it got painted or the chronicle where its story is told.</p>
+          <p>Below you'll see a breakdown of the entire painted range for the year. The item and origin are listed, with icons to watch, read, or — where the Yellow Imp sells a cousin of the piece — to buy.</p>
+          <div class="tally">🖌 62 miniatures painted in the year of our grind 2026</div>
+          <div class="centerlink"><a href="/log">Learn more about how the sausage gets painted here...</a></div>
+        </div>
+      </div>
+
+      <h2 class="cat" id="lords">Lords and Heroes</h2>
+      <div class="range">
+        <div class="item"><div class="ph"><img src="/gallery/war-prophet.jpg" alt="" onerror="this.remove()"></div><b>War Prophet</b><span class="pack">(Trench Crusade ·<br>1 resin model)</span><div class="acts"><a href="#" title="watch it painted">🎥</a><a href="#" title="field notes">📜</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/dwarf-witch.jpg" alt="" onerror="this.remove()"></div><b>Dwarf Witch</b><span class="pack">(one-off ·<br>1 metal model)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/necromancer.jpg" alt="" onerror="this.remove()"></div><b>Necromancer</b><span class="pack">(Reaper ·<br>1 metal model)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/gomb.jpg" alt="" onerror="this.remove()"></div><b>Child of Gomb</b><span class="pack">(Daemon Prince ·<br>kitbash, 1 model)</span><div class="acts"><a href="#">🎥</a><a href="#">📜</a></div></div>
+      </div>
+
+      <h2 class="cat" id="core">Core Units</h2>
+      <div class="range">
+        <div class="item"><div class="ph"><img src="/gallery/dusk-army.jpg" alt="" onerror="this.remove()"></div><b>Ice King's Dusk</b><span class="pack">(Warmachine ·<br>full army)</span><div class="acts"><a href="#">🎥</a><a href="#">📜</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/tc-warband.jpg" alt="" onerror="this.remove()"></div><b>Trench Pilgrims</b><span class="pack">(Trench Crusade ·<br>warband, 9 models)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/infinity.jpg" alt="" onerror="this.remove()"></div><b>Infinity Strike Team</b><span class="pack">(Infinity ·<br>10 metal models)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/shadowdark-party.jpg" alt="" onerror="this.remove()"></div><b>All-Dwarf Party</b><span class="pack">(Shadowdark ·<br>mustering now)</span><div class="acts"><a href="#">📜</a></div></div>
+      </div>
+
+      <div class="sketch"><img src="/gallery/sketch-strip.jpg" alt="" onerror="this.remove()"><span class="lbl">workbench sketches &amp; works in progress</span></div>
+
+      <h2 class="cat" id="special">Special Units</h2>
+      <div class="range">
+        <div class="item"><div class="ph"><img src="/gallery/anchorite.jpg" alt="" onerror="this.remove()"></div><b>Anchorite Shrine</b><span class="pack">(Trench Crusade ·<br>terrain piece)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/outhouse.jpg" alt="" onerror="this.remove()"></div><b>The Outhouse</b><span class="pack">(terrain ·<br>1 humble model)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/coffee-cup.jpg" alt="" onerror="this.remove()"></div><b>The Coffee Cup</b><span class="pack">(scale model ·<br>yes, really)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/toro.jpg" alt="" onerror="this.remove()"></div><b>Crucible Guard Toro</b><span class="pack">(Warmachine ·<br>1 warjack)</span><div class="acts"><a href="#">🎥</a></div></div>
+      </div>
+
+      <h2 class="cat" id="rare">Rare Units</h2>
+      <div class="range">
+        <div class="item"><div class="ph"><img src="/gallery/moss-giant.jpg" alt="" onerror="this.remove()"></div><b>Moss Giant</b><span class="pack">(Dolmenwood ·<br>1 large model)</span><div class="acts"><a href="#">🎥</a><a href="#">📜</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/goat-scholar.jpg" alt="" onerror="this.remove()"></div><b>Goat Scholar</b><span class="pack">(Dolmenwood ·<br>1 learned model)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/skelly-joe.jpg" alt="" onerror="this.remove()"></div><b>Skelly Joe</b><span class="pack">(Mörk Borg ·<br>1 bony model)</span><div class="acts"><a href="#">🎥</a></div></div>
+        <div class="item"><div class="ph"><img src="/gallery/imp.jpg" alt="" onerror="this.remove()"></div><b>The Yellow Imp</b><span class="pack">(Yellow Imp ·<br>the company mascot)</span><div class="acts"><a href="#">🎥</a><a href="https://yellowimp.com">🛒</a></div></div>
+      </div>
+
+      <div class="legend">
+        <b>How to read this catalog:</b><br>
+        <span class="ic">🎥</span> Watch the piece get painted on one of the channels.<br>
+        <span class="ic">📜</span> Read its field notes in the Chronicle.<br>
+        <span class="ic">🛒</span> A cousin of this piece lives in the <a href="https://yellowimp.com">Yellow Imp store</a>. By clicking the cart (<i>this page only!</i>) you will be shipped to the Imp. If you want one painted like this, that's a <a href="https://yellowimp.com/commissions">commission</a>.
+      </div>
+
+      <div class="footlinks">
+        <a href="/">Home</a> | <a href="/about">About the Painter</a> | <a href="/work">Gallery</a> | <a href="/log">Chronicle</a> | <a href="/videos">Videos</a> | <a href="#">Guestbook</a> | <a href="https://yellowimp.com/commissions">Commissions</a>
+      </div>
+      <div class="legal">
+        All artwork and creative content by Matt Gilbert — no AI-generated art.<br>
+        © MDG Growth LLC 2026 · best viewed at 1024×768
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>

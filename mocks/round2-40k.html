@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MATTGLBRT — In the deep end of the dungeon there is only hobby</title>
+<!--
+  mattglbrt.com — round 2: built to the 2007 us.games-workshop.com capture.
+  Teal woven surround · white canvas · black module caps · default-blue links ·
+  stone logo + blackletter tagline · icon strips · sidebar of sectioned link lists.
+  All textures procedural (CSS gradients + SVG noise). Responsive.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=UnifrakturMaguntia&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing:border-box; margin:0; padding:0; }
+  :root { --teal:#11525b; --blue:#0000cc; --bar:#0b0b0d; }
+
+  /* ---- the teal weave ---- */
+  body {
+    background-color:var(--teal);
+    background-image:
+      repeating-linear-gradient(90deg, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 104px, rgba(0,0,0,0.33) 104px, rgba(0,0,0,0.33) 112px),
+      repeating-linear-gradient(0deg, rgba(255,255,255,0.045) 0px, rgba(255,255,255,0.045) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 4px),
+      repeating-linear-gradient(90deg, rgba(0,0,0,0.14) 0px, rgba(0,0,0,0.14) 1px, rgba(0,0,0,0) 1px, rgba(0,0,0,0) 4px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='t'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' seed='5'/%3E%3CfeColorMatrix values='0 0 0 0 0.03 0 0 0 0 0.16 0 0 0 0 0.18 0 0 0 0.4 0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23t)'/%3E%3C/svg%3E");
+    font-family:Arial,Helvetica,sans-serif; font-size:12px; color:#1a1a1a;
+  }
+
+  a { color:var(--blue); }
+  a:visited { color:#551a8b; }
+
+  .page { max-width:980px; margin:0 auto; background:transparent; }
+
+  /* ---- top black brand bar ---- */
+  .topbar { background:linear-gradient(180deg,#1a1c26,#06070a); border-bottom:1px solid #000;
+    display:flex; align-items:center; gap:18px; padding:7px 14px; flex-wrap:wrap; }
+  .topbar .mark { font-family:Cinzel,serif; font-weight:900; font-size:15px; letter-spacing:0.04em;
+    background:linear-gradient(180deg,#ffd978,#c22b1a 70%); -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 1px 0 #000); }
+  .topbar nav { display:flex; gap:6px; align-items:center; flex-wrap:wrap; }
+  .topbar nav a { color:#e8e8ee; text-decoration:none; font-size:11px; font-weight:bold; letter-spacing:0.12em; text-transform:uppercase; }
+  .topbar nav a:hover { color:#ffd978; text-decoration:underline; }
+  .topbar nav .dot { color:#7a7d8c; font-size:9px; }
+
+  /* ---- orange promo banner (the slot the Flash ad lived in) ---- */
+  .promo { background:linear-gradient(180deg,#ffb23e 0%,#f4731c 55%,#d94e10 100%);
+    border-top:1px solid #ffd99a; border-bottom:2px solid #7a2a05;
+    padding:14px 18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; }
+  .promo b { font-size:24px; font-weight:bold; color:#fff; text-shadow:1px 2px 0 rgba(122,42,5,0.75); letter-spacing:-0.01em; }
+  .promo a { color:#3a1402; font-weight:bold; font-size:12px; }
+
+  /* ---- columns ---- */
+  .cols { display:grid; grid-template-columns:190px 1fr; }
+  @media (max-width:720px){ .cols { grid-template-columns:1fr; } }
+
+  /* ---- sidebar ---- */
+  aside { background:linear-gradient(180deg,#181a21,#101117); border-right:1px solid #000; padding-bottom:30px; }
+  .sb-logo { margin:10px; padding:12px 8px; text-align:center;
+    background:linear-gradient(180deg,#2e3140,#15161d); border:1px solid #000;
+    box-shadow:inset 0 1px 0 rgba(255,255,255,0.14), inset 0 0 14px rgba(0,0,0,0.7); }
+  .sb-logo .t { font-family:Cinzel,serif; font-weight:900; font-size:16px; letter-spacing:0.05em;
+    background:linear-gradient(180deg,#f2f3ef 0%,#aeb3ae 45%,#5d655f 75%,#8d948e 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent; filter:drop-shadow(0 1px 1px #000); }
+  .sb-logo .s { font-size:8.5px; letter-spacing:0.28em; color:#8e94a8; margin-top:3px; text-transform:uppercase; }
+  .sb h3 { font-size:10px; letter-spacing:0.14em; text-transform:uppercase; padding:9px 12px 3px;
+    color:#c9cdd8; text-shadow:0 1px 0 #000, 0 0 1px rgba(255,255,255,0.4);
+    border-bottom:1px solid #3c4050; margin:0 10px 4px; }
+  .sb h3.fancy { text-align:center; margin-top:14px; border:none; position:relative; color:#d8dce8; }
+  .sb h3.fancy::before, .sb h3.fancy::after { content:"═══"; color:#4a4f63; font-size:9px; margin:0 5px; }
+  .sb ul { list-style:none; margin:0 10px 8px; }
+  .sb li a { display:block; color:#cfd3de; text-decoration:none; font-size:11px; padding:3px 4px; }
+  .sb li a:hover { color:#fff; background:#23263200; text-decoration:underline; }
+  .sb li .note { color:#7b8094; font-size:9.5px; display:block; padding:0 4px 2px; }
+
+  /* ---- main canvas ---- */
+  main { background:#fff; min-width:0; }
+
+  /* icon strips */
+  .icons { background:var(--bar); color:#fff; display:flex; align-items:center; justify-content:center; gap:12px;
+    padding:5px 10px; font-size:13px; letter-spacing:0.05em; }
+  .icons .label { font-size:11px; font-weight:bold; letter-spacing:0.18em; }
+  .icons span.g { opacity:0.92; font-size:12px; }
+
+  /* stone logo + blackletter */
+  .hero { text-align:center; padding:26px 16px 10px; }
+  .stone { font-family:Cinzel,serif; font-weight:900; font-size:clamp(40px,8vw,74px); line-height:0.95; letter-spacing:0.01em;
+    background:linear-gradient(180deg,#f4f6f1 0%, #cfd6cc 30%, #8fa092 55%, #4e5f54 78%, #7c8d80 92%, #2e3a32 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 1px 0 #1c241e) drop-shadow(0 3px 1px rgba(0,0,0,0.55)) drop-shadow(0 6px 10px rgba(0,0,0,0.3)); }
+  .blackletter { font-family:"UnifrakturMaguntia",serif; font-size:clamp(15px,2.6vw,23px); color:#141414; margin-top:10px; }
+
+  /* promo slots row */
+  .slots { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; padding:18px 16px 6px; }
+  @media (max-width:720px){ .slots { grid-template-columns:1fr; } }
+  .slot { text-align:center; font-size:11px; }
+  .slot .img { border:1px solid #9a9a9a; aspect-ratio:16/10; margin-bottom:7px;
+    background:
+      radial-gradient(90% 80% at 50% 36%, #5b6478 0%, #232733 75%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' seed='9'/%3E%3CfeColorMatrix values='0 0 0 0 0.12 0 0 0 0 0.13 0 0 0 0 0.17 0 0 0 0.3 0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E"); }
+  .slot .img img { width:100%; height:100%; object-fit:cover; display:block; }
+  .slot .price { font-weight:bold; }
+  .slot .cart { display:inline-block; transform:translateY(1px); }
+
+  /* section banner */
+  .shrine { background:var(--bar); color:#fff; margin:16px; padding:6px 10px;
+    display:flex; align-items:center; justify-content:center; gap:14px; }
+  .shrine .wing { font-size:13px; opacity:0.9; }
+  .shrine b { font-size:13px; font-weight:bold; letter-spacing:0.22em; }
+
+  /* army-style modules */
+  .armies { display:grid; grid-template-columns:1fr 1fr; gap:16px; padding:0 16px 16px; }
+  @media (max-width:720px){ .armies { grid-template-columns:1fr; } }
+  .army { border:1px solid #000; }
+  .army .cap { background:var(--bar); color:#fff; font-weight:bold; font-size:12.5px; letter-spacing:0.14em;
+    text-transform:uppercase; padding:5px 10px; }
+  .army .body { display:grid; grid-template-columns:118px 1fr; gap:12px; padding:11px; }
+  .army .thumb { width:118px; aspect-ratio:3/4; border:1px solid #9a9a9a;
+    background:radial-gradient(85% 75% at 50% 34%, #6a7186 0%, #272b38 78%); position:relative; overflow:hidden; }
+  .army .thumb img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .army ul { list-style:none; }
+  .army li { padding:1.5px 0; font-size:11.5px; }
+  .army li a { text-decoration:underline; }
+
+  /* footer */
+  .footlinks { text-align:center; font-size:11px; padding:16px 14px 6px; border-top:1px solid #ccc; margin:8px 16px 0; line-height:1.9; }
+  .legal { text-align:center; color:#8a8a8a; font-size:10px; line-height:1.7; padding:8px 26px 26px; }
+  .legal .counter { font-family:"Courier New",monospace; background:#000; color:#7CFC00; padding:1px 7px; border:1px solid #444; letter-spacing:2px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <span class="mark">MATTGLBRT</span>
+    <nav>
+      <a href="https://hobbinomicon.com">The Hobbinomicon</a><span class="dot">●</span>
+      <a href="https://aloneinthedungeon.com">Alone in the Dungeon</a><span class="dot">●</span>
+      <a href="https://yellowimp.com">Yellow Imp</a>
+    </nav>
+  </div>
+
+  <div class="promo">
+    <b>THE YELLOW IMP STORE OPENS OCT 31</b>
+    <a href="https://yellowimp.com">Enter the store &raquo;</a>
+  </div>
+
+  <div class="cols">
+    <aside class="sb">
+      <div class="sb-logo"><div class="t">MATTGLBRT</div><div class="s">Painter · Builder · Writer</div></div>
+
+      <h3>The Keep</h3>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/work">The Gallery</a></li>
+        <li><a href="/log">The Chronicle</a></li>
+        <li><a href="/videos">Latest Videos</a></li>
+      </ul>
+
+      <h3>Online Store</h3>
+      <ul>
+        <li><a href="https://yellowimp.com">Yellow Imp Store</a></li>
+        <li><a href="#">Buzzard's Trading Post (eBay)</a></li>
+        <li><a href="https://yellowimp.com/commissions">Painting Commissions</a></li>
+      </ul>
+
+      <h3>Gaming</h3>
+      <ul>
+        <li><a href="https://www.youtube.com/@Hobbinomicon">The Hobbinomicon</a></li>
+        <li><a href="#">Hobbinomicon: Warmachine</a></li>
+        <li><a href="#">Hobbinomicon: KDM</a></li>
+        <li><a href="https://www.youtube.com/@AloneInTheDungeon">Alone in the Dungeon</a></li>
+      </ul>
+
+      <h3 class="fancy">Realms of the<br>MDG Universe</h3>
+      <ul>
+        <li><a href="https://hobbinomicon.com">hobbinomicon.com</a></li>
+        <li><a href="https://aloneinthedungeon.com">aloneinthedungeon.com</a></li>
+        <li><a href="https://yellowimp.com">yellowimp.com</a></li>
+        <li><a href="#">minitrukk.com</a><span class="note">the gates open soon</span></li>
+        <li><a href="#">thetablesedge.com</a><span class="note">the gates open soon</span></li>
+      </ul>
+
+      <h3>Extras</h3>
+      <ul>
+        <li><a href="#">Sign the Guestbook</a></li>
+        <li><a href="#">Discord</a></li>
+        <li><a href="#">Threads</a> · <a href="#">Substack</a></li>
+        <li><a href="mailto:matt@hobbinomicon.com">Send a Raven</a></li>
+      </ul>
+    </aside>
+
+    <main>
+      <div class="icons">
+        <span class="g">☠</span><span class="g">⚔</span><span class="g">🛡</span><span class="g">⚒</span><span class="g">🎲</span>
+        <span class="label">THE WORKS OF MATTGLBRT</span>
+        <span class="g">🎲</span><span class="g">⚒</span><span class="g">🛡</span><span class="g">⚔</span><span class="g">☠</span>
+      </div>
+
+      <div class="hero">
+        <div class="stone">MATTGLBRT</div>
+        <div class="blackletter">In the deep end of the dungeon there is only hobby</div>
+      </div>
+
+      <div class="slots">
+        <div class="slot">
+          <div class="img"><img src="/gallery/getting-started.jpg" alt="" onerror="this.remove()"></div>
+          <b>GETTING STARTED WITH THE HOBBINOMICON</b><br>
+          Take the <a href="https://www.youtube.com/@Hobbinomicon">grand tour &raquo;</a>
+        </div>
+        <div class="slot">
+          <div class="img"><img src="/gallery/dusk-army.jpg" alt="" onerror="this.remove()"></div>
+          <b>THE ICE KING'S DUSK</b><br>
+          Visit the <a href="#">Warmachine campaign &raquo;</a>
+        </div>
+        <div class="slot">
+          <div class="img"><img src="/gallery/yellowimp-minis.jpg" alt="" onerror="this.remove()"></div>
+          Yellow Imp Miniatures<br>
+          <span class="price">from $12.00</span> <span class="cart">🛒</span> <a href="https://yellowimp.com">shop &raquo;</a>
+        </div>
+      </div>
+
+      <div class="shrine"><span class="wing">⚜</span><b>SHRINE OF KNOWLEDGE: THE GALLERY</b><span class="wing">⚜</span></div>
+
+      <div class="armies">
+        <div class="army">
+          <div class="cap">Warmachine</div>
+          <div class="body">
+            <div class="thumb"><img src="/gallery/dusk-thumb.jpg" alt="" onerror="this.remove()"></div>
+            <ul>
+              <li><a href="#">Ice King's Dusk — the army</a></li>
+              <li><a href="#">Crucible Guard Toro</a></li>
+              <li><a href="#">Butcher</a></li>
+              <li><a href="#">Dusk test model masterclass</a></li>
+              <li><a href="#">More Warmachine...</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="army">
+          <div class="cap">Trench Crusade</div>
+          <div class="body">
+            <div class="thumb"><img src="/gallery/tc-thumb.jpg" alt="" onerror="this.remove()"></div>
+            <ul>
+              <li><a href="#">War Prophet</a></li>
+              <li><a href="#">Communicant Mercenary</a></li>
+              <li><a href="#">Anchorite Shrine</a></li>
+              <li><a href="#">The Wretched</a></li>
+              <li><a href="#">More Trench Crusade...</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="army">
+          <div class="cap">Dolmenwood</div>
+          <div class="body">
+            <div class="thumb"><img src="/gallery/dolmenwood-thumb.jpg" alt="" onerror="this.remove()"></div>
+            <ul>
+              <li><a href="#">Moss Giant</a></li>
+              <li><a href="#">Goat Scholar</a></li>
+              <li><a href="#">More Dolmenwood...</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="army">
+          <div class="cap">One-Offs &amp; Oddities</div>
+          <div class="body">
+            <div class="thumb"><img src="/gallery/oddities-thumb.jpg" alt="" onerror="this.remove()"></div>
+            <ul>
+              <li><a href="#">Child of Gomb, Daemon Prince</a></li>
+              <li><a href="#">Dwarf Witch</a></li>
+              <li><a href="#">Reaper Necromancer</a></li>
+              <li><a href="#">Skelly Joe (Mörk Borg)</a></li>
+              <li><a href="#">The Coffee Cup</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="icons">
+        <span class="g">☠</span><span class="g">⚔</span><span class="g">🛡</span><span class="g">⚒</span><span class="g">🎲</span>
+        <span class="label">THE WORKS OF MATTGLBRT</span>
+        <span class="g">🎲</span><span class="g">⚒</span><span class="g">🛡</span><span class="g">⚔</span><span class="g">☠</span>
+      </div>
+
+      <div class="footlinks">
+        <a href="/">Home</a> | <a href="/about">About the Painter</a> | <a href="/work">Gallery</a> | <a href="/log">Chronicle</a> | <a href="/videos">Videos</a> | <a href="#">Guestbook</a> | <a href="https://yellowimp.com/commissions">Commissions</a> | <a href="#">Site Map</a>
+      </div>
+      <div class="legal">
+        All artwork and creative content by Matt Gilbert — no AI-generated art.<br>
+        © MDG Growth LLC 2026. The Hobbinomicon, Alone in the Dungeon, and Yellow Imp Miniatures are ventures of MDG Growth,
+        variably registered in the deep end of the dungeon.<br>
+        <span class="counter">VISITORS 004,217</span> · best viewed at 1024×768
+      </div>
+    </main>
+  </div>
+</div>
+</body>
+</html>
