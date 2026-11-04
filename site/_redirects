@@ -1,0 +1,6 @@
+# Commissions moved to Yellow Imp (Aug 2026).
+/commissions    https://yellowimp.com/commissions  301
+/commissions/*  https://yellowimp.com/commissions  301
+
+# Every other old route (/videos, /volume/*, /rss.xml, ...) lands on the page.
+/*  /  302
