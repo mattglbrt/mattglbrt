@@ -4,6 +4,39 @@ Append-only. **Newest entry first.**
 
 ---
 
+## 2026-11-04 (Claude Code) — Warmachine channel CTA shipped; first Mac session
+
+**Context:** First session on the Mac, starting from the orchestrator's 10-31
+migration HANDOFF (install deps, check secrets, fix Windows leftovers, smoke test).
+
+**What happened:** Matt first asked to drop the redesign and ship a single landing
+page linking Instagram/YouTube/hobbinomicon.com ASAP. I built it as static
+`site/index.html` + `_redirects` with no build step (PR #1). Matt then changed
+course: keep the current Astro site as it is and put a CTA at the top. I added a
+site-wide banner to `src/layouts/textmode/TextmodeLayout.astro` (styles in
+`src/styles/modules/footer.css`): "Warmachine-focused hobby channel coming this
+month · [ go sub ]" linking to https://www.youtube.com/@TheHobbinomiconWarmachine.
+`pnpm build` passed. Squash-merged as PR #2 (`be65160`) on Matt's "deploy it", and
+it was live on mattglbrt.com about 45s later (I checked the live HTML, not a browser).
+PR #1 was closed unmerged and its branch deleted.
+
+**Decisions:** Keep the existing Astro site live (Matt). The banner goes in the
+shared layout so it shows on every page. I used the existing textmode palette
+(yellow) so it matches the site.
+
+**Handoff items addressed:** (1) Deps: pnpm installed via Homebrew, `pnpm install`
+done. (2) Secrets: there are no `.env` files in the repo and the build needs none.
+`BUILD_HOOK_URL` lives in the Netlify UI. (3) Windows leftovers: none found
+(searched for `powershell` and `C:\`). (4) Smoke test: `pnpm build` passes on the
+Mac (warning: collection "philes" is empty; harmless). HANDOFF.md deleted.
+
+**Open:** Whether the Hugo "love letter" redesign is paused or just deferred
+(inferred paused; not confirmed). The banner says "coming this month", so update or
+remove it once the channel launches. `mdggrowth/PROJECTS.md` is missing on the Mac,
+so there was no board row to update.
+
+---
+
 ## 2026-10-21 (Claude Code) — Orient + handoff close-out; rebuild confirmed
 
 **Context:** Started from the orchestrator's HANDOFF ("Wake: content session",
